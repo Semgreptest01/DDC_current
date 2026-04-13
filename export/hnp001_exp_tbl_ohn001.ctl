@@ -1,0 +1,6 @@
+TABLES=("HNP_くくりベンダーパラメータ")
+INDEXES=n
+CONSTRAINTS = n
+GRANTS = n
+COMPRESS = n
+BUFFER = 2000000

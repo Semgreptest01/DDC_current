@@ -1,0 +1,6 @@
+TABLES=("HNT_Œv‰æI—¹‘ÎÛ¤•iQTŽŸ")
+INDEXES=n
+CONSTRAINTS = n
+GRANTS = n
+COMPRESS = n
+BUFFER = 2000000

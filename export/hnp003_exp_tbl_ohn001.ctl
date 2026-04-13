@@ -1,0 +1,6 @@
+TABLES=("HNP_返品削減宛先パラメータ")
+INDEXES=n
+CONSTRAINTS = n
+GRANTS = n
+COMPRESS = n
+BUFFER = 2000000
