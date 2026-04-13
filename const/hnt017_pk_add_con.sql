@@ -1,0 +1,4 @@
+ALTER TABLE HNT_メーカー ADD(CONSTRAINT HNT017_PK PRIMARY KEY(
+社コード,
+メーカーコード,
+有効終了日)

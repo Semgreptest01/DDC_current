@@ -1,0 +1,1 @@
+ALTER TABLE HNT_¤•i‚c‚h‚u DROP PRIMARY KEY;

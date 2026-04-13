@@ -1,0 +1,4 @@
+ALTER TABLE HNT_商品ＤＩＶ ADD(CONSTRAINT HNT022_PK PRIMARY KEY(
+社コード,
+商品ＤＩＶコード,
+有効終了日)
