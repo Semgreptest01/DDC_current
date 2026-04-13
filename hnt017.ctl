@@ -1,0 +1,40 @@
+LOAD DATA
+ APPEND INTO TABLE HNT_メーカー
+ (
+ 社コード                                 POSITION(1:6) CHAR,
+ メーカーコード                           POSITION(7:12) CHAR,
+ 有効終了日                               POSITION(13:20) DATE "YYYYMMDD",
+ 有効開始日                               POSITION(21:28) DATE "YYYYMMDD",
+ メーカー名                               POSITION(29:78) CHAR
+  "DECODE(RTRIM(RTRIM(:メーカー名),'　'),NULL,'　',RTRIM(RTRIM(:メーカー名),'　'))",
+ メーカー名カナ                           POSITION(79:103) CHAR
+  "DECODE(RTRIM(RTRIM(:メーカー名カナ),' '),NULL,' ',RTRIM(RTRIM(:メーカー名カナ),' '))",
+ メーカー種別                             POSITION(104:105) CHAR,
+ 年契親メーカーコード                     POSITION(106:111) CHAR,
+ 年契親子区分                             POSITION(112:113) CHAR,
+ 契約形態区分                             POSITION(114:115) CHAR,
+ 入力依頼者氏名コード                     POSITION(116:123) CHAR,
+ 入力依頼者氏名                           POSITION(124:143) CHAR,
+ 処理区分                                 POSITION(144:145) CHAR,
+ 物理削除日                               POSITION(146:153) DATE "YYYYMMDD",
+ コピー処理日                             POSITION(154:161) DATE "YYYYMMDD",
+ コピー処理状況区分                       POSITION(162:163) CHAR,
+ 物理削除区分                             POSITION(164:165) CHAR,
+ 作成者氏名コード                         POSITION(166:173) CHAR,
+ 作成者氏名                               POSITION(174:203) CHAR,
+ 作成者部署コード                         POSITION(204:209) CHAR,
+ 作成者部署名                             POSITION(210:249) CHAR,
+ 作成プログラムＩＤ                       POSITION(250:289) CHAR,
+ 作成日時                                 POSITION(290:303) DATE "YYYYMMDDHH24MISS",
+ オンライン更新者氏名コード               POSITION(304:311) CHAR,
+ オンライン更新者氏名                     POSITION(312:341) CHAR,
+ オンライン更新者部署コード               POSITION(342:347) CHAR,
+ オンライン更新者部署名                   POSITION(348:387) CHAR,
+ オンライン更新プログラムＩＤ             POSITION(388:427) CHAR,
+ オンライン更新日時                       POSITION(428:441) DATE "YYYYMMDDHH24MISS",
+ バッチ更新プログラムＩＤ                 POSITION(442:481) CHAR,
+ バッチ更新日時                           POSITION(482:495) DATE "YYYYMMDDHH24MISS",
+ ロック連番                               POSITION(496:499) ZONED NULLIF ロック連番=BLANKS,
+ 削除区分                                 POSITION(500:501) CHAR,
+ 更新端末ＩＤ                             POSITION(502:531) CHAR
+ )
