@@ -1,0 +1,54 @@
+#
+#----------------------------------------------------------------------#
+# job name      : ＤＢ Ｐｒｏｊｅｃｔ シェル共通処理サブモジュール
+# shell name    : export2.src
+# parameters    : none
+# effect        : プログラム実行＆ステータス・チェック
+# author        : ozawa
+# create date   : 2001.02.07 Initial Release.
+# update date   : xxxx.xx.xx update
+#
+# 必須ｼｪﾙ変数   : SHELLNAME    = シェル名称
+#               : LOG_FILE     = ログファイル名称
+#               : DMP_FILE     = ダンプファイル名称
+#               : EXPORT_LOG   = EXPORTログファイル名称
+#               : EXPORT_SQL   = EXPORT実行ファイル名称
+#               : NORMAL       = 正常終了ステータス
+#               : ABEND        = 異常終了ステータス
+# NO 修正日付     修正者     修正内容
+# 01 2005/08/24   K.Ebihara  サーバ移転対応修正
+#                            01.sjtoeuc -> iconv#
+# 02 2005/09/01   M.Kaneko   iconv部の不具合修正
+#----------------------------------------------------------------------#
+#       set shell valiables
+#----------------------------------------------------------------------#
+set EXPORT_LOG  = $LOG_FILE.exp
+#----------------------------------------------------------------------#
+# プログラム実行＆ステータス・チェック
+#----------------------------------------------------------------------#
+#
+#       execute program
+#
+echo "$SHELLNAME:t : start time = `date +%y/%m/%d:%H:%M:%S`"    >> $LOG_FILE
+
+exp $ORAUID/$ORAPWD PARFILE=$EXPORT_SQL FILE=$DMP_FILE LOG=$EXPORT_LOG  >& $EXPORT_LOG
+#
+#iconv -f SJIS -t EUC-JP $___TMP___LOG___                       >> $LOG_FILE
+#iconv -f SJIS -t EUC-JP $EXPORT_LOG                             >> $LOG_FILE
+cat $EXPORT_LOG >> $LOG_FILE
+#sjtoeuc $EXPORT_LOG                                            >> $LOG_FILE
+#
+#/bin/rm $EXPORT_LOG
+set sts = $status
+
+echo "$SHELLNAME:t : end   time = `date +%y/%m/%d:%H:%M:%S`"    >> $LOG_FILE
+if ( $sts == 0 )  then
+#       /bin/rm $___TMP___LOG___
+        /bin/rm $EXPORT_LOG
+        echo "$SHELLNAME:t : normal end"                        >> $LOG_FILE
+        exit $NORMAL
+else
+        echo "$SHELLNAME:t : abnormal end :status = $sts"       >> $LOG_FILE
+        exit $ABEND
+endif
+#

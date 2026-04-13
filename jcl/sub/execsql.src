@@ -1,0 +1,43 @@
+#
+#----------------------------------------------------------------------#
+# job name      : ＤＢ Ｐｒｏｊｅｃｔ シェル共通処理サブモジュール
+# shell name    : execsql.src
+# parameters    : none
+# effect        : ＳＱＬプログラム実行＆ステータス・チェック
+# author        : mizno
+# create date   : 1996.04.05 Initial Release.
+# update date   : 1996.11.27 n.kawakami
+# 必須ｼｪﾙ変数   : SHELLNAME = シェル名称
+#               : LOG_FILE  = ログファイル名称
+#               : NORMAL    = 正常終了ステータス
+#               : ABEND     = 異常終了ステータス
+#               : SQL_NAME  = SQLプログラム名称
+#               : SQL_PARM  = SQLプログラムパラメータ
+#               : LOG_DIR   = ログ出力先ディレクトリ名称（ワークで使用）
+# memo          :
+#----------------------------------------------------------------------#
+# ＳＱＬプログラム実行＆ステータス・チェック
+#----------------------------------------------------------------------#
+#
+#       execute program
+#
+echo "$SHELLNAME:t : $SQL_NAME:t : start time = `date +%y/%m/%d:%H:%M:%S`" \
+                                                                >> $LOG_FILE
+# ログ出力を一時ファイルに入力
+$SQL_NAME $SQL_PARM  >>  $LOG_FILE
+set sts = $status
+echo "$SHELLNAME:t : $SQL_NAME:t : end   time = `date +%y/%m/%d:%H:%M:%S`" \
+                                                                >> $LOG_FILE
+# 一時ファイルのログを、ログファイルへ出力
+#cat $LOG_DIR/$SHELLNAME:t.tmp.$$                            >> $LOG_FILE
+# 一時ファイルを削除
+#rm      $LOG_DIR/$SHELLNAME:t.tmp.$$
+# ＳＱＬプログラム実行結果判定
+if ( $sts == 0 )  then
+    echo "$SHELLNAME:t :$SQL_NAME:t normal end"                 >> $LOG_FILE
+    exit $NORMAL
+else
+    echo "$SHELLNAME:t :$SQL_NAME:t abnormal end :status = $sts">> $LOG_FILE
+    exit $ABEND
+endif
+#

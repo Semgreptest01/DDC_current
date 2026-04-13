@@ -1,0 +1,578 @@
+#
+#----------------------------------------------------------------------#
+# job name       : FT-Pass ファイル取出しインターフェース共有シェル(API)
+# shell name     : ftpget.src
+#                :
+# create date    : 2005-12-20, FujiSoftDIS, Initial Release.
+# update date    : YYYY-MM-DD
+#                :
+# 入力値         : *
+#                :
+# 必須シェル変数 :
+#                : SHELLNAME = シェル名称
+#                : LOG_FILE  = ログファイル名称
+#                : NORMAL    = 正常終了ステータス
+#                : ABEND     = 異常終了ステータス
+#                :
+#                : F_FILE    = 取出しファイル(ディレクトリ)名
+#                :           ※ 10～80バイトで指定する。
+#                : D_FILE    = 取出し後ファイル(ディレクトリ)名
+#                :           ※ 絶対パスで設定する。
+#                :           ※ 250バイト以下
+#                :
+# 任意設定変数   :
+#                : N_NO = 取出し件数
+#                :           ※ 0～99999を指定する。
+#                :           ※ "-y"との併用不可。
+#                : Y_GET_NEWEST = 取出し選択区分
+#                :           ※ "-y"を指定する。
+#                :           ※ "-n"との併用不可。
+#                : P_PROCEDURE = 処理区分
+#                :           ※ 1～3を指定する。
+#                :           ※ 省略時は1の指定とする。
+#                : E_ERASE = 取出し後ファイル削除区分。
+#                :           ※ "-e"を指定する。
+#                : I_RETRY_INTERVAL = リトライ間隔(分)
+#                :           ※ 1～9999を指定する。
+#                :           ※ 省略時は3分。
+#                : K_RETRY_COUNT = リトライ回数
+#                :           ※ 0～9999を指定する。
+#                :           ※ 省略時は無限回。
+#                : SEM_RETRY_INTERVAL = 同一論理ファイル取出しに対する
+#                :           リトライ間隔(分)
+#                :           ※ 1～60を指定する。
+#                :           ※ 省略時は1分。
+#                : SEM_RETRY_COUNT = 同一論理ファイル取出しに対する
+#                :           リトライ回数
+#                :           ※ 0～9999を指定する。
+#                :           ※ 省略時は10回。
+#                : O_OUTPUT   = コマンドログ出力先
+#                :           ※ 未設定の場合はLOG_FILEへ反映する。
+#                :           ※ "STDOUT"を指定すると標準出力する。
+#                :
+# 予約変数       : 下記変数は、将来のインタフェースとして予約します。
+#                :
+# 出力値         : *
+#                :
+# 戻り値         : NORMAL     : 正常終了
+#                : ABEND      : 異常終了
+#                :
+# memo           :
+#                : 一時的な作業ファイルとして
+#                : /tmp/FTPASS.YYMMDDhhmmss.プロセスID.tmp を作成します。
+#                : 作業用に"_"で始まるCシェル変数を使用しています。
+#                :
+#----------------------------------------------------------------------#
+# 出力変数初期化
+#----------------------------------------------------------------------#
+
+#----------------------------------------------------------------------#
+# 変数チェック
+#----------------------------------------------------------------------#
+if ( ! $?LOG_FILE ) then
+    echo "※ftpget.src : 必須シェル変数 LOG_FILE が未設定です。"
+    echo "  事前処理で common.src を実行する必要があります。"
+    exit 9
+endif
+echo "■ ftpget.src  ■■■■■■■■■■■■■■■■■■■■■■■■■" \
+>>$LOG_FILE
+#
+if ( ! $?SHELLNAME ) then
+    echo "※ftpget.src : 必須シェル変数 SHELLNAME が未設定です。" >>$LOG_FILE
+    echo "  事前処理で common.src を実行する必要があります。" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit 9
+endif
+#
+if ( ! $?ABEND ) then
+    echo "$SHELLNAME:t : 必須シェル変数 ABEND が未設定です。" >>$LOG_FILE
+    echo "  事前処理で common.src を実行する必要があります。" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit 9
+endif
+#
+if ( ! $?NORMAL ) then
+    echo "$SHELLNAME:t : 必須シェル変数 NORMAL が未設定です。" >>$LOG_FILE
+    echo "  事前処理で common.src を実行する必要があります。" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit $ABEND
+endif
+
+#==================================================
+#       取出しファイル(ディレクトリ)名のチェック（必須変数）
+#==================================================
+#
+if ( ! $?F_FILE ) then
+    echo "$SHELLNAME:t : 必須シェル変数 F_FILE が未設定です。" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit $ABEND
+endif
+set     _F_FILE_LEN=`echo $F_FILE | awk '{ print length }'`
+if (( $_F_FILE_LEN < 10 ) || ( $_F_FILE_LEN > 80 )) then
+        echo "$SHELLNAME:t : 取出しファイル名は10～80桁で指定して下さい。" >>$LOG_FILE
+    echo "$SHELLNAME:t : F_FILE=[$F_FILE]" >>$LOG_FILE
+        echo "■" >>$LOG_FILE
+        exit $ABEND
+endif
+
+#==================================================
+#       取出し後ファイル(ディレクトリ)名のチェック（必須変数）
+#==================================================
+#
+if ( ! $?D_FILE ) then
+    echo "$SHELLNAME:t : 必須シェル変数 D_FILE が未設定です。" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit $ABEND
+endif
+set     _D_FILE_TOP=`echo $D_FILE | awk '{ print substr($1,1,1) }'`
+if ( "$_D_FILE_TOP" != "/" ) then
+    echo "$SHELLNAME:t : 必須シェル変数 D_FILE は絶対パスで指定して下さい。"\
+        >>$LOG_FILE
+    echo "$SHELLNAME:t : D_FILE=[$D_FILE]" >>$LOG_FILE
+    echo "■" >>$LOG_FILE
+    exit $ABEND
+endif
+set     _D_FILE_LEN=`echo $D_FILE | awk '{ print length }'`
+if ( $_D_FILE_LEN > 250 ) then
+        echo "$SHELLNAME:t : 取出し後ファイル名は250桁以下で指定して下さい。" \
+        >>$LOG_FILE
+    echo "$SHELLNAME:t : D_FILE=[$D_FILE]" >>$LOG_FILE
+        echo "■" >>$LOG_FILE
+        exit $ABEND
+endif
+
+
+#==================================================
+#       取出し件数のチェック（オプション）
+#==================================================
+#
+if ( ! $?N_NO ) then
+    set _N_NO = ""
+else
+        set     _N_NO_NUM = `echo $N_NO | awk '{ printf "%d", int($0) }'`
+        if ( "$N_NO" != "$_N_NO_NUM" ) then
+                echo "$SHELLNAME:t : 取出し件数は数字しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : N_NO=[$N_NO]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+        if (( "$_N_NO_NUM" < 0 ) || ( "$_N_NO_NUM" > 99999 )) then
+                echo "$SHELLNAME:t : 取出し件数は0～99999しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : N_NO=[$N_NO]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _N_NO = $N_NO
+endif
+
+#==================================================
+#       取出し選択区分のチェック（オプション）
+#==================================================
+#
+if ( ! $?Y_GET_NEWEST ) then
+    set _Y_GET_NEWEST = ""
+else
+        if ( "$_N_NO" != "" ) then
+                echo "$SHELLNAME:t : 取出し選択区分(-y) と 取出し件数(-n) は併用できません。" >>$LOG_FILE
+                echo "$SHELLNAME:t : N_NO=[$N_NO], Y_GET_NEWEST=[$Y_GET_NEWEST]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+
+        if ( "$Y_GET_NEWEST" != "-y" ) then
+                echo "$SHELLNAME:t : 取出し選択区分には -y 以外は指定できません。" >>$LOG_FILE
+                echo "$SHELLNAME:t : Y_GET_NEWEST=[$Y_GET_NEWEST]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _Y_GET_NEWEST = $Y_GET_NEWEST
+endif
+
+#==================================================
+#       処理区分のチェック（オプション）
+#==================================================
+#
+if ( ! $?P_PROCEDURE ) then
+    set _P_PROCEDURE = ""
+else
+        set     _P_PROCEDURE_NUM = `echo $P_PROCEDURE | awk '{ printf "%d", int($0) }'`
+        if ( "$P_PROCEDURE" != "$_P_PROCEDURE_NUM" ) then
+                echo "$SHELLNAME:t : 処理区分は数字しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : P_PROCEDURE=[$P_PROCEDURE]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+        if (( "$_P_PROCEDURE_NUM" < 1 ) || ( "$_P_PROCEDURE_NUM" > 3 )) then
+                echo "$SHELLNAME:t : 処理区分は1～3しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : P_PROCEDURE=[$P_PROCEDURE]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _P_PROCEDURE = $P_PROCEDURE
+endif
+
+#==================================================
+#       取出し後ファイル削除区分のチェック（オプション）
+#==================================================
+#
+if ( ! $?E_ERASE ) then
+    set _E_ERASE = ""
+else
+        if ( "$E_ERASE" != "-e" ) then
+                echo "$SHELLNAME:t : 取出し後ファイル削除区分には -e 以外は指定できません。" >>$LOG_FILE
+                echo "$SHELLNAME:t : E_ERASE=[$E_ERASE]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _E_ERASE = $E_ERASE
+endif
+
+#==================================================
+#       リトライ間隔のチェック（オプション）
+#==================================================
+#
+if ( ! $?I_RETRY_INTERVAL ) then
+    set _I_RETRY_INTERVAL = ""
+else
+        set     _I_RTY_INTVAL_NUM = `echo $I_RETRY_INTERVAL | awk '{ printf "%d", int($0) }'`
+        if ( "$I_RETRY_INTERVAL" != "$_I_RTY_INTVAL_NUM" ) then
+                echo "$SHELLNAME:t : リトライ間隔は数字しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : I_RETRY_INTERVAL=[$I_RETRY_INTERVAL]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+        if (( "$_I_RTY_INTVAL_NUM" < 1 ) || ( "$_I_RTY_INTVAL_NUM" > 9999 )) then
+                echo "$SHELLNAME:t : リトライ間隔は1～9999しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : I_RETRY_INTERVAL=[$I_RETRY_INTERVAL]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _I_RETRY_INTERVAL = $I_RETRY_INTERVAL
+endif
+
+#==================================================
+#       リトライ回数のチェック（オプション）
+#==================================================
+#
+if ( ! $?K_RETRY_COUNT ) then
+    set _K_RETRY_COUNT = ""
+else
+        if (( "$K_RETRY_COUNT" < 0 ) || ( "$K_RETRY_COUNT" > 9999 )) then
+                echo "$SHELLNAME:t : リトライ回数は0～9999しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : K_RETRY_COUNT=[$K_RETRY_COUNT]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _K_RETRY_COUNT = $K_RETRY_COUNT
+endif
+
+#==================================================
+#       同一論理ファイル取出しに対するリトライ間隔のチェック（オプション）
+#==================================================
+#
+if ( ! $?SEM_RETRY_INTERVAL ) then
+    set _SEM_RETRY_INTERVAL = 1
+else
+        set     _SM_RTRY_INTVAL_NUM = `echo $SEM_RETRY_INTERVAL | awk '{ printf "%d", int($0) }'`
+        if ( "$SEM_RETRY_INTERVAL" != "$_SM_RTRY_INTVAL_NUM" ) then
+                echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ間隔は数字しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : SEM_RETRY_INTERVAL=[$SEM_RETRY_INTERVAL]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+        if (( "$_SM_RTRY_INTVAL_NUM" < 1 ) || ( "$_SM_RTRY_INTVAL_NUM" > 60 )) then
+                echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ間隔は1～60しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : SEM_RETRY_INTERVAL=[$SEM_RETRY_INTERVAL]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _SEM_RETRY_INTERVAL = $SEM_RETRY_INTERVAL
+endif
+
+#==================================================
+#       同一論理ファイル取出しに対するリトライ回数のチェック（オプション）
+#==================================================
+#
+if ( ! $?SEM_RETRY_COUNT ) then
+    set _SEM_RETRY_COUNT = 10
+else
+        set     _SEM_RETRY_COUNT_NUM = `echo $SEM_RETRY_COUNT | awk '{ printf "%d", int($0) }'`
+        if ( "$SEM_RETRY_COUNT" != "$_SEM_RETRY_COUNT_NUM" ) then
+                echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ回数は数字しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : SEM_RETRY_COUNT=[$SEM_RETRY_COUNT]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+        if (( "$_SEM_RETRY_COUNT_NUM" < 0 ) || ( "$_SEM_RETRY_COUNT_NUM" > 9999 )) then
+                echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ回数は0～9999しか指定できません。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : SEM_RETRY_COUNT=[$SEM_RETRY_COUNT]" >>$LOG_FILE
+                echo "■" >>$LOG_FILE
+                exit $ABEND
+        endif
+    set _SEM_RETRY_COUNT = $SEM_RETRY_COUNT
+endif
+
+#==================================================
+#       コマンドログ出力先のチェック（オプション）
+#==================================================
+#
+if ( ! $?O_OUTPUT ) then
+    set _O_OUTPUT = ""
+else
+    set _O_OUTPUT = $O_OUTPUT
+endif
+set     _O_OUTPUT_TMP = ""
+if ( "$_O_OUTPUT" == "" ) then
+        set     _O_OUTPUT_DATE = `date '+%y%m%d%H%M%S'`
+        set     _O_OUTPUT_TMP = "/tmp/FTPASS.$_O_OUTPUT_DATE.$$.tmp"
+endif
+
+#----------------------------------------------------------------------#
+# ファイル取出し処理
+#----------------------------------------------------------------------#
+#
+
+#==================================================
+#       起動パラメータの出力
+#==================================================
+#
+echo "$SHELLNAME:t : 取出しファイル名＝$F_FILE" >>$LOG_FILE
+echo "$SHELLNAME:t : 取出し後ファイル名＝$D_FILE" >>$LOG_FILE
+switch ( "$_N_NO" )
+case ""         :       # 指定無し
+        echo "$SHELLNAME:t : 取出し件数＝省略(全てのファイル)" >>$LOG_FILE
+        breaksw
+case "0"        :       # 無条件で1件
+        echo "$SHELLNAME:t : 取出し件数＝0(無条件で１件のファイル)" >>$LOG_FILE
+        breaksw
+default         :       # 件数指定
+        echo "$SHELLNAME:t : 取出し件数＝$_N_NO" >>$LOG_FILE
+        breaksw
+endsw
+if ( $_Y_GET_NEWEST == "-y" ) then
+        echo "$SHELLNAME:t : 取出し選択区分＝最新ファイルの取出し" >>$LOG_FILE
+else
+        echo "$SHELLNAME:t : 取出し選択区分＝通常（最古）ファイルの取出し" >>$LOG_FILE
+endif
+echo "$SHELLNAME:t : 処理区分＝$_P_PROCEDURE" >>$LOG_FILE
+echo "$SHELLNAME:t : リトライ間隔＝$_I_RETRY_INTERVAL" >>$LOG_FILE
+echo "$SHELLNAME:t : リトライ回数＝$_K_RETRY_COUNT" >>$LOG_FILE
+echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ間隔＝$_SEM_RETRY_INTERVAL" >>$LOG_FILE
+echo "$SHELLNAME:t : 同一論理ファイル取出しに対するリトライ回数＝$_SEM_RETRY_COUNT" >>$LOG_FILE
+if ( "$_E_ERASE" == "-e" ) then
+        echo "$SHELLNAME:t : 取出し後ファイル削除区分＝削除する" >>$LOG_FILE
+else
+        echo "$SHELLNAME:t : 取出し後ファイル削除区分＝削除しない" >>$LOG_FILE
+endif
+echo "$SHELLNAME:t : コマンドログ出力先＝$_O_OUTPUT" >>$LOG_FILE
+
+#==================================================
+#       起動パラメータの調整
+#==================================================
+#
+if ( "$_N_NO" != "" ) then
+    set _N_NO = "-n $_N_NO"
+endif
+if ( "$_P_PROCEDURE" != "" ) then
+    set _P_PROCEDURE = "-p $_P_PROCEDURE"
+endif
+if ( "$_I_RETRY_INTERVAL" != "" ) then
+    set _I_RETRY_INTERVAL = "-i $_I_RETRY_INTERVAL"
+endif
+if ( "$_K_RETRY_COUNT" != "" ) then
+    set _K_RETRY_COUNT = "-k $_K_RETRY_COUNT"
+endif
+if ( "$_O_OUTPUT" != "" ) then
+    set _O_OUTPUT = "-o $_O_OUTPUT"
+else
+    set _O_OUTPUT = "-o $_O_OUTPUT_TMP"
+endif
+
+#==================================================
+#       各ファイルの未取出しファイル取出し
+#==================================================
+#
+setenv FTPASS_HOME ~ftpass
+
+@       _RETRY=$_SEM_RETRY_COUNT                # ループ回数（リトライ回数）
+@       _SLEEP=60 * $_SEM_RETRY_INTERVAL        # リトライ待ち（秒数）
+set     _LOOP="YES"                             # ループ制御
+set     _CMD_STATUS=0                           # コマンド戻り値
+set     _FTPASS_GET=$FTPASS_HOME/bin/ftpass_get # 起動コマンド
+
+echo "$SHELLNAME:t : 起動コマンド：" >>$LOG_FILE
+echo "$SHELLNAME:t : $_FTPASS_GET -f $F_FILE " >>$LOG_FILE
+echo "$SHELLNAME:t : -d $D_FILE " >>$LOG_FILE
+echo "$SHELLNAME:t : $_N_NO $_Y_GET_NEWEST $_P_PROCEDURE $_E_ERASE " >>$LOG_FILE
+echo "$SHELLNAME:t : $_I_RETRY_INTERVAL $_K_RETRY_COUNT " >>$LOG_FILE
+echo "$SHELLNAME:t : -x $SHELLNAME:t $_O_OUTPUT" >>$LOG_FILE
+
+while ( $_LOOP == "YES" )
+        # ファイル取出しコマンドの実行
+        # リトライ可能なエラーの場合は、$_SLEEP周期で
+        # $_RETRY回までリトライする。
+        #
+        $_FTPASS_GET -f $F_FILE -d $D_FILE \
+                $_N_NO $_Y_GET_NEWEST $_P_PROCEDURE $_E_ERASE \
+                $_I_RETRY_INTERVAL $_K_RETRY_COUNT \
+                -x $SHELLNAME:t $_O_OUTPUT
+        set     _CMD_STATUS=$status
+        #
+        # コマンドログの取り込み
+        if (( "$_O_OUTPUT_TMP" != "" ) && ( -f $_O_OUTPUT_TMP )) then
+                echo "$SHELLNAME:t : コマンドログ：" >>$LOG_FILE
+                cat $_O_OUTPUT_TMP >>$LOG_FILE
+                /bin/rm -f $_O_OUTPUT_TMP
+        endif
+        echo "$SHELLNAME:t : 終了ステータス＝$_CMD_STATUS" >>$LOG_FILE
+        #
+        # ファイル取出しコマンド終了ステータスのチェック
+        switch ( $_CMD_STATUS )
+        case 0 :    # 正常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : 未取出しファイルの取出しは正常に終了しました。" \
+                >>$LOG_FILE
+                if ( "$_N_NO" == "" ) then
+                        echo "$SHELLNAME:t : 注意：取出し件数を省略しているので、" \
+                        >>$LOG_FILE
+                        echo "$SHELLNAME:t : 未取出しファイルが無い場合も正常と扱います。" \
+                        >>$LOG_FILE
+                        echo "$SHELLNAME:t : N_NO=[$_N_NO]" >>$LOG_FILE
+                endif
+                breaksw
+        case 1 :    # システムエラー：リトライ不要の異常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : システムエラーが発生しました。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : コマンドログを確認して下さい。" >>$LOG_FILE
+                breaksw
+        case 2 :    # パラメータエラー：リトライ不要の異常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : パラメータエラーが発生しました。" \
+                >>$LOG_FILE
+                echo "$SHELLNAME:t : パラメータ設定を確認してください。" >>$LOG_FILE
+                breaksw
+        case 3 :    # 既存取出し後ファイルの存在：リトライ不要の異常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : 取出し後ファイルが既に存在しています。" >> $LOG_FILE
+                echo "$SHELLNAME:t : D_FILE=[$D_FILE]" >>$LOG_FILE
+                echo "$SHELLNAME:t : 取出し後ファイル削除区分[E_ERASE]を指定して下さい。" >>$LOG_FILE
+                breaksw
+        case 4 :    # 取出し件数以上の未取出しファイル：リトライ不要の異常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : 取出し件数以上の未取出しファイルが存在しています。" >> $LOG_FILE
+                echo "$SHELLNAME:t : 未取出しファイルの件数を確認して下さい。" >>$LOG_FILE
+                echo "$SHELLNAME:t : 取出し件数[N_NO]や処理区分[P_PROCEDURE]を調整して下さい。" >>$LOG_FILE
+                echo "$SHELLNAME:t : N_NO=[$_N_NO], P_PROCEDURE=[$_P_PROCEDURE]" >>$LOG_FILE
+                breaksw
+        case 5 :    # 取出し件数以下の未取出しファイル：リトライ不要の異常
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : 取出し件数分の未取出しファイルが揃っていません。" >> $LOG_FILE
+                echo "$SHELLNAME:t : 未取出しファイルの有無を確認して下さい。" >>$LOG_FILE
+                echo "$SHELLNAME:t : 取出し件数[N_NO]や処理区分[P_PROCEDURE]を調整して下さい。" >>$LOG_FILE
+                echo "$SHELLNAME:t : N_NO=[$_N_NO], P_PROCEDURE=[$_P_PROCEDURE]" >>$LOG_FILE
+                breaksw
+        case 6 :        # 同一論理ファイルの取出し：リトライで復旧可能な異常
+                echo "$SHELLNAME:t : 同一論理ファイルの取出しが行われています。" >>$LOG_FILE
+                # ループ回数の制御
+                @ _RETRY = $_RETRY - 1
+                if ( $_RETRY <= 0 ) then
+                        set     _LOOP="NO"       # リトライオーバ
+                        echo "$SHELLNAME:t : $F_FILE の取出し処理がリトライオーバとなりました。" \
+                        >>$LOG_FILE
+                else
+                        echo "$SHELLNAME:t : $_SLEEP 秒後にリトライします。" | \
+                        tee -a $LOG_FILE
+                        sleep $_SLEEP    # 一定時間後にリトライ
+                endif
+                breaksw
+        default :       # その他。リトライ不要？
+                set     _LOOP="NO"
+                echo "$SHELLNAME:t : 未定義のエラーです。" >>$LOG_FILE
+                echo "$SHELLNAME:t : システム管理者へ連絡してください。" >>$LOG_FILE
+                breaksw
+        endsw
+end
+
+echo "$SHELLNAME:t : ================================================" \
+>>$LOG_FILE
+#----------------------------------------------------------------------#
+# エラーチェック
+#----------------------------------------------------------------------#
+if ( $_CMD_STATUS != 0) then
+        echo "$SHELLNAME:t : ファイル取出しに失敗しました。" | tee -a $LOG_FILE
+        echo "■" >>$LOG_FILE
+        #
+        unset   _CMD_STATUS
+        unset   _D_FILE_LEN
+        unset   _D_FILE_TOP
+        unset   _E_ERASE
+        unset   _Y_GET_NEWEST
+        unset   _FTPASS_GET
+        unset   _F_FILE_LEN
+        unset   _I_RETRY_INTERVAL
+        unset   _I_RTY_INTVAL_NUM
+        unset   _K_RETRY_COUNT
+        unset   _LOOP
+        unset   _N_NO
+        unset   _N_NO_NUM
+        unset   _O_OUTPUT
+        unset   _O_OUTPUT_DATE
+        unset   _O_OUTPUT_TMP
+        unset   _P_PROCEDURE
+        unset   _P_PROCEDURE_NUM
+        unset   _SEM_RETRY_COUNT
+        unset   _SEM_RETRY_COUNT_NUM
+        unset   _SEM_RETRY_INTERVAL
+        unset   _SM_RTRY_INTVAL_NUM
+        #
+        echo "$SHELLNAME:t : ftpget.src : abnormal end time = `date +%y/%m/%d:%H:%M:%S`" \
+        | tee -a $LOG_FILE
+        exit $ABEND
+endif
+
+#==================================================
+#       作業シェル変数の削除
+#==================================================
+#
+unset   _CMD_STATUS
+unset   _D_FILE_LEN
+unset   _D_FILE_TOP
+unset   _E_ERASE
+unset   _Y_GET_NEWEST
+unset   _FTPASS_GET
+unset   _F_FILE_LEN
+unset   _I_RETRY_INTERVAL
+unset   _I_RTY_INTVAL_NUM
+unset   _K_RETRY_COUNT
+unset   _LOOP
+unset   _N_NO
+unset   _N_NO_NUM
+unset   _O_OUTPUT
+unset   _O_OUTPUT_DATE
+unset   _O_OUTPUT_TMP
+unset   _P_PROCEDURE
+unset   _P_PROCEDURE_NUM
+unset   _SEM_RETRY_COUNT
+unset   _SEM_RETRY_COUNT_NUM
+unset   _SEM_RETRY_INTERVAL
+unset   _SM_RTRY_INTVAL_NUM
+#
+echo "$SHELLNAME:t : ftpget.src : end   time = `date +%y/%m/%d:%H:%M:%S`" \
+>>$LOG_FILE
+echo "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" \
+>>$LOG_FILE
+exit $NORMAL
+#
+
