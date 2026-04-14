@@ -1,0 +1,706 @@
+/* *----------------------------------------------------------------------------
+// * システム		:	センター向け仕入
+// * CSS			:	共通
+// * 会社名or所属名	:	株式会社ヴィクサス
+// * 作成日			:	2013/03/12
+// * 作成者			:	S.Takahashi
+// * *** 修正履歴 ***
+// * No.	Date		Author		Description
+// *--------------------------------------------------------------------------*/
+/* *----------------------------------------------------------------------------
+// * 基本：共通ＣＳＳ
+// *--------------------------------------------------------------------------*/
+body {
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: hidden;
+	text-align: center;
+    background-color: #CCFFFF;
+}
+
+table {
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	background-color: inherit;
+	table-layout: fixed;
+
+}
+
+TH {
+	background-color: #0000ff;
+	color: white;
+	border-width: 1px;
+	font-size: 9pt;
+	letter-spacing: -1px
+}
+
+TD {
+	border-width: 1px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 9pt;
+	letter-spacing: 0px
+}
+/* *----------------------------------------------------------------------------
+// * div：メインフレームサイズの設定(全画面共通フレーム)
+// * widthは共通ではないので、各画面にて設定すること
+// *--------------------------------------------------------------------------*/
+div.hedder {
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: auto;
+	width: 1143px;
+	height: 65px;
+	text-align: left;
+}
+div.main {
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: auto;
+	width: 1143px;
+	height: 485px;
+	text-align: left;
+}
+div.footer {
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: auto;
+	width: 1143px;
+	height: 30px;
+	text-align: left;
+}
+/* *----------------------------------------------------------------------------
+// * 基本：共通ＩＤ表示部分ＣＳＳ（基本変更しないこと）<hedder&fotter>
+// *--------------------------------------------------------------------------*/
+TD.ScreenHeader {
+	background-color: #0000ff;
+	height: 20;
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	font-size: 9pt;
+}
+TD.ScreenClock {
+	background-color: #b5b5ff;
+	 height: 20;
+	 text-align: center;
+	 color: black;
+}
+TD.RowHeader {
+	text-align: left;
+}
+
+TD.White {
+	background-color: #ffffff;
+}
+
+.NumericTxt {
+	text-align: right;
+}
+
+.NormalTxt {
+	text-align: left;
+}
+
+.DateTxt {
+	text-align: right;
+}
+
+.Remarks {
+	font-size: 10pt;
+	font-family: 'MS Gothic'
+}
+
+tr.menu_row {
+	height: 20px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+input.dummy {
+	position: absolute;
+	visibility: hidden;
+}
+
+input.bttn_menu_nd {
+	width: 18px;
+	height: 16px;
+	text-align: center;
+}
+
+input.bttn_menu_scrn {
+	height: 18px;
+	text-align: center;
+}
+
+table.header {
+	background-color: #0000ff;
+	color: #ffffff;
+	text-align: left;
+	font-weight: bold;
+}/* *----------------------------------------------------------------------------
+// * Table設定：hnmslj0010
+// *--------------------------------------------------------------------------*/
+td.line_item_nm {
+    background-color: #FFFF33;
+    text-align:center;
+    height:26px;
+}
+td.layerhedder{
+	height:18px;
+	text-align:"center";
+	background-color: #0000ff;
+	color: white;
+}
+
+tr.layerodd{
+	background-color: #ffffff;
+	height:26px;
+}
+tr.layereven{
+	background-color: #CCFFFF;
+	height:26px;
+}
+table.layerheader{
+	background-color: #ffffff;
+}
+.bttn_layer{
+	width: 7em;
+	font-size: 11pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+.bttn_del{
+	width: 60px;
+	height: 30px;
+	font-size: 10.5pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+.bttn_sale{
+	width: 130px;
+	height: 30px;
+	font-size: 10.5pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+.line_nothing{
+	color: #ff0000;
+	text-align: center;
+}
+/* *----------------------------------------------------------------------------
+// * Table設定<TR>：共通ＣＳＳ
+// *--------------------------------------------------------------------------*/
+
+tr.line_nodisp {
+    display:none;
+    background-color: #ffffff;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+tr.line_disp {
+    background-color: #ffffff;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+/*偶数行*/
+tr.line_odd {
+    background-color: #ffffff;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+/*奇数行*/
+tr.line_even {
+	background-color: #ccffff;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+/*灰色行*/
+tr.line_silver {
+	background-color: #d0d0ff;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+/*黄色行*/
+tr.line_yellow {
+	background-color: #ffff00;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+/*エラー行*/
+tr.line_err {
+	background-color: pink;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+/*DISABLE*/
+.silver {
+	background-color: silver;
+}
+
+/*印刷時の改行：その位置で強制改ページする*/
+tr.page_change {
+	page-break-before: always;
+}
+
+/* *----------------------------------------------------------------------------
+// * form基本設定：各種フォームの基本設定
+// *--------------------------------------------------------------------------*/
+select {
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+}
+textarea {
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+	ime-mode: inactive;
+	overflow: auto;
+}
+input {
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+	ime-mode: disabled;
+	text-align: left;
+}
+.button {
+	width: 6em;
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+.mid_button {
+	width: 6em;
+	font-size: 11pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+
+.big_button {
+	width: 7em;
+	font-size: 12pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+/* *----------------------------------------------------------------------------
+// * 基本設定２：状態
+// *--------------------------------------------------------------------------*/
+.dsply_nn {
+	display: none;
+}
+
+.vsblty_hddn {
+	visibility: hidden;
+}
+
+.nt_pddng {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+/*アラートメッセージ（青色）*/
+.alrt_msg {
+	color: #0000ff;
+}
+/*エラーメッセージ（赤色）*/
+.err_msg {
+	color: #ff0000;
+}
+
+/* SV表示用  */
+.sv_color {
+	background-color: #FFFF33;
+}
+
+/* *----------------------------------------------------------------------------
+// * input-Button-size：ボタンの大きさ設定<input:button-size>
+// *--------------------------------------------------------------------------*/
+input.bttn_dflt {
+	width: 6em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn1 {
+    width: 1em;
+    height: 20px;
+    font-size: 10pt;
+    text-align: center;
+}
+input.bttn2 {
+    width: 1em;
+    height: 20px;
+    font-size: 10pt;
+    text-align: center;
+}
+input.bttn3 {
+    width: 3em;
+    height: 20px;
+    font-size: 10pt;
+    text-align: center;
+}
+input.bttn4 {
+	width: 4em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn5 {
+	width: 5em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn6 {
+	width: 6em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn7 {
+	width: 7em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn8 {
+	width: 8em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn9 {
+	width: 9em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+input.bttn10 {
+	width: 10em;
+	height: 20px;
+	font-size: 10pt;
+	text-align: center;
+}
+/* *----------------------------------------------------------------------------
+// * input-size：フォーム横幅設定（文字）
+// *--------------------------------------------------------------------------*/
+input.code3 {
+	width: 27px;
+	text-align: left;
+}
+
+input.code4 {
+	width: 32px;
+	text-align: left;
+}
+
+input.code5 {
+	width: 38px;
+	text-align: left;
+}
+
+input.code6 {
+	width: 42px;
+	text-align: left;
+}
+input.code7{
+	width: 49px;
+	text-align: left;
+}
+input.code8 {
+	width: 56px;
+	text-align: left;
+}
+input.code9 {
+	width: 61px;
+	text-align: left;
+}
+input.code10 {
+	width: 66px;
+	text-align: left;
+}
+input.code11 {
+	width: 72px;
+	text-align: left;
+}
+input.code12 {
+	width: 78px;
+	text-align: left;
+}
+input.code13 {
+	width: 84px;
+	text-align: left;
+}
+input.code14 {
+	width: 90px;
+	text-align: left;
+}
+
+input.code26 {
+	width: 165px;
+	text-align: left;
+}
+input.code50 {
+	width: 310px;
+	text-align: left;
+}
+input.code51 {
+	width: 310px;
+	text-align: left;
+}
+/* *----------------------------------------------------------------------------
+// * input-size：フォーム横幅設定（数値）
+// *--------------------------------------------------------------------------*/
+input.nmbr2 {
+	width: 20px;
+	text-align: right;
+}
+
+input.nmbr3 {
+	width: 27px;
+	text-align: right;
+}
+
+input.nmbr4 {
+	width: 38px;
+	text-align: right;
+}
+
+input.nmbr5 {
+	width: 42px;
+	text-align: right;
+}
+
+input.nmbr6 {
+	width: 48px;
+	text-align: right;
+}
+input.nmbr7{
+	width: 55px;
+	text-align: right;
+}
+input.nmbr8 {
+	width: 61px;
+	text-align: right;
+}
+input.nmbr9 {
+	width: 67px;
+	text-align: right;
+}
+input.nmbr10 {
+	width: 72px;
+	text-align: right;
+}
+input.nmbr11 {
+	width: 78px;
+	text-align: right;
+}
+input.nmbr12 {
+	width: 84px;
+	text-align: right;
+}
+input.nmbr13 {
+	width: 90px;
+	text-align: right;
+}
+input.nmbr14 {
+	width: 96px;
+	text-align: right;
+}
+/* *----------------------------------------------------------------------------
+// * input-size：フォーム横幅設定（日付）
+// *--------------------------------------------------------------------------*/
+input.date {
+	width: 70px;
+}
+/* *----------------------------------------------------------------------------
+// * input-size：フォーム横幅設定（テキストフォーム）
+// *--------------------------------------------------------------------------*/
+/*店名*/
+input.str_nm {
+	width: 157px;
+	text-align: left;
+	ime-mode: active;
+}
+/*商品名*/
+input.sku_nm {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+/*商品名カナ*/
+input.sku_kana {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+
+/* *----------------------------------------------------------------------------
+// * input-color：透明色指定（テキストフォーム）
+// *--------------------------------------------------------------------------*/
+input.textbox_noColor{
+border:0px;
+background-Color:transparent;
+width: 100%;
+}
+
+/* *----------------------------------------------------------------------------
+// * div-scroll：DIVタグ内スクロールバーの設定
+// *--------------------------------------------------------------------------*/
+div.scroll_x {
+	width: 957px;
+	overflow-x: auto;
+}
+
+div.scroll_y {
+	width: 960px;
+	overflow-y: auto;
+	position: relative;
+	top: -2px;
+}
+div.hddn_y {
+	width: 960px;
+	overflow-y: hidden;
+	position: relative;
+	top: -2px;
+}
+div.scroll_y_free_width {
+	overflow-y: auto;
+	position: relative;
+	top: -2px;
+}
+/* *----------------------------------------------------------------------------
+// * form-select：プルダウンの横幅設定（項目別）
+// *--------------------------------------------------------------------------*/
+select.shori_kbn {
+	width: 90px;
+}
+select.unei_sha {
+	width: 150px;
+}
+select.dv {
+	width: 325px;
+}
+
+select.dr {
+	width: 325px;
+}
+
+select.sv {
+	width: 325px;
+}
+
+select.str {
+	width: 325px;
+}
+
+select.fl {
+	width: 145px;
+}
+
+select.trgt_mnth {
+	width: 85px;
+}
+
+select.trgt_wk {
+	width: 285px;
+}
+
+select.week {
+	width: 60px;
+}
+
+select.ki {
+	width: 80px;
+}
+
+select.dept_class {
+	width: 360px;
+}
+
+select.sku_area {
+	width: 70px;
+}
+
+select.chiiki {
+	width: 100px;
+}
+/* *----------------------------------------------------------------------------
+// * エラー画面用（サービスチェックなど）
+// *--------------------------------------------------------------------------*/
+textarea {
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+	ime-mode: inactive;
+	overflow: auto;
+}
+
+textarea.msg_box {
+	font-weight: bold;
+	width: 965px;
+	color: #ff0000;
+	overflow-y: scroll;
+}
+
+textarea.msg_boxP {
+	font-weight: bold;
+	width: 636px;
+	color: #ff0000;
+	overflow-y: scroll;
+	font-size: 6pt;
+}
+
+textarea.msg_box_err {
+	width: 717px;
+	color: #ff0000;
+	background: #f0ffff;
+	overflow-y: auto;
+}
+.err_msg {
+	color: #ff0000;
+}
+input.bttn_lnk {
+	background-color: transparent;
+	color: #0000ff;
+	border: 0px;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+input.bttn_lnkP {
+	background-color: transparent;
+	color: #0000ff;
+	border: 0px;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: underline;
+	font-size: 6pt;
+}
+/* *----------------------------------------------------------------------------
+// * ヘルプ画面用
+// *--------------------------------------------------------------------------*/
+table.bttn_hlp {
+	position: absolute;
+	top: 655px;
+	left: 948px;
+}
+
+table.lnk_hlp {
+	position: absolute;
+	top: 655px;
+	left: 948px;
+}
+/* *----------------------------------------------------------------------------
+// * レイヤー部分ＣＳＳ
+// *--------------------------------------------------------------------------*/
+.drag {
+	position: relative;
+	cursor:hand;
+	background-color:#a9a9a9;
+	height:530px;
+}
+.absol {
+	position:absolute;
+	top:200px;
+	left:200px;
+	cursor:hand;
+}

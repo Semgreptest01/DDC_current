@@ -1,0 +1,242 @@
+/* *----------------------------------------------------------------------------
+// * システム		:	返品メールアドレス編集画面
+// * CSS			:	Eddclj0010専用CSS
+// * 会社名or所属名	:	株式会社ヴィンクス
+// * 作成日			:	2013/07/24
+// * 作成者			:	S.Takahashi
+// * *** 修正履歴 ***
+// * No.	Date		Author		Description
+// *--------------------------------------------------------------------------*/
+/* *---------------------------------------------------------------------------
+   * 各部位毎の設定
+   *--------------------------------------------------------------------------*/
+/*///////////////////////////////////////
+// 検索 Search :sh
+///////////////////////////////////////*/
+.shdiv{
+	margin-top: 5px;
+}
+.shtab {
+	border:none;
+	border-color: #000000;
+	border-collapse: collapse;
+}
+.shtab th{
+	background-color: #23dcff;
+	border: solid 1px;
+}
+.shtab td{
+	background-color: #ffffff;
+	border: solid 1px;
+	padding: 2px;
+}
+.shbtnfl{
+	float: left;
+	padding-top: 16px;
+}
+.shbtnfr{
+	float: right;
+}
+/*///////////////////////////////////////
+// 登録 Regist :reg
+///////////////////////////////////////*/
+div.reghedder{
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: auto;
+	width: 1143px;
+	height: 76px;
+	text-align: left;
+}
+div.regdatal{
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+	overflow: auto;
+	width: 766px;
+	height: 260px;
+	text-align: left;
+}
+.reginfotab {
+	border:none;
+	border-color: #000000;
+	border-collapse: collapse;
+}
+
+.reginfotab2 {
+	border:none;
+	border-color: #000000;
+	border-collapse: collapse;
+}
+
+.reginfotab2 th{
+	border: solid 1px;
+}
+.reginfotab2 td{
+	border: solid 1px;
+	background-color: #ffffff;
+	padding: 2px;
+}
+
+.reginfotab th{
+	border: solid 1px;
+}
+.reginfotab td{
+	border: solid 1px;
+	background-color: #ffffff;
+	padding: 2px;
+}
+/*///////////////////////////////////////
+// 変更 Modify :mod
+///////////////////////////////////////*/
+div.moddiv{
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+}
+div.modhedder{
+	overflow: none;
+	width: 945px;
+	height: 76px;
+	text-align: left;
+}
+div.moddatal{
+	overflow: auto;
+	width: 811px;
+	height: 162px;
+	text-align: left;
+}
+
+div.moddatal2{
+	overflow: auto;
+	width: 768px;
+	height: 310px;
+	text-align: left;
+}
+
+.addtab {
+	border:none;
+	border-color: #000000;
+	border-collapse: collapse;
+
+}
+.addtab th{
+	border: solid 1px;
+	background-color: #151c7a;
+}
+.addtab td{
+	border: solid 1px;
+	background-color: #ffffff;
+	padding: 2px;
+}
+div.adddatal{
+	overflow: auto;
+	width: 766px;
+	height: 130px;
+	text-align: left;
+}
+/* *---------------------------------------------------------------------------
+   * FLOAT ONLY & CLEAR BOTH
+   *--------------------------------------------------------------------------*/
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.fc {
+	clear: both;
+}
+
+.input_text{
+/* *-	border: none;*/
+}
+
+.input_text2{
+	border: none;
+}
+
+.user_name{
+/* *-	border: none;*/
+}
+.code48{
+/* *-	border: none;*/
+}
+
+.code50{
+/* *-	border: none;*/
+}
+
+.code51{
+	border: none;
+}
+
+
+.btn_mini{
+	width: 5em;
+	font-size: 9pt;
+	font-family: 'ＭＳ ゴシック';
+	text-align: center;
+}
+/* *---------------------------------------------------------------------------
+   * レイヤー部分ＣＳＳ
+   *--------------------------------------------------------------------------*/
+.drag {
+	position: relative;
+	cursor:hand;
+	background-color:#a9a9a9;
+	height:530px;
+}
+.absol {
+	position:absolute;
+	top:200px;
+	left:200px;
+	cursor:hand;
+}
+/* *----------------------------------------------------------------------------
+// * input-size：フォーム横幅設定（テキストフォーム）
+// *--------------------------------------------------------------------------*/
+/*店名*/
+input.str_nm {
+	width: 157px;
+	text-align: left;
+	ime-mode: active;
+}
+/*商品名*/
+input.sku_nm {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+/*商品名カナ*/
+input.sku_kana {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+/*利用者名*/
+input.user_name {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+/*メールアドレス*/
+input.email_addr {
+	width: 310px;
+	text-align: left;
+	ime-mode: active;
+}
+
+/* *---------------------------------------------------------------------------
+   *
+   *--------------------------------------------------------------------------*/
+.CNG {
+	text-align: left;
+	background-color:#00FF00;
+}
+.DEL {
+	text-align: left;
+	background-color:#FF0000;
+}
+.ADD {
+	text-align: left;
+	background-color:#6090EF;
+}
