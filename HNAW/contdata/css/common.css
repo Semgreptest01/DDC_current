@@ -1,0 +1,83 @@
+/* *----------------------------------------------------------------------------
+// * ¥·¥¹¥Æ¥à		:	¶¦ÄÌ
+// * CSS			:	¶¦ÄÌ
+// * ²ñ¼ÒÌ¾or½êÂ°Ì¾	:	³ô¼°²ñ¼Ò¥ô¥£¥¯¥µ¥¹
+// * ºîÀ®Æü			:	2006/03/03
+// * ºîÀ®¼Ô			:	Hirata
+// * *** ½¤ÀµÍúÎò ***
+// * No.	Date		Author		Description
+// *--------------------------------------------------------------------------*/
+body{ font-size: 10pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; overflow: hidden; text-align: center; }
+
+table{ font-size: 10pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; background-color: inherit; table-layout: fixed; }
+table.header{ background-color: #0000ff; color: #ffffff; text-align:left; font-weight: bold; }
+table.srch_cndtn{ solid #ffffff; background-color: #ffffff; padding-right: 5px; padding-left: 5px; }
+table.list_header{ solid #ffffff; background-color: #d0d0ff; padding-right: 5px; padding-left: 5px; }
+table.list_body{ solid #ffffff; background-color: #ffffff; padding-right: 5px; padding-left: 5px; }
+table.bttm_bttn_tbl{ position: absolute; left: 0px; top: 610px; }
+
+tr.line_odd{ background-color: #ffffff; padding-right: 5px; padding-left: 5px; }
+tr.line_even{ background-color: #ccffff; padding-right: 5px; padding-left: 5px; }
+tr.line_err{ background-color: pink; padding-right: 5px; padding-left: 5px; }
+tr.menu_row{ height: 20px; padding-right: 5px; padding-left: 5px; }
+
+.column{ background-color: #ffffff; padding-right: 5px; padding-left: 5px; }
+.title_column{ background-color: #d0d0ff; padding-right: 5px; padding-left: 5px; }
+.err_column{ background-color: #ffffff; color: #ff0000; padding-right: 5px; padding-left: 5px; }
+.dsply_nn{ display: none; }
+.vsblty_hddn{ visibility: hidden; }
+
+.nt_pddng{ padding-right: 0px; padding-left: 0px; }
+.alrt_msg{ color: #ff0000; }
+.err_msg{ color: #ff0000; }
+
+button{ font-size: 9pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; text-align: center; }
+
+input{ font-size: 9pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; ime-mode: disabled; text-align: left; }
+input.dummy{ position: absolute; visibility: hidden; }
+input.bttn_dflt{ width: 6em; height: 20px; font-size: 10pt; text-align: center; }
+input.bttn_lnk{ background-color: transparent; color: #0000ff; border: 0px; text-align: center; cursor: pointer; text-decoration: underline; }
+input.bttn_clndr { width: 1.5em; height: 20px; font-size: 8pt; text-align: center; }
+input.bttn3{ width: 3em; height: 20px; font-size: 10pt; text-align: center; }
+input.bttn6{ width: 6em; height: 20px; font-size: 10pt; text-align: center; }
+input.bttn7{ width: 7em; height: 20px; font-size: 10pt; text-align: center; }
+input.code3{ width: 27px; text-align: left; }
+input.code4{ width: 32px; text-align: left; }
+input.code5{ width: 38px; text-align: left; }
+input.code6{ width: 42px; text-align: left; }
+input.code7{ width: 48px; text-align: left; }
+input.code8{ width: 56px; text-align: left; }
+input.code9{ width: 61px; text-align: left; }
+input.code11{ width: 72px; text-align: left; }
+input.code26{ width: 165px; text-align: left; }
+input.nmbr1{ width: 12px; text-align: right; }
+input.nmbr2{ width: 20px; text-align: right; }
+input.nmbr3{ width: 27px; text-align: right; }
+input.nmbr4{ width: 38px; text-align: right; }
+input.nmbr5{ width: 46px; text-align: right; }
+input.date_slash{ width: 70px; }
+input.date{ width: 55px; }
+
+input.bttn_dwnld{ width: 7em; height: 20px; font-size: 10pt; text-align: center; }
+
+select{ font-size: 9pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; }
+
+option.err_optn{ color: #ff0000; }
+option.del_optn{ color: #0000ff; }
+
+textarea{ font-size: 9pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; ime-mode: inactive; overflow: auto; }
+textarea.msg_box{ font-weight: bold; width: 965px; color: #ff0000; overflow-y: scroll; }
+textarea.msg_box_err{ width: 715px; color: #ff0000; background: #f0ffff; overflow-y: auto; }
+
+div.scroll_x{ width: 957px; overflow-x: auto; }
+div.hddn_y{ width: 960px; overflow-y: hidden; position: relative; top: -2px; }
+div.scroll_y{ width: 960px; overflow-y: auto; position: relative; top: -2px; }
+div.menu{ font-size: 10pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; overflow: auto; width: 965px; height: 600px; text-align: left; }
+
+span.menu_indnt{ width: 20px; }
+
+pre.hlp{ font-size: 10pt; font-family: '£Í£Ó ¥´¥·¥Ã¥¯'; overflow: auto; width: 100%; height: 270px; text-align: left; }
+
+
+select.cntr_cd{ width: 325px; }
+select.tp_anni_yrwk_no{ width: 100px; }

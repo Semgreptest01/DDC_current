@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!-- <?xml version="1.0" encoding="ISO-8859-1"?> -->
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+ <!--
+
+  ********** システム名称：計画終了対象商品案内 **********
+
+ -->
+<web-app>
+  <servlet><!-- セッション変数削除 -->
+  	<servlet-name>RemoveSessionAttribute</servlet-name>
+    <servlet-class>common.RemoveSessionAttribute</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveSessionAttribute</servlet-name>
+    <url-pattern>/RemoveSessionAttribute</url-pattern>
+  </servlet-mapping>
+  
+  <servlet><!-- セッション変数削除Ajax -->
+  	<servlet-name>RemoveSessionAttributeAjax</servlet-name>
+    <servlet-class>common.RemoveSessionAttributeAjax</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveSessionAttributeAjax</servlet-name>
+    <url-pattern>/RemoveSessionAttributeAjax</url-pattern>
+  </servlet-mapping>
+  
+  <servlet><!-- 計画終了対象商品ダウンロード（前） -->
+    <servlet-name>Hnawlj0010b</servlet-name>
+    <servlet-class>app.Hnawlj0010b</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hnawlj0010b</servlet-name>
+    <url-pattern>/Hnawlj0010b</url-pattern>
+  </servlet-mapping>
+  
+  <servlet><!-- 計画終了対象商品ダウンロード（後） -->
+    <servlet-name>Hnawlj0010a</servlet-name>
+    <servlet-class>app.Hnawlj0010a</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hnawlj0010a</servlet-name>
+    <url-pattern>/Hnawlj0010a</url-pattern>
+  </servlet-mapping>
+  
+  <servlet><!-- 計画終了対象商品ダウンロード（Ajax） -->
+  	<servlet-name>Hnawlj0010Ajax</servlet-name>
+    <servlet-class>app.Hnawlj0010Ajax</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hnawlj0010Ajax</servlet-name>
+    <url-pattern>/Hnawlj0010Ajax</url-pattern>
+  </servlet-mapping>
+  
+  <servlet><!-- 計画終了対象商品ダウンロード（ダウンロード） -->
+    <servlet-name>Hnawlj0010d</servlet-name>
+    <servlet-class>app.Hnawlj0010d</servlet-class>
+    <load-on-startup>6</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hnawlj0010d</servlet-name>
+    <url-pattern>/Hnawlj0010d</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+    <session-timeout>120</session-timeout>
+  </session-config>
+
+</web-app>

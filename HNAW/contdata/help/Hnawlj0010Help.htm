@@ -1,0 +1,171 @@
+<!--
+// *----------------------------------------------------------------------------
+// * システム		:	計画終了対象商品案内
+// * 画面			:	HNAW0010 計画終了対象商品ダウンロード　ヘルプ画面
+// * 会社名or所属名	:	株式会社ヴィクサス
+// * 作成日			:	2010/01/18
+// * 作成者			:	Hirata
+// * *** 修正履歴 ***
+// * No.	Date		Author		Description
+// *----------------------------------------------------------------------------
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<title></title>
+		<script language="JavaScript" src="../js/common/common.js"></script>
+		<script language="JavaScript" src="../js/app_common/app_common.js"></script>
+		<script language="JavaScript" src="../js/app_common/const.js"></script>
+		<script language="JavaScript" src="../js/app_common/help.js"></script>
+		<script language="JavaScript">
+<!--
+// DECLARE_CONST_START
+var WINDOW_ID		=	"SHNAW0010";
+// DECLARE_CONST_END
+	function initial() {
+		document.title = getHlpScrnNm( WINDOW_ID );
+		try{
+			resizeTo( HELP_WINDOW_WIDTH, HELP_WINDOW_HEIGHT );
+			self.moveTo( HELP_WINDOW_LEFT, HELP_WINDOW_TOP );
+		} catch(e) {};
+		with ( document.form1 ) {
+			bttnClose.disabled = false;
+			bttnClose.focus();
+		}
+	}
+// -->
+		</script>
+	</head>
+	<body topmargin="5" leftmargin="10" onload="initial();">
+		<form name="form1" method="post" target="_self">
+			<input type="text" name="dummy" class="dummy" disabled>
+			<script language="JavaScript">
+<!--
+	writeHelpHeader( WINDOW_ID );
+// -->
+			</script>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<col align="center">
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="5" cellspacing="0">
+							<col align="left" width="20">
+							<col align="left">
+							<tr>
+								<td colspan="2">１．画面名</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>SHNAW0010　「計画終了対象商品　ダウンロード」</td>
+							</tr>
+							<tr>
+								<td colspan="2">２．画面概要</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>計画終了となった商品の情報をダウンロードできます。</td>
+							</tr>
+							<tr>
+								<td colspan="2">３．画面が利用できる時間帯</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>6:30　〜　22:00</td>
+							</tr>
+							<tr>
+								<td colspan="2">４．抽出できる過去データ範囲</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>13ヶ月前の1日データから抽出可能です。</td>
+							</tr>
+							<tr>
+								<td colspan="2">５．利用可能なユーザー</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									計画終了対象商品を扱っているベンダー様、センター様の利用者コードでログインしたユーザーのみ
+									<br>
+									データ抽出可能です。
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">６．項目説明</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<table width="700" border="1" cellpadding="0" cellspacing="0">
+										<col align="center" width="25">
+										<col align="left" width="130">
+										<col align="left">
+										<tr>
+											<th>No.</th>
+											<th>項目名</th>
+											<th>説明</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>センターコード</td>
+											<td>ローソンが管理している各配送センターのコード</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>センター名</td>
+											<td>配送センター名</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Dept名</td>
+											<td>商品分類DEPT名称</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Class名</td>
+											<td>商品分類CLASS名称</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>商品コード</td>
+											<td>ローソンが管理している代表商品コード</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>商品名</td>
+											<td>商品名称</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>店案内日</td>
+											<td>この商品がカット登録されたことが店舗へ案内される日付</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>計画終了有効開始日</td>
+											<td>
+												この商品の計画終了が開始する日付。通常、店案内の一週間後の火曜日。
+												<br>
+												計画終了期間に入った商品は店舗への１００％納品が保障されなくなる
+											</td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>取消日</td>
+											<td>この日以降、店舗での発注ができなくなる日付。カット日、推奨取消日と同じ意味</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="button" class="bttn_dflt" name="bttnClose" value="閉じる" onclick="closeClick();" disabled></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

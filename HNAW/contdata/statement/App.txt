@@ -1,0 +1,91 @@
+// *********************************************
+// * HTMLタグ・データ
+// *********************************************
+// *********************************************
+// * getHdrHtml 全画面用・画面ヘッダ
+// *********************************************
+<HTM000>
+<table width="965" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="965" height="28" border="0" cellpadding="0" cellspacing="0" class="header">
+<col width="200">
+<col width="765">
+<tr>
+<td>画面ID：[&0]</td>
+<td>画面名：[&1]</td>
+</tr>
+</table>
+<textarea id="msgBox" class="msg_box" rows="1" cols="147" wrap="soft" readonly onfocus="this.rows=5" onblur="this.rows=1">[&2]</textarea>
+</td>
+</tr>
+</table>
+<table width="965" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="right">
+<input type="button" class="bttn_dflt" name="bttnHelp" value="ヘルプ" onclick="helpClick();" disabled><input type="button" class="bttn_dflt" name="bttnClose" value="閉じる" onclick="closeClick();" disabled>
+</td>
+</tr>
+</table>
+<table height="15"><tr><td></td></tr></table>
+</HTM000>
+<HTM001>
+</HTM001>
+<HTM002>
+</HTM002>
+<HTM003>
+</HTM003>
+<HTM004>
+</HTM004>
+<HTM005>
+</HTM005>
+<HTM006>
+</HTM006>
+<HTM007>
+</HTM007>
+<HTM008>
+</HTM008>
+<HTM009>
+</HTM009>
+//--------------------------------------------------------------------------------------------------
+// *********************************************
+// * SQL-STATEMENT
+// *********************************************
+//   000〜999まで1000種類のSQL登録が可能です。
+//  ＊＊＊使用方法＊＊＊
+//  (1)log="1"という記述をしておけば、SQL文がコンソールに表示されます。
+//  (2) 日付項目は、ISO標準記述をしてください。（以下は、例です）
+//     DATE(年月日)　　指定：{ d'2004-12-31' }
+//     DATE(年月日時刻)指定：{ ts'2004-12-31 12:34:56' }
+//     ※上記のように記述すれば、JDBC-Driverによって適切に型変換が行われます。
+//     SQLステートメントは、ISO/ANSI(SQL92)を標準とします。
+//     TO_DATE関数などのRDB固有の関数を使うとRDBからの独立性が失われます。
+//  (3)また、(+)などの外部結合や副問い合わせは、基本的には禁止です。
+//     ほとんどの場合、SQLを分割するなどして、Javaのメソッド内で処理可能なはずです。
+//  (4)SELECT * FROM のようなSQLは、禁止です。
+//--------------------------------------------------------------------------------------------------
+// *********************************************
+// * setControlDate 日付コントロール当日日付の取得
+// *********************************************
+<SQL000 log="0">
+ SELECT SHR_JS_DT AS TODAY FROM HNT002
+</SQL000>
+<SQL001 log="0">
+</SQL001>
+<SQL002 log="0">
+</SQL002>
+<SQL003 log="0">
+</SQL003>
+<SQL004 log="0">
+</SQL004>
+<SQL005 log="0">
+</SQL005>
+<SQL006 log="0">
+</SQL006>
+<SQL007 log="0">
+</SQL007>
+<SQL008 log="0">
+</SQL008>
+<SQL009 log="0">
+</SQL009>
+//--------------------------------------------------------------------------------------------------
