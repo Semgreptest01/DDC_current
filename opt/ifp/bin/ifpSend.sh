@@ -1,0 +1,19 @@
+#!/bin/sh
+#################################################
+# env
+#  IFP_HOME=/opt/app/ifp
+#  JAVA_HOME=/usr/java/jre1.5.0_15
+
+#################################################
+# IFP CLIENT MODULE
+# required parameters ------------
+# [1] notify file id
+# [2] target file path
+# option parameters --------------
+source /home/lawson/.bashrc
+
+CLASSPATH=${IFP_HOME}:${IFP_HOME}/conf:${IFP_HOME}/lib/commons-beanutils-1.6.1.jar:${IFP_HOME}/lib/commons-cli-1.1.jar:${IFP_HOME}/lib/commons-codec-1.3.jar:${IFP_HOME}/lib/commons-collections-3.1.jar:${IFP_HOME}/lib/commons-configuration-1.1.jar:${IFP_HOME}/lib/commons-digester-1.8.jar:${IFP_HOME}/lib/commons-fileupload-1.2.1.jar:${IFP_HOME}/lib/commons-httpclient-3.0.jar:${IFP_HOME}/lib/commons-io-1.1.jar:${IFP_HOME}/lib/commons-lang-2.0.jar:${IFP_HOME}/lib/commons-logging-1.1.jar:${IFP_HOME}/lib/commons-net-1.4.1.jar:${IFP_HOME}/lib/IFP-1.1.0.0000.jar:${IFP_HOME}/lib/log4j-1.2.15.jar:
+export IFP_HOME PATH CLASSPATH
+
+java -DIFP_HOME=${IFP_HOME} IfpSend ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9} ${10} ${11} ${12} ${13}
+exit $?
