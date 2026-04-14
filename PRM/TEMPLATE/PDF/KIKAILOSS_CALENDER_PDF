@@ -1,0 +1,802 @@
+############### ヘッダ
+# 左上
+rectxyfill 10 6 30 21 153 204 255
+linesegment  10   6  90   6 1
+linesegment  10  11  90  11 1
+linesegment  10  16  90  16 1
+linesegment  10  21  90  21 1
+linesegment  10   6  10  21 1
+linesegment  30   6  30  21 1
+linesegment  90   6  90  21 1
+label  20   8.5 center center gothic  9 black _ _ 期間
+label  20  13.5 center center gothic  9 black _ _ カテゴリ
+label  20  18.5 center center gothic  9 black _ _ 組織
+label  60   8.5 center center gothic  9 black _ _ ###KIKAN###
+label  60  13.5 center center gothic  9 black _ _ ###CLASSNAME###
+label  60  18.5 center center gothic  9 black _ _ ###TEN###
+label   3   4   left   center gothic  6 black _ _ チェーン外秘
+# 中央
+label 100  13.5 left   center gothic 18 black _ _ カレンダーツール
+# 右上
+#label 291   4   right  center gothic  6 black _ _ Powered_by_SLiM-PJT
+# 右下
+label 291 207   right  bottom gothic  6 black _ _ (C)_ローソン_2009
+
+############### 色
+# 青
+rectxyfill  10  23     22  47.75 153 204 255
+rectxyfill  10  51.75  22 186.5  153 204 255
+rectxyfill 259  20    287  23    153 204 255
+rectxyfill 259  48.75 287  51.75 153 204 255
+# 薄オレンジ
+rectxyfill  22  23    256  28.5  255 204 153
+rectxyfill 259  23    287  28.5  255 204 153
+rectxyfill 259  51.75 287  57.25 255 204 153
+rectxyfill 259  79.25 287  84.75 255 204 153
+rectxyfill 259 106.75 287 112.25 255 204 153
+rectxyfill 259 134.25 287 139.75 255 204 153
+rectxyfill 259 161.75 287 167.25 255 204 153
+# 濃オレンジ
+rectxyfill  56  25.75  64  28.5  255 102   0
+rectxyfill  88  25.75  96  28.5  255 102   0
+rectxyfill 120  25.75 128  28.5  255 102   0
+rectxyfill 152  25.75 160  28.5  255 102   0
+rectxyfill 184  25.75 192  28.5  255 102   0
+rectxyfill 216  25.75 224  28.5  255 102   0
+rectxyfill 248  25.75 256  28.5  255 102   0
+rectxyfill 280  25.75 287  28.5  255 102   0
+rectxyfill 280  54.5  287  57.25 255 102   0
+rectxyfill 280  82    287  84.75 255 102   0
+rectxyfill 280 109.5  287 112.25 255 102   0
+rectxyfill 280 137    287 139.75 255 102   0
+rectxyfill 280 164.5  287 167.25 255 102   0
+# 薄みどり
+rectxyfill  22  51.75 256  57.25 204 255 204
+rectxyfill  22  79.25 256  84.75 204 255 204
+rectxyfill  22 106.75 256 112.25 204 255 204
+rectxyfill  22 134.25 256 139.75 204 255 204
+rectxyfill  22 161.75 256 167.25 204 255 204
+# 濃みどり
+rectxyfill  56  54.5   64  57.25   0 255   0
+rectxyfill  88  54.5   96  57.25   0 255   0
+rectxyfill 120  54.5  128  57.25   0 255   0
+rectxyfill 152  54.5  160  57.25   0 255   0
+rectxyfill 184  54.5  192  57.25   0 255   0
+rectxyfill 216  54.5  224  57.25   0 255   0
+rectxyfill 248  54.5  256  57.25   0 255   0
+rectxyfill  56  82     64  84.75   0 255   0
+rectxyfill  88  82     96  84.75   0 255   0
+rectxyfill 120  82    128  84.75   0 255   0
+rectxyfill 152  82    160  84.75   0 255   0
+rectxyfill 184  82    192  84.75   0 255   0
+rectxyfill 216  82    224  84.75   0 255   0
+rectxyfill 248  82    256  84.75   0 255   0
+rectxyfill  56 109.5   64 112.25   0 255   0
+rectxyfill  88 109.5   96 112.25   0 255   0
+rectxyfill 120 109.5  128 112.25   0 255   0
+rectxyfill 152 109.5  160 112.25   0 255   0
+rectxyfill 184 109.5  192 112.25   0 255   0
+rectxyfill 216 109.5  224 112.25   0 255   0
+rectxyfill 248 109.5  256 112.25   0 255   0
+rectxyfill  56 137     64 139.75   0 255   0
+rectxyfill  88 137     96 139.75   0 255   0
+rectxyfill 120 137    128 139.75   0 255   0
+rectxyfill 152 137    160 139.75   0 255   0
+rectxyfill 184 137    192 139.75   0 255   0
+rectxyfill 216 137    224 139.75   0 255   0
+rectxyfill 248 137    256 139.75   0 255   0
+rectxyfill  56 164.5   64 167.25   0 255   0
+rectxyfill  88 164.5   96 167.25   0 255   0
+rectxyfill 120 164.5  128 167.25   0 255   0
+rectxyfill 152 164.5  160 167.25   0 255   0
+rectxyfill 184 164.5  192 167.25   0 255   0
+rectxyfill 216 164.5  224 167.25   0 255   0
+rectxyfill 248 164.5  256 167.25   0 255   0
+# 土の青
+rectxyfill 160  23    192  25.75 153 204 255
+rectxyfill 160  51.75 192  54.5  153 204 255
+rectxyfill 160  79.25 192  82    153 204 255
+rectxyfill 160 106.75 192 109.5  153 204 255
+rectxyfill 160 134.25 192 137    153 204 255
+rectxyfill 160 161.75 192 164.5  153 204 255
+# 日の赤
+rectxyfill 192  23    224  25.75 255 153 204
+rectxyfill 192  51.75 224  54.5  255 153 204
+rectxyfill 192  79.25 224  82    255 153 204
+rectxyfill 192 106.75 224 109.5  255 153 204
+rectxyfill 192 134.25 224 137    255 153 204
+rectxyfill 192 161.75 224 164.5  255 153 204
+# 右上の薄黄色
+rectxyfill 259  28.5  287  47.75 255 255 153
+
+############### 機会ロスベスト３のピンク
+# %1 : x         32 + 8n (n=4x7)
+#               259 + 7n
+# %2 : x + 8or7
+# %3 : y         33
+#                62 + 27.5w
+# %4 : y + 2.5
+###BLUE3###
+rectxyfill %1 %3 %2 %4 hotpink _ _
+###BLUE3###
+############### 廃棄数ベスト３の青
+# %1 : x         32 + 8n (n=4x7)
+#               259 + 7n
+# %2 : x + 8or7
+# %3 : y         45.5
+#                74.5 + 27.5w
+# %4 : y + 2.5
+###PINK3###
+rectxyfill %1 %3 %2 %4 aqua _ _
+###PINK3###
+
+############### 罫線
+# 	横線左				
+linesegment	10	23	256	23	1
+linesegment	22	25.75	256	25.75	1
+linesegment	22	28.5	256	28.5	1
+linesegment	22	31.25	256	31.25	0.5
+linesegment	22	34	256	34	0.5
+linesegment	22	36.75	256	36.75	0.5
+linesegment	22	39.5	256	39.5	0.5
+linesegment	22	42.25	256	42.25	0.5
+linesegment	22	45	256	45	0.5
+linesegment	10	47.75	256	47.75	1
+linesegment	10	51.75	256	51.75	1
+linesegment	22	54.5	256	54.5	1
+linesegment	22	57.25	256	57.25	1
+linesegment	22	60	256	60	0.5
+linesegment	22	62.75	256	62.75	0.5
+linesegment	22	65.5	256	65.5	0.5
+linesegment	22	68.25	256	68.25	0.5
+linesegment	22	71	256	71	0.5
+linesegment	22	73.75	256	73.75	0.5
+linesegment	22	76.5	256	76.5	1
+linesegment	22	79.25	256	79.25	1
+linesegment	22	82	256	82	1
+linesegment	22	84.75	256	84.75	1
+linesegment	22	87.5	256	87.5	0.5
+linesegment	22	90.25	256	90.25	0.5
+linesegment	22	93	256	93	0.5
+linesegment	22	95.75	256	95.75	0.5
+linesegment	22	98.5	256	98.5	0.5
+linesegment	22	101.25	256	101.25	0.5
+linesegment	22	104	256	104	1
+linesegment	22	106.75	256	106.75	1
+linesegment	22	109.5	256	109.5	1
+linesegment	22	112.25	256	112.25	1
+linesegment	22	115	256	115	0.5
+linesegment	22	117.75	256	117.75	0.5
+linesegment	22	120.5	256	120.5	0.5
+linesegment	22	123.25	256	123.25	0.5
+linesegment	22	126	256	126	0.5
+linesegment	22	128.75	256	128.75	0.5
+linesegment	22	131.5	256	131.5	1
+linesegment	22	134.25	256	134.25	1
+linesegment	22	137	256	137	1
+linesegment	22	139.75	256	139.75	1
+linesegment	22	142.5	256	142.5	0.5
+linesegment	22	145.25	256	145.25	0.5
+linesegment	22	148	256	148	0.5
+linesegment	22	150.75	256	150.75	0.5
+linesegment	22	153.5	256	153.5	0.5
+linesegment	22	156.25	256	156.25	0.5
+linesegment	22	159	256	159	1
+linesegment	22	161.75	256	161.75	1
+linesegment	22	164.5	256	164.5	1
+linesegment	22	167.25	256	167.25	1
+linesegment	22	170	256	170	0.5
+linesegment	22	172.75	256	172.75	0.5
+linesegment	22	175.5	256	175.5	0.5
+linesegment	22	178.25	256	178.25	0.5
+linesegment	22	181	256	181	0.5
+linesegment	22	183.75	256	183.75	0.5
+linesegment	10	186.5	256	186.5	1
+#	横線右				
+linesegment	259	23	287	23	1
+linesegment	259	25.75	287	25.75	1
+linesegment	259	28.5	287	28.5	1
+linesegment	259	31.25	287	31.25	0.5
+linesegment	259	34	287	34	0.5
+linesegment	259	36.75	287	36.75	0.5
+linesegment	259	39.5	287	39.5	0.5
+linesegment	259	42.25	287	42.25	0.5
+linesegment	259	45	287	45	0.5
+linesegment	259	47.75	287	47.75	1
+linesegment	259	51.75	287	51.75	1
+linesegment	259	54.5	287	54.5	1
+linesegment	259	57.25	287	57.25	1
+linesegment	259	60	287	60	0.5
+linesegment	259	62.75	287	62.75	0.5
+linesegment	259	65.5	287	65.5	0.5
+linesegment	259	68.25	287	68.25	0.5
+linesegment	259	71	287	71	0.5
+linesegment	259	73.75	287	73.75	0.5
+linesegment	259	76.5	287	76.5	1
+linesegment	259	79.25	287	79.25	1
+linesegment	259	82	287	82	1
+linesegment	259	84.75	287	84.75	1
+linesegment	259	87.5	287	87.5	0.5
+linesegment	259	90.25	287	90.25	0.5
+linesegment	259	93	287	93	0.5
+linesegment	259	95.75	287	95.75	0.5
+linesegment	259	98.5	287	98.5	0.5
+linesegment	259	101.25	287	101.25	0.5
+linesegment	259	104	287	104	1
+linesegment	259	106.75	287	106.75	1
+linesegment	259	109.5	287	109.5	1
+linesegment	259	112.25	287	112.25	1
+linesegment	259	115	287	115	0.5
+linesegment	259	117.75	287	117.75	0.5
+linesegment	259	120.5	287	120.5	0.5
+linesegment	259	123.25	287	123.25	0.5
+linesegment	259	126	287	126	0.5
+linesegment	259	128.75	287	128.75	0.5
+linesegment	259	131.5	287	131.5	1
+linesegment	259	134.25	287	134.25	1
+linesegment	259	137	287	137	1
+linesegment	259	139.75	287	139.75	1
+linesegment	259	142.5	287	142.5	0.5
+linesegment	259	145.25	287	145.25	0.5
+linesegment	259	148	287	148	0.5
+linesegment	259	150.75	287	150.75	0.5
+linesegment	259	153.5	287	153.5	0.5
+linesegment	259	156.25	287	156.25	0.5
+linesegment	259	159	287	159	1
+linesegment	259	161.75	287	161.75	1
+linesegment	259	164.5	287	164.5	1
+linesegment	259	167.25	287	167.25	1
+linesegment	259	170	287	170	0.5
+linesegment	259	172.75	287	172.75	0.5
+linesegment	259	175.5	287	175.5	0.5
+linesegment	259	178.25	287	178.25	0.5
+linesegment	259	181	287	181	0.5
+linesegment	259	183.75	287	183.75	0.5
+linesegment	259	186.5	287	186.5	1
+linesegment	259	20	287	20	1
+linesegment	259	48.75	287	48.75	1
+#	縦線上				
+linesegment	10	23	10	47.75	1
+linesegment	22	23	22	47.75	1
+linesegment	32	23	32	47.75	1
+linesegment	40	25.75	40	47.75	0.5
+linesegment	48	25.75	48	47.75	0.5
+linesegment	56	25.75	56	47.75	0.5
+linesegment	64	23	64	47.75	1
+linesegment	72	25.75	72	47.75	0.5
+linesegment	80	25.75	80	47.75	0.5
+linesegment	88	25.75	88	47.75	0.5
+linesegment	96	23	96	47.75	1
+linesegment	104	25.75	104	47.75	0.5
+linesegment	112	25.75	112	47.75	0.5
+linesegment	120	25.75	120	47.75	0.5
+linesegment	128	23	128	47.75	1
+linesegment	136	25.75	136	47.75	0.5
+linesegment	144	25.75	144	47.75	0.5
+linesegment	152	25.75	152	47.75	0.5
+linesegment	160	23	160	47.75	1
+linesegment	168	25.75	168	47.75	0.5
+linesegment	176	25.75	176	47.75	0.5
+linesegment	184	25.75	184	47.75	0.5
+linesegment	192	23	192	47.75	1
+linesegment	200	25.75	200	47.75	0.5
+linesegment	208	25.75	208	47.75	0.5
+linesegment	216	25.75	216	47.75	0.5
+linesegment	224	23	224	47.75	1
+linesegment	232	25.75	232	47.75	0.5
+linesegment	240	25.75	240	47.75	0.5
+linesegment	248	25.75	248	47.75	0.5
+linesegment	256	23	256	47.75	1
+linesegment	259	20	259	47.75	1
+linesegment	266	25.75	266	47.75	0.5
+linesegment	273	25.75	273	47.75	0.5
+linesegment	280	25.75	280	47.75	0.5
+linesegment	287	20	287	47.75	1
+#	縦線左				
+linesegment	10	51.75	10	186.5	1
+linesegment	22	51.75	22	186.5	1
+#	縦線1w				
+linesegment	32	51.75	32	76.5	1
+linesegment	40	54.5	40	76.5	0.5
+linesegment	48	54.5	48	76.5	0.5
+linesegment	56	54.5	56	76.5	0.5
+linesegment	64	51.75	64	76.5	1
+linesegment	72	54.5	72	76.5	0.5
+linesegment	80	54.5	80	76.5	0.5
+linesegment	88	54.5	88	76.5	0.5
+linesegment	96	51.75	96	76.5	1
+linesegment	104	54.5	104	76.5	0.5
+linesegment	112	54.5	112	76.5	0.5
+linesegment	120	54.5	120	76.5	0.5
+linesegment	128	51.75	128	76.5	1
+linesegment	136	54.5	136	76.5	0.5
+linesegment	144	54.5	144	76.5	0.5
+linesegment	152	54.5	152	76.5	0.5
+linesegment	160	51.75	160	76.5	1
+linesegment	168	54.5	168	76.5	0.5
+linesegment	176	54.5	176	76.5	0.5
+linesegment	184	54.5	184	76.5	0.5
+linesegment	192	51.75	192	76.5	1
+linesegment	200	54.5	200	76.5	0.5
+linesegment	208	54.5	208	76.5	0.5
+linesegment	216	54.5	216	76.5	0.5
+linesegment	224	51.75	224	76.5	1
+linesegment	232	54.5	232	76.5	0.5
+linesegment	240	54.5	240	76.5	0.5
+linesegment	248	54.5	248	76.5	0.5
+linesegment	256	51.75	256	76.5	1
+linesegment	259	48.75	259	76.5	1
+linesegment	266	54.5	266	76.5	0.5
+linesegment	273	54.5	273	76.5	0.5
+linesegment	280	54.5	280	76.5	0.5
+linesegment	287	48.75	287	76.5	1
+#	縦線2w				
+linesegment	32	79.25	32	104	1
+linesegment	40	82	40	104	0.5
+linesegment	48	82	48	104	0.5
+linesegment	56	82	56	104	0.5
+linesegment	64	79.25	64	104	1
+linesegment	72	82	72	104	0.5
+linesegment	80	82	80	104	0.5
+linesegment	88	82	88	104	0.5
+linesegment	96	79.25	96	104	1
+linesegment	104	82	104	104	0.5
+linesegment	112	82	112	104	0.5
+linesegment	120	82	120	104	0.5
+linesegment	128	79.25	128	104	1
+linesegment	136	82	136	104	0.5
+linesegment	144	82	144	104	0.5
+linesegment	152	82	152	104	0.5
+linesegment	160	79.25	160	104	1
+linesegment	168	82	168	104	0.5
+linesegment	176	82	176	104	0.5
+linesegment	184	82	184	104	0.5
+linesegment	192	79.25	192	104	1
+linesegment	200	82	200	104	0.5
+linesegment	208	82	208	104	0.5
+linesegment	216	82	216	104	0.5
+linesegment	224	79.25	224	104	1
+linesegment	232	82	232	104	0.5
+linesegment	240	82	240	104	0.5
+linesegment	248	82	248	104	0.5
+linesegment	256	79.25	256	104	1
+linesegment	259	79.25	259	104	1
+linesegment	266	82	266	104	0.5
+linesegment	273	82	273	104	0.5
+linesegment	280	82	280	104	0.5
+linesegment	287	79.25	287	104	1
+#	縦線3w				
+linesegment	32	106.75	32	131.5	1
+linesegment	40	109.5	40	131.5	0.5
+linesegment	48	109.5	48	131.5	0.5
+linesegment	56	109.5	56	131.5	0.5
+linesegment	64	106.75	64	131.5	1
+linesegment	72	109.5	72	131.5	0.5
+linesegment	80	109.5	80	131.5	0.5
+linesegment	88	109.5	88	131.5	0.5
+linesegment	96	106.75	96	131.5	1
+linesegment	104	109.5	104	131.5	0.5
+linesegment	112	109.5	112	131.5	0.5
+linesegment	120	109.5	120	131.5	0.5
+linesegment	128	106.75	128	131.5	1
+linesegment	136	109.5	136	131.5	0.5
+linesegment	144	109.5	144	131.5	0.5
+linesegment	152	109.5	152	131.5	0.5
+linesegment	160	106.75	160	131.5	1
+linesegment	168	109.5	168	131.5	0.5
+linesegment	176	109.5	176	131.5	0.5
+linesegment	184	109.5	184	131.5	0.5
+linesegment	192	106.75	192	131.5	1
+linesegment	200	109.5	200	131.5	0.5
+linesegment	208	109.5	208	131.5	0.5
+linesegment	216	109.5	216	131.5	0.5
+linesegment	224	106.75	224	131.5	1
+linesegment	232	109.5	232	131.5	0.5
+linesegment	240	109.5	240	131.5	0.5
+linesegment	248	109.5	248	131.5	0.5
+linesegment	256	106.75	256	131.5	1
+linesegment	259	106.75	259	131.5	1
+linesegment	266	109.5	266	131.5	0.5
+linesegment	273	109.5	273	131.5	0.5
+linesegment	280	109.5	280	131.5	0.5
+linesegment	287	106.75	287	131.5	1
+#       縦線4w
+linesegment    32      134.25  32      159   1
+linesegment    40      137     40      159   0.5
+linesegment    48      137     48      159   0.5
+linesegment    56      137     56      159   0.5
+linesegment    64      134.25  64      159   1
+linesegment    72      137     72      159   0.5
+linesegment    80      137     80      159   0.5
+linesegment    88      137     88      159   0.5
+linesegment    96      134.25  96      159   1
+linesegment    104     137     104     159   0.5
+linesegment    112     137     112     159   0.5
+linesegment    120     137     120     159   0.5
+linesegment    128     134.25  128     159   1
+linesegment    136     137     136     159   0.5
+linesegment    144     137     144     159   0.5
+linesegment    152     137     152     159   0.5
+linesegment    160     134.25  160     159   1
+linesegment    168     137     168     159   0.5
+linesegment    176     137     176     159   0.5
+linesegment    184     137     184     159   0.5
+linesegment    192     134.25  192     159   1
+linesegment    200     137     200     159   0.5
+linesegment    208     137     208     159   0.5
+linesegment    216     137     216     159   0.5
+linesegment    224     134.25  224     159   1
+linesegment    232     137     232     159   0.5
+linesegment    240     137     240     159   0.5
+linesegment    248     137     248     159   0.5
+linesegment    256     134.25  256     159   1
+linesegment    259     134.25  259     159   1
+linesegment    266     137     266     159   0.5
+linesegment    273     137     273     159   0.5
+linesegment    280     137     280     159   0.5
+linesegment    287     134.25  287     159   1
+#	縦線5w				
+linesegment	32	161.75	32	186.5	1
+linesegment	40	164.5	40	186.5	0.5
+linesegment	48	164.5	48	186.5	0.5
+linesegment	56	164.5	56	186.5	0.5
+linesegment	64	161.75	64	186.5	1
+linesegment	72	164.5	72	186.5	0.5
+linesegment	80	164.5	80	186.5	0.5
+linesegment	88	164.5	88	186.5	0.5
+linesegment	96	161.75	96	186.5	1
+linesegment	104	164.5	104	186.5	0.5
+linesegment	112	164.5	112	186.5	0.5
+linesegment	120	164.5	120	186.5	0.5
+linesegment	128	161.75	128	186.5	1
+linesegment	136	164.5	136	186.5	0.5
+linesegment	144	164.5	144	186.5	0.5
+linesegment	152	164.5	152	186.5	0.5
+linesegment	160	161.75	160	186.5	1
+linesegment	168	164.5	168	186.5	0.5
+linesegment	176	164.5	176	186.5	0.5
+linesegment	184	164.5	184	186.5	0.5
+linesegment	192	161.75	192	186.5	1
+linesegment	200	164.5	200	186.5	0.5
+linesegment	208	164.5	208	186.5	0.5
+linesegment	216	164.5	216	186.5	0.5
+linesegment	224	161.75	224	186.5	1
+linesegment	232	164.5	232	186.5	0.5
+linesegment	240	164.5	240	186.5	0.5
+linesegment	248	164.5	248	186.5	0.5
+linesegment	256	161.75	256	186.5	1
+linesegment	259	161.75	259	186.5	1
+linesegment	266	164.5	266	186.5	0.5
+linesegment	273	164.5	273	186.5	0.5
+linesegment	280	164.5	280	186.5	0.5
+linesegment	287	161.75	287	186.5	1
+
+############### 固定メッセージ
+# 雑多
+label  16   35    center bottom gothic 7 black _ _ 曜日傾向
+label  16   36    center top    gothic 7 black _ _ (合計)
+label  16  119.5  center center gothic 7 black _ _ 日別傾向
+label 273   21.5  center center gothic 7 black _ _ 月度傾向
+label 273   50.25 center center gothic 7 black _ _ 週別傾向_(合計)
+#	左									
+label	22	27.125	left	center	gothic	5	black	_	_	項目
+label	22	29.875	left	center	gothic	5	black	_	_	客数
+label	22	32.625	left	center	gothic	5	black	_	_	機会ロス数
+label	22	35.375	left	center	gothic	5	black	_	_	機会ロス高
+label	22	38.125	left	center	gothic	5	black	_	_	購入率
+label	22	40.875	left	center	gothic	5	black	_	_	納品数
+label	22	43.625	left	center	gothic	5	black	_	_	販売数
+label	22	46.375	left	center	gothic	5	black	_	_	廃棄数
+label	22	55.875	left	center	gothic	5	black	_	_	項目
+label	22	58.625	left	center	gothic	5	black	_	_	客数
+label	22	61.375	left	center	gothic	5	black	_	_	機会ロス数
+label	22	64.125	left	center	gothic	5	black	_	_	機会ロス高
+label	22	66.875	left	center	gothic	5	black	_	_	購入率
+label	22	69.625	left	center	gothic	5	black	_	_	納品数
+label	22	72.375	left	center	gothic	5	black	_	_	販売数
+label	22	75.125	left	center	gothic	5	black	_	_	廃棄数
+label	22	83.375	left	center	gothic	5	black	_	_	項目
+label	22	86.125	left	center	gothic	5	black	_	_	客数
+label	22	88.875	left	center	gothic	5	black	_	_	機会ロス数
+label	22	91.625	left	center	gothic	5	black	_	_	機会ロス高
+label	22	94.375	left	center	gothic	5	black	_	_	購入率
+label	22	97.125	left	center	gothic	5	black	_	_	納品数
+label	22	99.875	left	center	gothic	5	black	_	_	販売数
+label	22	102.625	left	center	gothic	5	black	_	_	廃棄数
+label	22	110.875	left	center	gothic	5	black	_	_	項目
+label	22	113.625	left	center	gothic	5	black	_	_	客数
+label	22	116.375	left	center	gothic	5	black	_	_	機会ロス数
+label	22	119.125	left	center	gothic	5	black	_	_	機会ロス高
+label	22	121.875	left	center	gothic	5	black	_	_	購入率
+label	22	124.625	left	center	gothic	5	black	_	_	納品数
+label	22	127.375	left	center	gothic	5	black	_	_	販売数
+label	22	130.125	left	center	gothic	5	black	_	_	廃棄数
+label	22	138.375	left	center	gothic	5	black	_	_	項目
+label	22	141.125	left	center	gothic	5	black	_	_	客数
+label	22	143.875	left	center	gothic	5	black	_	_	機会ロス数
+label	22	146.625	left	center	gothic	5	black	_	_	機会ロス高
+label	22	149.375	left	center	gothic	5	black	_	_	購入率
+label	22	152.125	left	center	gothic	5	black	_	_	納品数
+label	22	154.875	left	center	gothic	5	black	_	_	販売数
+label	22	157.625	left	center	gothic	5	black	_	_	廃棄数
+label	22	165.875	left	center	gothic	5	black	_	_	項目
+label	22	168.625	left	center	gothic	5	black	_	_	客数
+label	22	171.375	left	center	gothic	5	black	_	_	機会ロス数
+label	22	174.125	left	center	gothic	5	black	_	_	機会ロス高
+label	22	176.875	left	center	gothic	5	black	_	_	購入率
+label	22	179.625	left	center	gothic	5	black	_	_	納品数
+label	22	182.375	left	center	gothic	5	black	_	_	販売数
+label	22	185.125	left	center	gothic	5	black	_	_	廃棄数
+#	日と曜日			
+label  48 24.375 center center gothic 5 black _ _ 火
+label  80 24.375 center center gothic 5 black _ _ 水
+label 112 24.375 center center gothic 5 black _ _ 木
+label 144 24.375 center center gothic 5 black _ _ 金
+label 176 24.375 center center gothic 5 black _ _ 土
+label 208 24.375 center center gothic 5 black _ _ 日
+label 240 24.375 center center gothic 5 black _ _ 月
+############### 日と曜日
+# 1-28  : 日
+# 29-35 : 最終行の日
+# 36    : 最終行が不要な場合に # をあてる
+#WEEKは1-4,5,6で同様
+###DAY_HEAD###
+label  48  53.125 center center gothic 5 black _ _ %1火
+label  80  53.125 center center gothic 5 black _ _ %2水
+label 112  53.125 center center gothic 5 black _ _ %3木
+label 144  53.125 center center gothic 5 black _ _ %4金
+label 176  53.125 center center gothic 5 black _ _ %5土
+label 208  53.125 center center gothic 5 black _ _ %6日
+label 240  53.125 center center gothic 5 black _ _ %7月
+label  48  80.625 center center gothic 5 black _ _ %8火
+label  80  80.625 center center gothic 5 black _ _ %9水
+label 112  80.625 center center gothic 5 black _ _ %10木
+label 144  80.625 center center gothic 5 black _ _ %11金
+label 176  80.625 center center gothic 5 black _ _ %12土
+label 208  80.625 center center gothic 5 black _ _ %13日
+label 240  80.625 center center gothic 5 black _ _ %14月
+label  48 108.125 center center gothic 5 black _ _ %15火
+label  80 108.125 center center gothic 5 black _ _ %16水
+label 112 108.125 center center gothic 5 black _ _ %17木
+label 144 108.125 center center gothic 5 black _ _ %18金
+label 176 108.125 center center gothic 5 black _ _ %19土
+label 208 108.125 center center gothic 5 black _ _ %20日
+label 240 108.125 center center gothic 5 black _ _ %21月
+label  48 135.625 center center gothic 5 black _ _ %22火
+label  80 135.625 center center gothic 5 black _ _ %23水
+label 112 135.625 center center gothic 5 black _ _ %24木
+label 144 135.625 center center gothic 5 black _ _ %25金
+label 176 135.625 center center gothic 5 black _ _ %26土
+label 208 135.625 center center gothic 5 black _ _ %27日
+label 240 135.625 center center gothic 5 black _ _ %28月
+%36label  48 163.125 center center gothic 5 black _ _ %29火
+%36label  80 163.125 center center gothic 5 black _ _ %30水
+%36label 112 163.125 center center gothic 5 black _ _ %31木
+%36label 144 163.125 center center gothic 5 black _ _ %32金
+%36label 176 163.125 center center gothic 5 black _ _ %33土
+%36label 208 163.125 center center gothic 5 black _ _ %34日
+%36label 240 163.125 center center gothic 5 black _ _ %35月
+###DAY_HEAD###
+###WEEK_HEAD###
+label 273  53.125 center center gothic 5 black _ _ %1日週
+label 273  80.625 center center gothic 5 black _ _ %2日週
+label 273 108.125 center center gothic 5 black _ _ %3日週
+label 273 135.625 center center gothic 5 black _ _ %4日週
+%6label 273 163.125 center center gothic 5 black _ _ %5日週
+###WEEK_HEAD###
+# 便
+label  36 27.125 center center gothic 5 black _ _ 1便
+label  44 27.125 center center gothic 5 black _ _ 2便
+label  52 27.125 center center gothic 5 black _ _ 3便
+label  60 27.125 center center gothic 5 black _ _ 合計
+label  68 27.125 center center gothic 5 black _ _ 1便
+label  76 27.125 center center gothic 5 black _ _ 2便
+label  84 27.125 center center gothic 5 black _ _ 3便
+label  92 27.125 center center gothic 5 black _ _ 合計
+label 100 27.125 center center gothic 5 black _ _ 1便
+label 108 27.125 center center gothic 5 black _ _ 2便
+label 116 27.125 center center gothic 5 black _ _ 3便
+label 124 27.125 center center gothic 5 black _ _ 合計
+label 132 27.125 center center gothic 5 black _ _ 1便
+label 140 27.125 center center gothic 5 black _ _ 2便
+label 148 27.125 center center gothic 5 black _ _ 3便
+label 156 27.125 center center gothic 5 black _ _ 合計
+label 164 27.125 center center gothic 5 black _ _ 1便
+label 172 27.125 center center gothic 5 black _ _ 2便
+label 180 27.125 center center gothic 5 black _ _ 3便
+label 188 27.125 center center gothic 5 black _ _ 合計
+label 196 27.125 center center gothic 5 black _ _ 1便
+label 204 27.125 center center gothic 5 black _ _ 2便
+label 212 27.125 center center gothic 5 black _ _ 3便
+label 220 27.125 center center gothic 5 black _ _ 合計
+label 228 27.125 center center gothic 5 black _ _ 1便
+label 236 27.125 center center gothic 5 black _ _ 2便
+label 244 27.125 center center gothic 5 black _ _ 3便
+label 252 27.125 center center gothic 5 black _ _ 合計
+label  36 55.875 center center gothic 5 black _ _ 1便
+label  44 55.875 center center gothic 5 black _ _ 2便
+label  52 55.875 center center gothic 5 black _ _ 3便
+label  60 55.875 center center gothic 5 black _ _ 合計
+label  68 55.875 center center gothic 5 black _ _ 1便
+label  76 55.875 center center gothic 5 black _ _ 2便
+label  84 55.875 center center gothic 5 black _ _ 3便
+label  92 55.875 center center gothic 5 black _ _ 合計
+label 100 55.875 center center gothic 5 black _ _ 1便
+label 108 55.875 center center gothic 5 black _ _ 2便
+label 116 55.875 center center gothic 5 black _ _ 3便
+label 124 55.875 center center gothic 5 black _ _ 合計
+label 132 55.875 center center gothic 5 black _ _ 1便
+label 140 55.875 center center gothic 5 black _ _ 2便
+label 148 55.875 center center gothic 5 black _ _ 3便
+label 156 55.875 center center gothic 5 black _ _ 合計
+label 164 55.875 center center gothic 5 black _ _ 1便
+label 172 55.875 center center gothic 5 black _ _ 2便
+label 180 55.875 center center gothic 5 black _ _ 3便
+label 188 55.875 center center gothic 5 black _ _ 合計
+label 196 55.875 center center gothic 5 black _ _ 1便
+label 204 55.875 center center gothic 5 black _ _ 2便
+label 212 55.875 center center gothic 5 black _ _ 3便
+label 220 55.875 center center gothic 5 black _ _ 合計
+label 228 55.875 center center gothic 5 black _ _ 1便
+label 236 55.875 center center gothic 5 black _ _ 2便
+label 244 55.875 center center gothic 5 black _ _ 3便
+label 252 55.875 center center gothic 5 black _ _ 合計
+label 36  83.375 center center gothic 5 black _ _ 1便
+label 44  83.375 center center gothic 5 black _ _ 2便
+label 52  83.375 center center gothic 5 black _ _ 3便
+label 60  83.375 center center gothic 5 black _ _ 合計
+label 68  83.375 center center gothic 5 black _ _ 1便
+label 76  83.375 center center gothic 5 black _ _ 2便
+label 84  83.375 center center gothic 5 black _ _ 3便
+label 92  83.375 center center gothic 5 black _ _ 合計
+label 100 83.375 center center gothic 5 black _ _ 1便
+label 108 83.375 center center gothic 5 black _ _ 2便
+label 116 83.375 center center gothic 5 black _ _ 3便
+label 124 83.375 center center gothic 5 black _ _ 合計
+label 132 83.375 center center gothic 5 black _ _ 1便
+label 140 83.375 center center gothic 5 black _ _ 2便
+label 148 83.375 center center gothic 5 black _ _ 3便
+label 156 83.375 center center gothic 5 black _ _ 合計
+label 164 83.375 center center gothic 5 black _ _ 1便
+label 172 83.375 center center gothic 5 black _ _ 2便
+label 180 83.375 center center gothic 5 black _ _ 3便
+label 188 83.375 center center gothic 5 black _ _ 合計
+label 196 83.375 center center gothic 5 black _ _ 1便
+label 204 83.375 center center gothic 5 black _ _ 2便
+label 212 83.375 center center gothic 5 black _ _ 3便
+label 220 83.375 center center gothic 5 black _ _ 合計
+label 228 83.375 center center gothic 5 black _ _ 1便
+label 236 83.375 center center gothic 5 black _ _ 2便
+label 244 83.375 center center gothic 5 black _ _ 3便
+label 252 83.375 center center gothic 5 black _ _ 合計
+label 36  110.875 center center gothic 5 black _ _ 1便
+label 44  110.875 center center gothic 5 black _ _ 2便
+label 52  110.875 center center gothic 5 black _ _ 3便
+label 60  110.875 center center gothic 5 black _ _ 合計
+label 68  110.875 center center gothic 5 black _ _ 1便
+label 76  110.875 center center gothic 5 black _ _ 2便
+label 84  110.875 center center gothic 5 black _ _ 3便
+label 92  110.875 center center gothic 5 black _ _ 合計
+label 100 110.875 center center gothic 5 black _ _ 1便
+label 108 110.875 center center gothic 5 black _ _ 2便
+label 116 110.875 center center gothic 5 black _ _ 3便
+label 124 110.875 center center gothic 5 black _ _ 合計
+label 132 110.875 center center gothic 5 black _ _ 1便
+label 140 110.875 center center gothic 5 black _ _ 2便
+label 148 110.875 center center gothic 5 black _ _ 3便
+label 156 110.875 center center gothic 5 black _ _ 合計
+label 164 110.875 center center gothic 5 black _ _ 1便
+label 172 110.875 center center gothic 5 black _ _ 2便
+label 180 110.875 center center gothic 5 black _ _ 3便
+label 188 110.875 center center gothic 5 black _ _ 合計
+label 196 110.875 center center gothic 5 black _ _ 1便
+label 204 110.875 center center gothic 5 black _ _ 2便
+label 212 110.875 center center gothic 5 black _ _ 3便
+label 220 110.875 center center gothic 5 black _ _ 合計
+label 228 110.875 center center gothic 5 black _ _ 1便
+label 236 110.875 center center gothic 5 black _ _ 2便
+label 244 110.875 center center gothic 5 black _ _ 3便
+label 252 110.875 center center gothic 5 black _ _ 合計
+label  36 138.375 center center gothic 5 black _ _ 1便
+label  44 138.375 center center gothic 5 black _ _ 2便
+label  52 138.375 center center gothic 5 black _ _ 3便
+label  60 138.375 center center gothic 5 black _ _ 合計
+label  68 138.375 center center gothic 5 black _ _ 1便
+label  76 138.375 center center gothic 5 black _ _ 2便
+label  84 138.375 center center gothic 5 black _ _ 3便
+label  92 138.375 center center gothic 5 black _ _ 合計
+label 100 138.375 center center gothic 5 black _ _ 1便
+label 108 138.375 center center gothic 5 black _ _ 2便
+label 116 138.375 center center gothic 5 black _ _ 3便
+label 124 138.375 center center gothic 5 black _ _ 合計
+label 132 138.375 center center gothic 5 black _ _ 1便
+label 140 138.375 center center gothic 5 black _ _ 2便
+label 148 138.375 center center gothic 5 black _ _ 3便
+label 156 138.375 center center gothic 5 black _ _ 合計
+label 164 138.375 center center gothic 5 black _ _ 1便
+label 172 138.375 center center gothic 5 black _ _ 2便
+label 180 138.375 center center gothic 5 black _ _ 3便
+label 188 138.375 center center gothic 5 black _ _ 合計
+label 196 138.375 center center gothic 5 black _ _ 1便
+label 204 138.375 center center gothic 5 black _ _ 2便
+label 212 138.375 center center gothic 5 black _ _ 3便
+label 220 138.375 center center gothic 5 black _ _ 合計
+label 228 138.375 center center gothic 5 black _ _ 1便
+label 236 138.375 center center gothic 5 black _ _ 2便
+label 244 138.375 center center gothic 5 black _ _ 3便
+label 252 138.375 center center gothic 5 black _ _ 合計
+label  36 165.875 center center gothic 5 black _ _ 1便
+label  44 165.875 center center gothic 5 black _ _ 2便
+label  52 165.875 center center gothic 5 black _ _ 3便
+label  60 165.875 center center gothic 5 black _ _ 合計
+label  68 165.875 center center gothic 5 black _ _ 1便
+label  76 165.875 center center gothic 5 black _ _ 2便
+label  84 165.875 center center gothic 5 black _ _ 3便
+label  92 165.875 center center gothic 5 black _ _ 合計
+label 100 165.875 center center gothic 5 black _ _ 1便
+label 108 165.875 center center gothic 5 black _ _ 2便
+label 116 165.875 center center gothic 5 black _ _ 3便
+label 124 165.875 center center gothic 5 black _ _ 合計
+label 132 165.875 center center gothic 5 black _ _ 1便
+label 140 165.875 center center gothic 5 black _ _ 2便
+label 148 165.875 center center gothic 5 black _ _ 3便
+label 156 165.875 center center gothic 5 black _ _ 合計
+label 164 165.875 center center gothic 5 black _ _ 1便
+label 172 165.875 center center gothic 5 black _ _ 2便
+label 180 165.875 center center gothic 5 black _ _ 3便
+label 188 165.875 center center gothic 5 black _ _ 合計
+label 196 165.875 center center gothic 5 black _ _ 1便
+label 204 165.875 center center gothic 5 black _ _ 2便
+label 212 165.875 center center gothic 5 black _ _ 3便
+label 220 165.875 center center gothic 5 black _ _ 合計
+label 228 165.875 center center gothic 5 black _ _ 1便
+label 236 165.875 center center gothic 5 black _ _ 2便
+label 244 165.875 center center gothic 5 black _ _ 3便
+label 252 165.875 center center gothic 5 black _ _ 合計
+# 右
+label 273   24.375 center center gothic 5 black _ _ 総合計
+label 262.5 27.125 center center gothic 5 black _ _ 1便
+label 269.5 27.125 center center gothic 5 black _ _ 2便
+label 276.5 27.125 center center gothic 5 black _ _ 3便
+label 283.5 27.125 center center gothic 5 black _ _ 合計
+label 262.5 55.875 center center gothic 5 black _ _ 1便
+label 269.5 55.875 center center gothic 5 black _ _ 2便
+label 276.5 55.875 center center gothic 5 black _ _ 3便
+label 283.5 55.875 center center gothic 5 black _ _ 合計
+label 262.5 83.375 center center gothic 5 black _ _ 1便
+label 269.5 83.375 center center gothic 5 black _ _ 2便
+label 276.5 83.375 center center gothic 5 black _ _ 3便
+label 283.5 83.375 center center gothic 5 black _ _ 合計
+label 262.5 110.875 center center gothic 5 black _ _ 1便
+label 269.5 110.875 center center gothic 5 black _ _ 2便
+label 276.5 110.875 center center gothic 5 black _ _ 3便
+label 283.5 110.875 center center gothic 5 black _ _ 合計
+label 262.5 138.375 center center gothic 5 black _ _ 1便
+label 269.5 138.375 center center gothic 5 black _ _ 2便
+label 276.5 138.375 center center gothic 5 black _ _ 3便
+label 283.5 138.375 center center gothic 5 black _ _ 合計
+label 262.5 165.875 center center gothic 5 black _ _ 1便
+label 269.5 165.875 center center gothic 5 black _ _ 2便
+label 276.5 165.875 center center gothic 5 black _ _ 3便
+label 283.5 165.875 center center gothic 5 black _ _ 合計
+
+############### 値
+# %1 : x    40       + 8n (n=4x7)
+#          266       + 7n 
+# %2 : y    26.75         + 2.5n (n=8)
+#           55.75 + 27.5w + 2.5n
+# %3 : 値
+###VALUE###
+label %1 %2 right center gothic 5 black _ _ %3
+###VALUE###
+
+############### 備考
+#label 30 188.5 left top gothic 7 black _ _ ※客数、機会ロス数、機会ロス高、購入率、販売数は1便:00:00～07:59、2便08:00～15:59、3便16:00～23:59として算出
+#label 30 191   left top gothic 7 black _ _ ※納品数、廃棄数はFOCUSの便別販売動向から抽
+#label 30 193.5 left top gothic 7 black _ _ ※機会ロス数はクラス全商品の欠品と非採用基本商品から算出
+label 30 188.5 left top gothic 7 black _ _ ※合計：個店の1便開始時刻～3便終了時刻にて集計
+label 30 191   left top gothic 7 black _ _ ※機会ロス数・廃棄数の塗りつぶし色変更ルール
+label 33 193.5 left top gothic 7 black _ _ 日毎傾向欄は、表示期間における便毎の上位3位を変更
+label 33 196   left top gothic 7 black _ _ 曜日傾向（合計）欄は、7曜日における便毎の上位3位を変更
+label 33 198.5 left top gothic 7 black _ _ 週別傾向（合計）欄は、表示対象週における便毎の上位1位を変更
+

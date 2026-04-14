@@ -1,0 +1,353 @@
+rectxyfill 10 6 30 21 153 204 255
+linesegment 10 6 90 6 1 black _ _
+linesegment 10 11 90 11 1 black _ _
+linesegment 10 16 90 16 1 black _ _
+linesegment 10 21 90 21 1 black _ _
+linesegment 10 6 10 21 1 black _ _
+linesegment 30 6 30 21 1 black _ _
+linesegment 90 6 90 21 1 black _ _
+label 3 4 left center gothic 6 black _ _ チェーン外秘
+label 100 16 left bottom gothic 18 0 0 0 カレンダーツール
+label 20 8.5 center center gothic 9 0 0 0 期間
+label 20 13.5 center center gothic 9 0 0 0 カテゴリ
+label 20 18.5 center center gothic 9 0 0 0 組織
+label 60 8.5 center center gothic 9 0 0 0 ###KIKAN###
+label 60 13.5 center center gothic 9 0 0 0 ###CLASSNAME###
+label 60 18.5 center center gothic 9 0 0 0 ###TEN###
+rectxyfill 15 24 25 48 153 204 255
+rectxystroke 15 24 25 48 1 black _ _
+label 20 31 center bottom gothic 10 0 0 0 曜
+label 20 35 center bottom gothic 10 0 0 0 日
+label 20 39 center bottom gothic 10 0 0 0 傾
+label 20 43 center bottom gothic 10 0 0 0 向
+rectxyfill 15 54 25 182 153 204 255
+rectxystroke 15 54 25 182 1 black _ _
+label 20 113 center bottom gothic 10 0 0 0 日
+label 20 117 center bottom gothic 10 0 0 0 別
+label 20 121 center bottom gothic 10 0 0 0 傾
+label 20 125 center bottom gothic 10 0 0 0 向
+###PINK3###
+%5ectxyfill %1 %3 %2 %4 255 0 0 _ _
+###PINK3###
+###BLUE3###
+%5ectxyfill %1 %3 %2 %4 0 255 255 _ _
+###BLUE3###
+rectxyfill 25 24 45 28 255 204 153
+rectxyfill 45 24 74 28 255 204 153
+rectxyfill 74 24 103 28 255 204 153
+rectxyfill 103 24 132 28 255 204 153
+rectxyfill 132 24 161 28 255 204 153
+rectxyfill 161 24 190 28 153 204 255
+rectxyfill 190 24 219 28 255 153 204
+rectxyfill 219 24 248 28 255 204 153
+rectxyfill 25 24 45 48 255 204 153
+linesegment 25 24 248 24 1 black _ _
+linesegment 25 28 248 28 1 black _ _
+linesegment 25 32 248 32 0.5 black _ _
+linesegment 25 36 248 36 0.5 black _ _
+linesegment 25 40 248 40 0.5 black _ _
+linesegment 25 44 248 44 0.5 black _ _
+linesegment 25 48 248 48 1 black _ _
+linesegment 25 24 25 48 1 black _ _
+linesegment 45 24 45 48 1 black _ _
+linesegment 74 24 74 48 1 black _ _
+linesegment 103 24 103 48 1 black _ _
+linesegment 132 24 132 48 1 black _ _
+linesegment 161 24 161 48 1 black _ _
+linesegment 190 24 190 48 1 black _ _
+linesegment 219 24 219 48 1 black _ _
+linesegment 248 24 248 48 1 black _ _
+label 25.5 27.1 left bottom gothic 9 0 0 0 　
+label 25.5 31.1 left bottom gothic 9 0 0 0 客数
+label 25.5 35.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 39.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 43.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 47.1 left bottom gothic 9 0 0 0 逸失値入高
+label 59.5 27.1 center bottom gothic 9 0 0 0 火
+label 88.5 27.1 center bottom gothic 9 0 0 0 水
+label 117.5 27.1 center bottom gothic 9 0 0 0 木
+label 146.5 27.1 center bottom gothic 9 0 0 0 金
+label 175.5 27.1 center bottom gothic 9 0 0 0 土
+label 204.5 27.1 center bottom gothic 9 0 0 0 日
+label 233.5 27.1 center bottom gothic 9 0 0 0 月
+rectxyfill 25 54 45 58 204 255 204
+rectxyfill 45 54 74 58 204 255 204
+rectxyfill 74 54 103 58 204 255 204
+rectxyfill 103 54 132 58 204 255 204
+rectxyfill 132 54 161 58 204 255 204
+rectxyfill 161 54 190 58 153 204 255
+rectxyfill 190 54 219 58 255 153 204
+rectxyfill 219 54 248 58 204 255 204
+rectxyfill 25 54 45 78 204 255 204
+linesegment 25 54 248 54 1 black _ _
+linesegment 25 58 248 58 1 black _ _
+linesegment 25 62 248 62 0.5 black _ _
+linesegment 25 66 248 66 0.5 black _ _
+linesegment 25 70 248 70 0.5 black _ _
+linesegment 25 74 248 74 0.5 black _ _
+linesegment 25 78 248 78 1 black _ _
+linesegment 25 54 25 78 1 black _ _
+linesegment 45 54 45 78 1 black _ _
+linesegment 74 54 74 78 1 black _ _
+linesegment 103 54 103 78 1 black _ _
+linesegment 132 54 132 78 1 black _ _
+linesegment 161 54 161 78 1 black _ _
+linesegment 190 54 190 78 1 black _ _
+linesegment 219 54 219 78 1 black _ _
+linesegment 248 54 248 78 1 black _ _
+label 25.5 57.1 left bottom gothic 9 0 0 0 　
+label 25.5 61.1 left bottom gothic 9 0 0 0 客数
+label 25.5 65.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 69.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 73.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 77.1 left bottom gothic 9 0 0 0 逸失値入高
+rectxyfill 25 80 45 84 204 255 204
+rectxyfill 45 80 74 84 204 255 204
+rectxyfill 74 80 103 84 204 255 204
+rectxyfill 103 80 132 84 204 255 204
+rectxyfill 132 80 161 84 204 255 204
+rectxyfill 161 80 190 84 153 204 255
+rectxyfill 190 80 219 84 255 153 204
+rectxyfill 219 80 248 84 204 255 204
+rectxyfill 25 80 45 104 204 255 204
+linesegment 25 80 248 80 1 black _ _
+linesegment 25 84 248 84 1 black _ _
+linesegment 25 88 248 88 0.5 black _ _
+linesegment 25 92 248 92 0.5 black _ _
+linesegment 25 96 248 96 0.5 black _ _
+linesegment 25 100 248 100 0.5 black _ _
+linesegment 25 104 248 104 1 black _ _
+linesegment 25 80 25 104 1 black _ _
+linesegment 45 80 45 104 1 black _ _
+linesegment 74 80 74 104 1 black _ _
+linesegment 103 80 103 104 1 black _ _
+linesegment 132 80 132 104 1 black _ _
+linesegment 161 80 161 104 1 black _ _
+linesegment 190 80 190 104 1 black _ _
+linesegment 219 80 219 104 1 black _ _
+linesegment 248 80 248 104 1 black _ _
+label 25.5 83.1 left bottom gothic 9 0 0 0 　
+label 25.5 87.1 left bottom gothic 9 0 0 0 客数
+label 25.5 91.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 95.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 99.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 103.1 left bottom gothic 9 0 0 0 逸失値入高
+rectxyfill 25 106 45 110 204 255 204
+rectxyfill 45 106 74 110 204 255 204
+rectxyfill 74 106 103 110 204 255 204
+rectxyfill 103 106 132 110 204 255 204
+rectxyfill 132 106 161 110 204 255 204
+rectxyfill 161 106 190 110 153 204 255
+rectxyfill 190 106 219 110 255 153 204
+rectxyfill 219 106 248 110 204 255 204
+rectxyfill 25 106 45 130 204 255 204
+linesegment 25 106 248 106 1 black _ _
+linesegment 25 110 248 110 1 black _ _
+linesegment 25 114 248 114 0.5 black _ _
+linesegment 25 118 248 118 0.5 black _ _
+linesegment 25 122 248 122 0.5 black _ _
+linesegment 25 126 248 126 0.5 black _ _
+linesegment 25 130 248 130 1 black _ _
+linesegment 25 106 25 130 1 black _ _
+linesegment 45 106 45 130 1 black _ _
+linesegment 74 106 74 130 1 black _ _
+linesegment 103 106 103 130 1 black _ _
+linesegment 132 106 132 130 1 black _ _
+linesegment 161 106 161 130 1 black _ _
+linesegment 190 106 190 130 1 black _ _
+linesegment 219 106 219 130 1 black _ _
+linesegment 248 106 248 130 1 black _ _
+label 25.5 109.1 left bottom gothic 9 0 0 0 　
+label 25.5 113.1 left bottom gothic 9 0 0 0 客数
+label 25.5 117.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 121.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 125.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 129.1 left bottom gothic 9 0 0 0 逸失値入高
+rectxyfill 25 132 45 136 204 255 204
+rectxyfill 45 132 74 136 204 255 204
+rectxyfill 74 132 103 136 204 255 204
+rectxyfill 103 132 132 136 204 255 204
+rectxyfill 132 132 161 136 204 255 204
+rectxyfill 161 132 190 136 153 204 255
+rectxyfill 190 132 219 136 255 153 204
+rectxyfill 219 132 248 136 204 255 204
+rectxyfill 25 132 45 156 204 255 204
+linesegment 25 132 248 132 1 black _ _
+linesegment 25 136 248 136 1 black _ _
+linesegment 25 140 248 140 0.5 black _ _
+linesegment 25 144 248 144 0.5 black _ _
+linesegment 25 148 248 148 0.5 black _ _
+linesegment 25 152 248 152 0.5 black _ _
+linesegment 25 156 248 156 1 black _ _
+linesegment 25 132 25 156 1 black _ _
+linesegment 45 132 45 156 1 black _ _
+linesegment 74 132 74 156 1 black _ _
+linesegment 103 132 103 156 1 black _ _
+linesegment 132 132 132 156 1 black _ _
+linesegment 161 132 161 156 1 black _ _
+linesegment 190 132 190 156 1 black _ _
+linesegment 219 132 219 156 1 black _ _
+linesegment 248 132 248 156 1 black _ _
+label 25.5 135.1 left bottom gothic 9 0 0 0 　
+label 25.5 139.1 left bottom gothic 9 0 0 0 客数
+label 25.5 143.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 147.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 151.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 155.1 left bottom gothic 9 0 0 0 逸失値入高
+rectxyfill 25 158 45 162 204 255 204
+rectxyfill 45 158 74 162 204 255 204
+rectxyfill 74 158 103 162 204 255 204
+rectxyfill 103 158 132 162 204 255 204
+rectxyfill 132 158 161 162 204 255 204
+rectxyfill 161 158 190 162 153 204 255
+rectxyfill 190 158 219 162 255 153 204
+rectxyfill 219 158 248 162 204 255 204
+rectxyfill 25 158 45 182 204 255 204
+linesegment 25 158 248 158 1 black _ _
+linesegment 25 162 248 162 1 black _ _
+linesegment 25 166 248 166 0.5 black _ _
+linesegment 25 170 248 170 0.5 black _ _
+linesegment 25 174 248 174 0.5 black _ _
+linesegment 25 178 248 178 0.5 black _ _
+linesegment 25 182 248 182 1 black _ _
+linesegment 25 158 25 182 1 black _ _
+linesegment 45 158 45 182 1 black _ _
+linesegment 74 158 74 182 1 black _ _
+linesegment 103 158 103 182 1 black _ _
+linesegment 132 158 132 182 1 black _ _
+linesegment 161 158 161 182 1 black _ _
+linesegment 190 158 190 182 1 black _ _
+linesegment 219 158 219 182 1 black _ _
+linesegment 248 158 248 182 1 black _ _
+label 25.5 161.1 left bottom gothic 9 0 0 0 　
+label 25.5 165.1 left bottom gothic 9 0 0 0 客数
+label 25.5 169.1 left bottom gothic 9 0 0 0 機会ロス数
+label 25.5 173.1 left bottom gothic 9 0 0 0 機会ロス高
+label 25.5 177.1 left bottom gothic 9 0 0 0 廃棄数
+label 25.5 181.1 left bottom gothic 9 0 0 0 逸失値入高
+###DAY_HEAD###
+label 59.5 57.1 center bottom gothic 9 0 0 0   %1_火 
+label 88.5 57.1 center bottom gothic 9 0 0 0   %2_水 
+label 117.5 57.1 center bottom gothic 9 0 0 0  %3_木 
+label 146.5 57.1 center bottom gothic 9 0 0 0  %4_金 
+label 175.5 57.1 center bottom gothic 9 0 0 0  %5_土 
+label 204.5 57.1 center bottom gothic 9 0 0 0  %6_日 
+label 233.5 57.1 center bottom gothic 9 0 0 0  %7_月 
+label 59.5 83.1 center bottom gothic 9 0 0 0   %8_火 
+label 88.5 83.1 center bottom gothic 9 0 0 0   %9_水 
+label 117.5 83.1 center bottom gothic 9 0 0 0  %10_木
+label 146.5 83.1 center bottom gothic 9 0 0 0  %11_金
+label 175.5 83.1 center bottom gothic 9 0 0 0  %12_土
+label 204.5 83.1 center bottom gothic 9 0 0 0  %13_日
+label 233.5 83.1 center bottom gothic 9 0 0 0  %14_月
+label 59.5 109.1 center bottom gothic 9 0 0 0  %15_火
+label 88.5 109.1 center bottom gothic 9 0 0 0  %16_水
+label 117.5 109.1 center bottom gothic 9 0 0 0 %17_木
+label 146.5 109.1 center bottom gothic 9 0 0 0 %18_金
+label 175.5 109.1 center bottom gothic 9 0 0 0 %19_土
+label 204.5 109.1 center bottom gothic 9 0 0 0 %20_日
+label 233.5 109.1 center bottom gothic 9 0 0 0 %21_月
+label 59.5 135.1 center bottom gothic 9 0 0 0  %22_火
+label 88.5 135.1 center bottom gothic 9 0 0 0  %23_水
+label 117.5 135.1 center bottom gothic 9 0 0 0 %24_木
+label 146.5 135.1 center bottom gothic 9 0 0 0 %25_金
+label 175.5 135.1 center bottom gothic 9 0 0 0 %26_土
+label 204.5 135.1 center bottom gothic 9 0 0 0 %27_日
+label 233.5 135.1 center bottom gothic 9 0 0 0 %28_月
+%36label 59.5 161.1 center bottom gothic 9 0 0 0  %29_火
+%36label 88.5 161.1 center bottom gothic 9 0 0 0  %30_水
+%36label 117.5 161.1 center bottom gothic 9 0 0 0 %31_木
+%36label 146.5 161.1 center bottom gothic 9 0 0 0 %32_金
+%36label 175.5 161.1 center bottom gothic 9 0 0 0 %33_土
+%36label 204.5 161.1 center bottom gothic 9 0 0 0 %34_日
+%36label 233.5 161.1 center bottom gothic 9 0 0 0 %35_月
+###DAY_HEAD###
+rectxyfill 250 20 282 24 160 160 244
+rectxyfill 250 24 282 48 255 255 153
+rectxyfill 250 24 282 28 255 204 153
+rectxystroke 250 20 282 24 1 black _ _
+label 266 23.1 center bottom gothic 9 0 0 0 月度傾向(合計)
+linesegment 250 24 282 24 1 black _ _
+linesegment 250 28 282 28 1 black _ _
+linesegment 250 32 282 32 0.5 black _ _
+linesegment 250 36 282 36 0.5 black _ _
+linesegment 250 40 282 40 0.5 black _ _
+linesegment 250 44 282 44 0.5 black _ _
+linesegment 250 48 282 48 1 black _ _
+linesegment 250 24 250 48 1 black _ _
+linesegment 282 24 282 48 1 black _ _
+label 265.5 27.1 center bottom gothic 9 0 0 0 総合計
+label 281.5 31.1 right bottom gothic 9 0 0 0 　
+label 281.5 35.1 right bottom gothic 9 0 0 0 　
+label 281.5 39.1 right bottom gothic 9 0 0 0 　
+label 281.5 43.1 right bottom gothic 9 0 0 0 　
+label 281.5 47.1 right bottom gothic 9 0 0 0 　
+rectxyfill 250 50 282 54 160 160 244
+rectxyfill 250 54 282 58 255 204 153
+rectxystroke 250 50 282 54 1 black _ _
+linesegment 250 54 282 54 1 black _ _
+linesegment 250 58 282 58 1 black _ _
+linesegment 250 62 282 62 0.5 black _ _
+linesegment 250 66 282 66 0.5 black _ _
+linesegment 250 70 282 70 0.5 black _ _
+linesegment 250 74 282 74 0.5 black _ _
+linesegment 250 78 282 78 1 black _ _
+linesegment 250 54 250 78 1 black _ _
+linesegment 282 54 282 78 1 black _ _
+label 266 53 center bottom gothic 9 0 0 0 週別傾向(合計)
+rectxyfill 250 80 282 84 255 204 153
+linesegment 250 80 282 80 1 black _ _
+linesegment 250 84 282 84 1 black _ _
+linesegment 250 88 282 88 0.5 black _ _
+linesegment 250 92 282 92 0.5 black _ _
+linesegment 250 96 282 96 0.5 black _ _
+linesegment 250 100 282 100 0.5 black _ _
+linesegment 250 104 282 104 1 black _ _
+linesegment 250 80 250 104 1 black _ _
+linesegment 282 80 282 104 1 black _ _
+rectxyfill 250 106 282 110 255 204 153
+linesegment 250 106 282 106 1 black _ _
+linesegment 250 110 282 110 1 black _ _
+linesegment 250 114 282 114 0.5 black _ _
+linesegment 250 118 282 118 0.5 black _ _
+linesegment 250 122 282 122 0.5 black _ _
+linesegment 250 126 282 126 0.5 black _ _
+linesegment 250 130 282 130 1 black _ _
+linesegment 250 106 250 130 1 black _ _
+linesegment 282 106 282 130 1 black _ _
+rectxyfill 250 132 282 136 255 204 153
+linesegment 250 132 282 132 1 black _ _
+linesegment 250 136 282 136 1 black _ _
+linesegment 250 140 282 140 0.5 black _ _
+linesegment 250 144 282 144 0.5 black _ _
+linesegment 250 148 282 148 0.5 black _ _
+linesegment 250 152 282 152 0.5 black _ _
+linesegment 250 156 282 156 1 black _ _
+linesegment 250 132 250 156 1 black _ _
+linesegment 282 132 282 156 1 black _ _
+rectxyfill 250 158 282 162 255 204 153
+linesegment 250 158 282 158 1 black _ _
+linesegment 250 162 282 162 1 black _ _
+linesegment 250 166 282 166 0.5 black _ _
+linesegment 250 170 282 170 0.5 black _ _
+linesegment 250 174 282 174 0.5 black _ _
+linesegment 250 178 282 178 0.5 black _ _
+linesegment 250 182 282 182 1 black _ _
+linesegment 250 158 250 182 1 black _ _
+linesegment 282 158 282 182 1 black _ _
+###WEEK_HEAD###
+label 266 57.1 center bottom gothic 9 0 0 0  %1_日週
+label 266 83.1 center bottom gothic 9 0 0 0  %2_日週
+label 266 109.1 center bottom gothic 9 0 0 0 %3_日週
+label 266 135.1 center bottom gothic 9 0 0 0 %4_日週
+%6label 266 161.1 center bottom gothic 9 0 0 0 %5_日週
+###WEEK_HEAD###
+label 15 186 left bottom gothic 7 0 0 0 ※表示している数値は、個店の1便開始時刻～3便終了時刻にて集計
+label 15 189 left bottom gothic 7 0 0 0 ※機会ロス数(赤)_・廃棄数(青)の塗りつぶし色変更ルール
+label 15 192 left bottom gothic 7 0 0 0 　日別傾向欄は、表示期間における便集計の上位3位を変更
+label 15 195 left bottom gothic 7 0 0 0 　曜日傾向_(合計)_欄は、7曜日における便集計の上位3位を変更
+label 15 198 left bottom gothic 7 0 0 0 　週別傾向_(合計)_欄は、表示対象週における便集計の上位1位を変更
+label 15 201 left bottom gothic 7 0 0 0 ※上記のルールが同一の欄に存在する場合、両方の色を表示
+###VALUE###
+label %1 %2 right bottom gothic 8.5 %4 %5 %6 %3
+###VALUE###

@@ -1,0 +1,524 @@
+# 機会ロス・単品機会ロス分析
+
+############### ヘッダ
+# 左上
+rectxyfill 10 6 30 21 153 204 255
+linesegment  10   6  90   6 1
+linesegment  10  11  90  11 1
+linesegment  10  16  90  16 1
+linesegment  10  21  90  21 1
+linesegment  10   6  10  21 1
+linesegment  30   6  30  21 1
+linesegment  90   6  90  21 1 
+label  20   8.5 center center gothic  9 black _ _ 期間
+label  20  13.5 center center gothic  9 black _ _ カテゴリ
+label  20  18.5 center center gothic  9 black _ _ 組織
+label  60   8.5 center center gothic  9 black _ _ ###KIKAN###
+label  60  13.5 center center gothic  9 black _ _ ###CLASSNAME###
+label  60  18.5 center center gothic  9 black _ _ ###TEN###
+label   3   4   left   center gothic  6 black _ _ チェーン外秘
+# 中央
+label 100  13.5 left   center gothic 18 black _ _ 単品機会ロス分析
+# 右上
+#label 291   4   right  center gothic  6 black _ _ Powered_by_SLiM-PJT
+# 右下
+label 291 207   right  bottom gothic  6 black _ _ (C)_ローソン_2009
+
+label 33 201   left top gothic 6 black _ _ 各項目の率表示（％）：小数点第2位で四捨五入
+label 33 203.2 left top gothic 6 black _ _ 基本商品：システムで自動計算されるもの（店売筋設定は含まない）
+
+####################### 固定部分-3					
+# 上段グラフ					
+rectxystroke	4	23	74	34.7	0.5
+rectxystroke	4	35	74	127	0.5
+rectxystroke	3.7	22.7	74.3	127.3	0.5
+rectxystroke	60	116	73	123	0.2
+rectxyfill	61	117	62	118	160 160 224
+rectxyfill	61	119	62	120	208 208 144
+rectxyfill	61	121	62	122	224 144 144
+label	62.5	117.5	left center gothic 4 black _ _ 合計/販売数		
+label	62.5	119.5	left center gothic 4 black _ _ 合計/機会ロス		
+label	62.5	121.5	left center gothic 4 black _ _ 合計/廃棄数		
+# 色塗り					
+rectxyfill	60	140.5	74	148	192 192 192
+rectxyfill	59	154	74	156.5	160 208 208
+# 横線					
+linesegment	4	128	74	128	1
+linesegment	4	130.5	74	130.5	1
+linesegment	4	133	74	133	0.5
+linesegment	4	135.5	74	135.5	0.5
+linesegment	4	138	74	138	0.5
+linesegment	4	140.5	74	140.5	0.5
+linesegment	4	143	74	143	0.5
+linesegment	4	145.5	74	145.5	0.5
+linesegment	4	148	74	148	0.5
+linesegment	4	150.5	74	150.5	0.5
+linesegment	4	153	74	153	1
+linesegment	4	154	74	154	1
+linesegment	4	156.5	74	156.5	1
+linesegment	4	157.5	74	157.5	1
+linesegment	4	160	74	160	1
+linesegment	4	162.5	74	162.5	0.5
+linesegment	4	165	74	165	0.5
+linesegment	4	167.5	74	167.5	0.5
+linesegment	4	170	74	170	0.5
+linesegment	4	172.5	74	172.5	0.5
+linesegment	4	175	74	175	0.5
+linesegment	4	177.5	74	177.5	0.5
+linesegment	4	180	74	180	0.5
+linesegment	4	182.5	74	182.5	0.5
+linesegment	4	185	74	185	0.5
+linesegment	4	187.5	74	187.5	0.5
+linesegment	4	190	74	190	0.5
+linesegment	4	192.5	74	192.5	0.5
+linesegment	4	195	74	195	0.5
+linesegment	4	197.5	74	197.5	1
+linesegment	4	200	74	200	1
+# 縦線/合計					
+linesegment	4	128	4	153	1
+linesegment	24	128	24	153	1
+linesegment	42	128	42	153	0.5
+linesegment	60	128	60	153	0.5
+linesegment	74	128	74	153	1
+# 縦線/SKU客					
+linesegment	4	154	4	156.5	1
+linesegment	24	154	24	156.5	1
+linesegment	39	154	39	156.5	1
+linesegment	59	154	59	156.5	1
+linesegment	74	154	74	156.5	1
+# 縦線/単品					
+linesegment	4	157.5	4	200	1
+linesegment	6 	157.5	6	197.5	0.5
+linesegment 	40.9 	157.5 	40.9 	197.5	0.5
+linesegment 	46.3 	157.5 	46.3	200	1
+linesegment 	51.7 	157.5 	51.7	200 	0.5
+linesegment 	57.1 	157.5 	57.1	200 	0.5
+linesegment 	62.5 	157.5 	62.5	200 	0.5
+#linesegment	64.2	157.5	64.2	200	0.5
+#linesegment	66.2	157.5	66.2	200	0.5
+linesegment	68	157.5 	68 	200 	0.5
+linesegment	74	157.5	74	200	1
+# 文字列					
+label	33	129.25	center center gothic 5 black _ _ トータル		
+label	51	129.25	center center gothic 5 black _ _ 基本商品
+label	67	129.25	center center gothic 5 black _ _ 比率		
+label	23.5	131.75	right  center gothic 5 black _ _ 納品数_合計(個)		
+label	23.5	134.25	right  center gothic 5 black _ _ 販売数_合計(個)		
+label	23.5	136.75	right  center gothic 5 black _ _ 機会ロス数_合計(個)		
+label	23.5	139.25	right  center gothic 5 black _ _ 廃棄数_合計(個)		
+label	23.5	141.75	right  center gothic 5 black _ _ 仕入率		
+label	23.5	144.25	right  center gothic 5 black _ _ 購入率		
+label	23.5	146.75	right  center gothic 5 black _ _ 販売率		
+#label	23.5	149.25	right  center gothic 5 black _ _ 販売高_合計(円)		
+#label	23.5	151.75	right  center gothic 5 black _ _ 荒利高_合計(円)		
+label	23.5	155.25	right  center gothic 5 black _ _ 採用SKU数		
+label	49	155.25	center center gothic 5 black _ _ _客数計【暦日・週】		
+label	5	158.75	center center gothic 4 black _ _ 基		
+label	24.4	158.75	center center gothic 4 black _ _ 商品名		
+label	43.8	158.75 	center center gothic 4 black _ _ 商品力
+label	49.2	158.75 	center center gothic 4 black _ _ 納品数
+label	54.6	158.75 	center center gothic 4 black _ _ 販売数
+label	60	158.75 	center center gothic 4 black _ _ 機会ロス
+label	65.4 	158.75 	center center gothic 4 black _ _ 廃棄数
+#label	60.5	158.75	center center gothic 4 black _ _ 販売高		
+#label	65.9	158.75	center center gothic 4 black _ _ 荒利高		
+label 	70.6 	158.75 	center center gothic 4 black _ _ 販売率
+label	24.1	198.75	center center gothic 4 black _ _ 基本商品
+
+####################### 固定部分-2					
+# 上段グラフ					
+rectxystroke	76	23	146	34.7	0.5
+rectxystroke	76	35	146	127	0.5
+rectxystroke	75.7	22.7	146.3	127.3	0.5
+rectxystroke	132	116	145	123	0.2
+rectxyfill	133	117	134	118	160 160 224
+rectxyfill	133	119	134	120	208 208 144
+rectxyfill	133	121	134	122	224 144 144
+label	134.5	117.5	left center gothic 4 black _ _ 合計/販売数		
+label	134.5	119.5	left center gothic 4 black _ _ 合計/機会ロス		
+label	134.5	121.5	left center gothic 4 black _ _ 合計/廃棄数		
+# 色塗り					
+rectxyfill	132	140.5	146	148	192 192 192
+rectxyfill	131	154	146	156.5	160 208 208
+# 横線					
+linesegment	76	128	146	128	1
+linesegment	76	130.5	146	130.5	1
+linesegment	76	133	146	133	0.5
+linesegment	76	135.5	146	135.5	0.5
+linesegment	76	138	146	138	0.5
+linesegment	76	140.5	146	140.5	0.5
+linesegment	76	143	146	143	0.5
+linesegment	76	145.5	146	145.5	0.5
+linesegment	76	148	146	148	0.5
+linesegment	76	150.5	146	150.5	0.5
+linesegment	76	153	146	153	1
+linesegment	76	154	146	154	1
+linesegment	76	156.5	146	156.5	1
+linesegment	76	157.5	146	157.5	1
+linesegment	76	160	146	160	1
+linesegment	76	162.5	146	162.5	0.5
+linesegment	76	165	146	165	0.5
+linesegment	76	167.5	146	167.5	0.5
+linesegment	76	170	146	170	0.5
+linesegment	76	172.5	146	172.5	0.5
+linesegment	76	175	146	175	0.5
+linesegment	76	177.5	146	177.5	0.5
+linesegment	76	180	146	180	0.5
+linesegment	76	182.5	146	182.5	0.5
+linesegment	76	185	146	185	0.5
+linesegment	76	187.5	146	187.5	0.5
+linesegment	76	190	146	190	0.5
+linesegment	76	192.5	146	192.5	0.5
+linesegment	76	195	146	195	0.5
+linesegment	76	197.5	146	197.5	1
+linesegment	76	200	146	200	1
+# 縦線/合計					
+linesegment	76	128	76	153	1
+linesegment	96	128	96	153	1
+linesegment	114	128	114	153	0.5
+linesegment	132	128	132	153	0.5
+linesegment	146	128	146	153	1
+# 縦線/SKU客					
+linesegment	76	154	76	156.5	1
+linesegment	96	154	96	156.5	1
+linesegment	111	154	111	156.5	1
+linesegment	131	154	131	156.5	1
+linesegment	146	154	146	156.5	1
+# 縦線/単品					
+linesegment	76	157.5	76	200	1
+linesegment	78	157.5	78	197.5	0.2
+linesegment 	112.9 	157.5 	112.9 	197.5 	0.2
+linesegment 	118.3 	157.5 	118.3   200   	1
+linesegment 	123.7 	157.5 	123.7   200 	0.5
+linesegment 	129.1 	157.5 	129.1   200 	0.5
+linesegment 	134.5 	157.5 	134.5   200 	0.5
+#linesegment	129.8	157.5	129.8	200	0.5
+#linesegment	135.2	157.5	135.2	200	0.5
+linesegment	140	157.5	140	200	0.5
+linesegment	146	157.5	146	200	1
+# 文字列					
+label	105	129.25	center center gothic 5 black _ _ トータル		
+label	123	129.25	center center gothic 5 black _ _ 基本商品
+label	139	129.25	center center gothic 5 black _ _ 比率		
+label	95.5	131.75	right  center gothic 5 black _ _ 納品数_合計(個)		
+label	95.5	134.25	right  center gothic 5 black _ _ 販売数_合計(個)		
+label	95.5	136.75	right  center gothic 5 black _ _ 機会ロス数_合計(個)		
+label	95.5	139.25	right  center gothic 5 black _ _ 廃棄数_合計(個)		
+label	95.5	141.75	right  center gothic 5 black _ _ 仕入率		
+label	95.5	144.25	right  center gothic 5 black _ _ 購入率		
+label	95.5	146.75	right  center gothic 5 black _ _ 販売率		
+#label	95.5	149.25	right  center gothic 5 black _ _ 販売高_合計(円)		
+#label	95.5	151.75	right  center gothic 5 black _ _ 荒利高_合計(円)		
+label	95.5	155.25	right  center gothic 5 black _ _ 採用SKU数		
+label	121	155.25	center center gothic 5 black _ _ _客数計【暦日・週】		
+label	77	158.75	center center gothic 4 black _ _ 基		
+label	94.4	158.75	center center gothic 4 black _ _ 商品名		
+label	115.6 	158.75 	center center gothic 4 black _ _ 商品力
+label  	121 	158.75 	center center gothic 4 black _ _ 納品数
+label	126.4	158.75 	center center gothic 4 black _ _ 販売数
+label	131.8	158.75 	center center gothic 4 black _ _ 機会ロス
+label	137.2	158.75 	center center gothic 4 black _ _ 廃棄数
+#label	132.5	158.75	center center gothic 4 black _ _ 販売高		
+#label	137.9	158.75	center center gothic 4 black _ _ 荒利高		
+label	142.6 	158.75 	center center gothic 4 black _ _ 販売率
+label	96.1	198.75	center center gothic 4 black _ _ 基本商品
+
+####################### 固定部分-1					
+# 上段グラフ					
+rectxystroke	148	23	218	34.7	0.5
+rectxystroke	148	35	218	127	0.5
+rectxystroke	147.7	22.7	218.3	127.3	0.5
+rectxystroke	204	116	217	123	0.2
+rectxyfill	205	117	206	118	160 160 224
+rectxyfill	205	119	206	120	208 208 144
+rectxyfill	205	121	206	122	224 144 144
+label	206.5	117.5	left center gothic 4 black _ _ 合計/販売数		
+label	206.5	119.5	left center gothic 4 black _ _ 合計/機会ロス		
+label	206.5	121.5	left center gothic 4 black _ _ 合計/廃棄数		
+# 色塗り					
+rectxyfill	204	140.5	218	148	192 192 192
+rectxyfill	203	154	218	156.5	160 208 208
+# 横線					
+linesegment	148	128	218	128	1
+linesegment	148	130.5	218	130.5	1
+linesegment	148	133	218	133	0.5
+linesegment	148	135.5	218	135.5	0.5
+linesegment	148	138	218	138	0.5
+linesegment	148	140.5	218	140.5	0.5
+linesegment	148	143	218	143	0.5
+linesegment	148	145.5	218	145.5	0.5
+linesegment	148	148	218	148	0.5
+linesegment	148	150.5	218	150.5	0.5
+linesegment	148	153	218	153	1
+linesegment	148	154	218	154	1
+linesegment	148	156.5	218	156.5	1
+linesegment	148	157.5	218	157.5	1
+linesegment	148	160	218	160	1
+linesegment	148	162.5	218	162.5	0.5
+linesegment	148	165	218	165	0.5
+linesegment	148	167.5	218	167.5	0.5
+linesegment	148	170	218	170	0.5
+linesegment	148	172.5	218	172.5	0.5
+linesegment	148	175	218	175	0.5
+linesegment	148	177.5	218	177.5	0.5
+linesegment	148	180	218	180	0.5
+linesegment	148	182.5	218	182.5	0.5
+linesegment	148	185	218	185	0.5
+linesegment	148	187.5	218	187.5	0.5
+linesegment	148	190	218	190	0.5
+linesegment	148	192.5	218	192.5	0.5
+linesegment	148	195	218	195	0.5
+linesegment	148	197.5	218	197.5	1
+linesegment	148	200	218	200	1
+# 縦線/合計					
+linesegment	148	128	148	153	1
+linesegment	168	128	168	153	1
+linesegment	186	128	186	153	0.5
+linesegment	204	128	204	153	0.5
+linesegment	218	128	218	153	1
+# 縦線/SKU客					
+linesegment	148	154	148	156.5	1
+linesegment	168	154	168	156.5	1
+linesegment	183	154	183	156.5	1
+linesegment	203	154	203	156.5	1
+linesegment	218	154	218	156.5	1
+# 縦線/単品					
+linesegment	148	157.5	148	200	1
+linesegment	150	157.5	150	197.5	0.2
+linesegment	184.9 	157.5 	184.9 	197.5	0.2
+linesegment	190.3 	157.5 	190.3   200   	1
+linesegment	195.7 	157.5 	195.7   200	0.5
+linesegment	201.1 	157.5 	201.1   200	0.5
+linesegment	206.5 	157.5 	206.5   200	0.5
+#linesegment	201.8	157.5	201.8	200	0.5
+#linesegment	207.2	157.5	207.2	200	0.5
+linesegment	212	157.5	212	200	0.5
+linesegment	218	157.5	218	200	1
+# 文字列					
+label	177	129.25	center center gothic 5 black _ _ トータル		
+label	195	129.25	center center gothic 5 black _ _ 基本商品
+label	211	129.25	center center gothic 5 black _ _ 比率		
+label	167.5	131.75	right  center gothic 5 black _ _ 納品数_合計(個)		
+label	167.5	134.25	right  center gothic 5 black _ _ 販売数_合計(個)		
+label	167.5	136.75	right  center gothic 5 black _ _ 機会ロス数_合計(個)		
+label	167.5	139.25	right  center gothic 5 black _ _ 廃棄数_合計(個)		
+label	167.5	141.75	right  center gothic 5 black _ _ 仕入率		
+label	167.5	144.25	right  center gothic 5 black _ _ 購入率		
+label	167.5	146.75	right  center gothic 5 black _ _ 販売率		
+#label	167.5	149.25	right  center gothic 5 black _ _ 販売高_合計(円)		
+#label	167.5	151.75	right  center gothic 5 black _ _ 荒利高_合計(円)		
+label	167.5	155.25	right  center gothic 5 black _ _ 採用SKU数		
+label	193	155.25	center center gothic 5 black _ _ _客数計【暦日・週】		
+label	149	158.75	center center gothic 4 black _ _ 基		
+label	166.4	158.75	center center gothic 4 black _ _ 商品名		
+label	187.6	158.75 	center center gothic 4 black _ _ 商品力
+label	193	158.75	center center gothic 4 black _ _ 納品数
+label	198.4	158.75	center center gothic 4 black _ _ 販売数
+label	203.8	158.75	center center gothic 4 black _ _ 機会ロス
+label	209.2	158.75	center center gothic 4 black _ _ 廃棄数
+#label	204.5	158.75	center center gothic 4 black _ _ 販売高		
+#label	209.9	158.75	center center gothic 4 black _ _ 荒利高		
+label 	214.6 	158.75 	center center gothic 4 black _ _ 販売率
+label	168.1	198.75	center center gothic 4 black _ _ 基本商品
+
+####################### 固定部分0					
+# 上段グラフ					
+rectxystroke	220	23	290	34.7	0.5
+rectxystroke	220	35	290	127	0.5
+rectxystroke	219.7	22.7	290.3	127.3	0.5
+rectxystroke	276	116	289	123	0.2
+rectxyfill	277	117	278	118	160 160 224
+rectxyfill	277	119	278	120	208 208 144
+rectxyfill	277	121	278	122	224 144 144
+label	278.5	117.5	left center gothic 4 black _ _ 合計/販売数		
+label	278.5	119.5	left center gothic 4 black _ _ 合計/機会ロス		
+label	278.5	121.5	left center gothic 4 black _ _ 合計/廃棄数		
+# 色塗り					
+rectxyfill	276	140.5	290	148	192 192 192
+rectxyfill	275	154	290	156.5	160 208 208
+# 横線					
+linesegment	220	128	290	128	1
+linesegment	220	130.5	290	130.5	1
+linesegment	220	133	290	133	0.5
+linesegment	220	135.5	290	135.5	0.5
+linesegment	220	138	290	138	0.5
+linesegment	220	140.5	290	140.5	0.5
+linesegment	220	143	290	143	0.5
+linesegment	220	145.5	290	145.5	0.5
+linesegment	220	148	290	148	0.5
+linesegment	220	150.5	290	150.5	0.5
+linesegment	220	153	290	153	1
+linesegment	220	154	290	154	1
+linesegment	220	156.5	290	156.5	1
+linesegment	220	157.5	290	157.5	1
+linesegment	220	160	290	160	1
+linesegment	220	162.5	290	162.5	0.5
+linesegment	220	165	290	165	0.5
+linesegment	220	167.5	290	167.5	0.5
+linesegment	220	170	290	170	0.5
+linesegment	220	172.5	290	172.5	0.5
+linesegment	220	175	290	175	0.5
+linesegment	220	177.5	290	177.5	0.5
+linesegment	220	180	290	180	0.5
+linesegment	220	182.5	290	182.5	0.5
+linesegment	220	185	290	185	0.5
+linesegment	220	187.5	290	187.5	0.5
+linesegment	220	190	290	190	0.5
+linesegment	220	192.5	290	192.5	0.5
+linesegment	220	195	290	195	0.5
+linesegment	220	197.5	290	197.5	1
+linesegment	220	200	290	200	1
+# 縦線/合計					
+linesegment	220	128	220	153	1
+linesegment	240	128	240	153	1
+linesegment	258	128	258	153	0.5
+linesegment	276	128	276	153	0.5
+linesegment	290	128	290	153	1
+# 縦線/SKU客					
+linesegment	220	154	220	156.5	1
+linesegment	240	154	240	156.5	1
+linesegment	255	154	255	156.5	1
+linesegment	275	154	275	156.5	1
+linesegment	290	154	290	156.5	1
+# 縦線/単品					
+linesegment	220	157.5	220	200	1
+linesegment	222	157.5	222	197.5	0.2
+linesegment	256.9	157.5	256.9 	197.5	0.2
+linesegment	262.3	157.5	262.3   200	1
+linesegment	267.7	157.5	267.7   200	0.5
+linesegment	273.1	157.5	273.1   200	0.5
+linesegment	278.5	157.5	278.5   200	0.5
+#linesegment	273.8	157.5	273.8	200	0.5
+#linesegment	279.2	157.5	279.2	200	0.5
+linesegment	284	157.5	284	200	0.5
+linesegment	290	157.5	290	200	1
+# 文字列					
+label	249	129.25	center center gothic 5 black _ _ トータル		
+label	267	129.25	center center gothic 5 black _ _ 基本商品
+label	283	129.25	center center gothic 5 black _ _ 比率		
+label	239.5	131.75	right  center gothic 5 black _ _ 納品数_合計(個)		
+label	239.5	134.25	right  center gothic 5 black _ _ 販売数_合計(個)		
+label	239.5	136.75	right  center gothic 5 black _ _ 機会ロス数_合計(個)		
+label	239.5	139.25	right  center gothic 5 black _ _ 廃棄数_合計(個)		
+label	239.5	141.75	right  center gothic 5 black _ _ 仕入率		
+label	239.5	144.25	right  center gothic 5 black _ _ 購入率		
+label	239.5	146.75	right  center gothic 5 black _ _ 販売率		
+#label	239.5	149.25	right  center gothic 5 black _ _ 販売高_合計(円)		
+#label	239.5	151.75	right  center gothic 5 black _ _ 荒利高_合計(円)		
+label	239.5	155.25	right  center gothic 5 black _ _ 採用SKU数		
+label	265	155.25	center center gothic 5 black _ _ _客数計【暦日・週】		
+label	221	158.75	center center gothic 4 black _ _ 基		
+label	239.4	158.75	center center gothic 4 black _ _ 商品名		
+label	259.6	158.75	center center gothic 4 black _ _ 商品力
+label	265	158.75	center center gothic 4 black _ _ 納品数
+label	270.4	158.75	center center gothic 4 black _ _ 販売数
+label	275.8	158.75	center center gothic 4 black _ _ 機会ロス
+label	281.2	158.75	center center gothic 4 black _ _ 廃棄数
+#label	276.5	158.75	center center gothic 4 black _ _ 販売高		
+#label	281.9	158.75	center center gothic 4 black _ _ 荒利高		
+label	286.6	158.75	center center gothic 4 black _ _ 販売率
+label	240.1	198.75	center center gothic 4 black _ _ 基本商品
+
+############################################# もじはめ系
+# グラフメイン
+# %1  :      x0-0.5        x    x0 to x0 + 34
+# %2  : x0   軸            x0 = 255 - 72n  (n/ 3 to 0 )
+# %3  :      x0+0.5
+# %4  :      (x0+x1)/2
+# %5  : x1   販売数右端
+# %6  :      (x1+x2)/2
+# %7  : x2   機会ロス右端
+# %8  :      (x2+x3)/2
+# %9  : x3   廃棄数右端
+# %10 : y1   グラフ上端    最上段は38にならない
+# %11 : y2   グラフ中央    y 38 to 123  (85)
+# %12 : y3   グラフ下端    最下段は123になる
+# %13 : y4   次の区切り線
+# %14 :      商品名
+# %15 :      商品名フォントサイズ(1-10:5 11-13:4 14-18:3 19-22:2.5
+# %16 :      販売数
+# %17 :      機会ロス数
+# %18 :      廃棄数
+# %19-21 :   販売数のグラフ色
+###GRAPH_MAIN###
+rectxyfill %2 %10 %9 %12 224 144 144
+rectxyfill %2 %10 %7 %12 208 208 144
+rectxyfill %2 %10 %5 %12 %19 %20 %21
+label   %4 %11 center center gothic 4   black _ _ %16
+label   %6 %11 center center gothic 4   black _ _ %17
+label   %8 %11 center center gothic 4   black _ _ %18
+label   %1 %11 right  center gothic %15 black _ _ %14
+linesegment   %2 %13 %3 %13 0.2
+###GRAPH_MAIN###
+linesegment  37 38  37 123 0.2
+linesegment 109 38 109 123 0.2
+linesegment 181 38 181 123 0.2
+linesegment 253 38 253 123 0.2
+linesegment  37 38  73  38 0.2
+linesegment 109 38 145  38 0.2
+linesegment 181 38 217  38 0.2
+linesegment 253 38 289  38 0.2
+linesegment  37 26  37  33 0.2
+linesegment 109 26 109  33 0.2
+linesegment 181 26 181  33 0.2
+linesegment 253 26 253  33 0.2
+linesegment  37 26  73  26 0.2
+linesegment 109 26 145  26 0.2
+linesegment 181 26 217  26 0.2
+linesegment 253 26 289  26 0.2
+
+# グラフ目盛
+# %1 : x  240 to 289  - 72n  (n/ 3 to 0 )
+# %2 : 値
+# %3-5 : 上/26 26.5 25.5 下/38 38.5 37.5
+###GRAPH_MEMORI###
+linesegment %1 %3 %1 %4 0.2
+label %1 %5 center bottom gothic 3.5 black _ _ %2
+###GRAPH_MEMORI###
+
+# グラフの日付
+# %1 : x  255 - 72n  (n/ 3 to 0 )
+# %2 : 値
+###GRAPH_WEEK###
+label %1 125 center center gothic 7 darkred _ _ %2
+###GRAPH_WEEK###
+
+# 中央の合計値
+# %1 : x  257.5 or 275.5 or 289.5 - 72n  (n/ 3 to 0 )
+# %2 : y  129.25                  + 2.5n (n/ 1 to 9 )
+# %3 : 値
+###NAKA###
+label %1 %2 right center gothic 5 black _ _ %3
+###NAKA###
+
+# 中下の採用SKU数と客数
+# %1 : x  247.5 or 282.5 - 72n  (n/ 3 to 0 )
+# %2 : 値
+###NAKASITA###
+label %1 155.25 center center gothic 5 black _ _ %2
+###NAKASITA###
+
+# 下部単品実績/基
+# %1 : x  221    - 72n  (n/ 3 to 0 )
+# %2 : y  158.75 + 2.5n (n/ 1 to 15)
+###SITA_KI###
+label %1 %2 center center gothic 4 black _ _ 基
+###SITA_KI###
+
+# 下部単品実績/商品名
+# %1 : x  223    - 72n  (n/ 3 to 0 )
+# %2 : y  158.75 + 2.5n (n/ 1 to 15)
+# %3 : 値
+# %4 : フォントサイズ
+###SITA_NAME###
+label %1 %2 left   center gothic %4 black _ _ %3
+###SITA_NAME###
+
+# 下部単品実績/他
+# %1 : x  247    - 72n  + 5.4m (n/ 3 to 0  m/ 1 to 8)
+# %2 : y  158.75 + 2.5n        (n/ 1 to 16)
+# %3 : 値
+###SITA_VALUE###
+label %1 %2 right  center gothic 4.5 black _ _ %3
+###SITA_VALUE###
+

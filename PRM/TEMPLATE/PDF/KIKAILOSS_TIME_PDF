@@ -1,0 +1,973 @@
+
+############### グラフ内
+# 機会ロス数
+# %1  : x        19 +  5n + 143n2
+# %2  : x+5
+# %3  : y    40～55 + 24n
+# %4  : y        55 + 24n
+# 購入率
+# %5  : x      21.5 +  5n + 143n2
+# %6  : x+5
+# %7  : y    40～55 + 24n
+# %8  : y        55 + 24n
+# 客数 (xは購入率と同一)
+# %9  : y    40～55 + 24n
+# %10 : y        55 + 24n
+# 機会ロス数数値
+# %10 : x      21.5 +  5n + 143n2
+# %11 : y 38(40)～53 + 24n + 0.5
+# %12 : 機会ロス数数値
+
+###GRAPH_24_6###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_6###
+rectxyfill 19 0 282 184 255 255 255
+
+###GRAPH_24_5###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_5###
+rectxyfill 19 0 282 160 255 255 255
+
+###GRAPH_24_4###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_4###
+rectxyfill 19 0 282 136 255 255 255
+
+###GRAPH_24_3###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_3###
+rectxyfill 19 0 282 112 255 255 255
+
+###GRAPH_24_2###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_2###
+rectxyfill 19 0 282 88 255 255 255
+
+###GRAPH_24_1###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_1###
+rectxyfill 19 0 282 64 255 255 255
+
+###GRAPH_24_0###
+rectxyfill %1 %3 %2 %4 red _ _
+linesegment %5 %7 %6 %8 1 green _ _ 3 3
+linesegment %5 %9 %6 %10 1 darkred _ _
+label %11 %12 center top gothic 5 black _ _ %13
+###GRAPH_24_0###
+rectxyfill 19 0 282 40 255 255 255
+
+############### 土日の色塗り
+rectxyfill  19 130 139 133 153 204 255
+rectxyfill  19 154 139 157 255 153 204
+rectxyfill 162 130 282 133 153 204 255
+rectxyfill 162 154 282 157 255 153 204
+
+# 日付文字
+# %1 : x  79   + 143n
+# %2 : y  35.5 +  24n
+# %3 : 年月日(曜日)
+###GRAPH_DAY###
+label %1 %2 center center gothic 6 black _ _ %3
+###GRAPH_DAY###
+
+############### グラフ軸
+# 左の客数
+# %1 : x          18 +  143n2
+# %2 : x-0.5
+# %3 : x+1
+# %4 : y      40～55 + 24n
+# %5 : 表示数値
+# %6 : left/right
+###GRAPH_JIKU###
+linesegment %1 %4 %3 %4 0.5
+label %2 %4 %6 center gothic 4 black _ _ %5
+###GRAPH_JIKU###
+
+############### ヘッダ
+# 左上
+rectxyfill 10 6 30 21 153 204 255
+linesegment  10   6  90   6 1
+linesegment  10  11  90  11 1
+linesegment  10  16  90  16 1
+linesegment  10  21  90  21 1
+linesegment  10   6  10  21 1
+linesegment  30   6  30  21 1
+linesegment  90   6  90  21 1
+label  20   8.5 center center gothic  9 black _ _ 期間
+label  20  13.5 center center gothic  9 black _ _ カテゴリ
+label  20  18.5 center center gothic  9 black _ _ 組織
+label  60   8.5 center center gothic  9 black _ _ ###KIKAN###
+label  60  13.5 center center gothic  9 black _ _ ###CLASSNAME###
+label  60  18.5 center center gothic  9 black _ _ ###TEN###
+label   3   4   left   center gothic  6 black _ _ チェーン外秘
+# 中央
+label 100  13.5 left   center gothic 18 black _ _ 時間帯別ツール
+# 右上
+#label 291   4   right  center gothic  6 black _ _ Powered_by_SLiM-PJT
+# 右下
+label 291 207   right  bottom gothic  6 black _ _ (C)_ローソン_2009
+# 右
+rectxystroke   257  6   287 21   1
+linesegment   259  8.5 268  8.5 1 darkred _ _
+linesegment   259 13.5 268 13.5 1 green   _ _ 3 3
+rectxyfill 259 17   268 20     red     _ _
+label   270  8.5 left center gothic 9 black _ _ 客数
+label   270 13.5 left center gothic 9 black _ _ 購入率
+label   270 18.5 left center gothic 9 black _ _ 機会ロス数
+
+############### 左グラフ					
+# 枠とヘッダ					
+rectxystroke	7	25	147	202	1
+rectxystroke	6.7	24.7	147.3	202.3	1
+label 77 27 center top gothic 9 black _ _ ###L_KIKAN###
+# グラフ枠					
+rectxystroke	11	34	145	55	1
+rectxystroke	11	58	145	79	1
+rectxystroke	11	82	145	103	1
+rectxystroke	11	106	145	127	1
+rectxystroke	11	130	145	151	1
+rectxystroke	11	154	145	175	1
+rectxystroke	11	178	145	199	1
+# グラフ横線					
+linesegment	11	37	145	37	1
+linesegment	11	61	145	61	1
+linesegment	11	85	145	85	1
+linesegment	11	109	145	109	1
+linesegment	11	133	145	133	1
+linesegment	11	157	145	157	1
+linesegment	11	181	145	181	1
+linesegment	11	40	145	40	1
+linesegment	11	64	145	64	1
+linesegment	11	88	145	88	1
+linesegment	11	112	145	112	1
+linesegment	11	136	145	136	1
+linesegment	11	160	145	160	1
+linesegment	11	184	145	184	1
+# グラフ縦線					
+linesegment	19	34	19	40	1
+linesegment	24	37	24	40	1
+linesegment	29	37	29	40	1
+linesegment	34	37	34	40	1
+linesegment	39	37	39	40	1
+linesegment	44	37	44	40	1
+linesegment	49	37	49	40	1
+linesegment	54	37	54	40	1
+linesegment	59	37	59	40	1
+linesegment	64	37	64	40	1
+linesegment	69	37	69	40	1
+linesegment	74	37	74	40	1
+linesegment	79	37	79	40	1
+linesegment	84	37	84	40	1
+linesegment	89	37	89	40	1
+linesegment	94	37	94	40	1
+linesegment	99	37	99	40	1
+linesegment	104	37	104	40	1
+linesegment	109	37	109	40	1
+linesegment	114	37	114	40	1
+linesegment	119	37	119	40	1
+linesegment	124	37	124	40	1
+linesegment	129	37	129	40	1
+linesegment	134	37	134	40	1
+linesegment	139	34	139	40	1
+linesegment	19	58	19	64	1
+linesegment	24	61	24	64	1
+linesegment	29	61	29	64	1
+linesegment	34	61	34	64	1
+linesegment	39	61	39	64	1
+linesegment	44	61	44	64	1
+linesegment	49	61	49	64	1
+linesegment	54	61	54	64	1
+linesegment	59	61	59	64	1
+linesegment	64	61	64	64	1
+linesegment	69	61	69	64	1
+linesegment	74	61	74	64	1
+linesegment	79	61	79	64	1
+linesegment	84	61	84	64	1
+linesegment	89	61	89	64	1
+linesegment	94	61	94	64	1
+linesegment	99	61	99	64	1
+linesegment	104	61	104	64	1
+linesegment	109	61	109	64	1
+linesegment	114	61	114	64	1
+linesegment	119	61	119	64	1
+linesegment	124	61	124	64	1
+linesegment	129	61	129	64	1
+linesegment	134	61	134	64	1
+linesegment	139	58	139	64	1
+linesegment	19	82	19	88	1
+linesegment	24	85	24	88	1
+linesegment	29	85	29	88	1
+linesegment	34	85	34	88	1
+linesegment	39	85	39	88	1
+linesegment	44	85	44	88	1
+linesegment	49	85	49	88	1
+linesegment	54	85	54	88	1
+linesegment	59	85	59	88	1
+linesegment	64	85	64	88	1
+linesegment	69	85	69	88	1
+linesegment	74	85	74	88	1
+linesegment	79	85	79	88	1
+linesegment	84	85	84	88	1
+linesegment	89	85	89	88	1
+linesegment	94	85	94	88	1
+linesegment	99	85	99	88	1
+linesegment	104	85	104	88	1
+linesegment	109	85	109	88	1
+linesegment	114	85	114	88	1
+linesegment	119	85	119	88	1
+linesegment	124	85	124	88	1
+linesegment	129	85	129	88	1
+linesegment	134	85	134	88	1
+linesegment	139	82	139	88	1
+linesegment	19	106	19	112	1
+linesegment	24	109	24	112	1
+linesegment	29	109	29	112	1
+linesegment	34	109	34	112	1
+linesegment	39	109	39	112	1
+linesegment	44	109	44	112	1
+linesegment	49	109	49	112	1
+linesegment	54	109	54	112	1
+linesegment	59	109	59	112	1
+linesegment	64	109	64	112	1
+linesegment	69	109	69	112	1
+linesegment	74	109	74	112	1
+linesegment	79	109	79	112	1
+linesegment	84	109	84	112	1
+linesegment	89	109	89	112	1
+linesegment	94	109	94	112	1
+linesegment	99	109	99	112	1
+linesegment	104	109	104	112	1
+linesegment	109	109	109	112	1
+linesegment	114	109	114	112	1
+linesegment	119	109	119	112	1
+linesegment	124	109	124	112	1
+linesegment	129	109	129	112	1
+linesegment	134	109	134	112	1
+linesegment	139	106	139	112	1
+linesegment	19	130	19	136	1
+linesegment	24	133	24	136	1
+linesegment	29	133	29	136	1
+linesegment	34	133	34	136	1
+linesegment	39	133	39	136	1
+linesegment	44	133	44	136	1
+linesegment	49	133	49	136	1
+linesegment	54	133	54	136	1
+linesegment	59	133	59	136	1
+linesegment	64	133	64	136	1
+linesegment	69	133	69	136	1
+linesegment	74	133	74	136	1
+linesegment	79	133	79	136	1
+linesegment	84	133	84	136	1
+linesegment	89	133	89	136	1
+linesegment	94	133	94	136	1
+linesegment	99	133	99	136	1
+linesegment	104	133	104	136	1
+linesegment	109	133	109	136	1
+linesegment	114	133	114	136	1
+linesegment	119	133	119	136	1
+linesegment	124	133	124	136	1
+linesegment	129	133	129	136	1
+linesegment	134	133	134	136	1
+linesegment	139	130	139	136	1
+linesegment	19	154	19	160	1
+linesegment	24	157	24	160	1
+linesegment	29	157	29	160	1
+linesegment	34	157	34	160	1
+linesegment	39	157	39	160	1
+linesegment	44	157	44	160	1
+linesegment	49	157	49	160	1
+linesegment	54	157	54	160	1
+linesegment	59	157	59	160	1
+linesegment	64	157	64	160	1
+linesegment	69	157	69	160	1
+linesegment	74	157	74	160	1
+linesegment	79	157	79	160	1
+linesegment	84	157	84	160	1
+linesegment	89	157	89	160	1
+linesegment	94	157	94	160	1
+linesegment	99	157	99	160	1
+linesegment	104	157	104	160	1
+linesegment	109	157	109	160	1
+linesegment	114	157	114	160	1
+linesegment	119	157	119	160	1
+linesegment	124	157	124	160	1
+linesegment	129	157	129	160	1
+linesegment	134	157	134	160	1
+linesegment	139	154	139	160	1
+linesegment	19	178	19	184	1
+linesegment	24	181	24	184	1
+linesegment	29	181	29	184	1
+linesegment	34	181	34	184	1
+linesegment	39	181	39	184	1
+linesegment	44	181	44	184	1
+linesegment	49	181	49	184	1
+linesegment	54	181	54	184	1
+linesegment	59	181	59	184	1
+linesegment	64	181	64	184	1
+linesegment	69	181	69	184	1
+linesegment	74	181	74	184	1
+linesegment	79	181	79	184	1
+linesegment	84	181	84	184	1
+linesegment	89	181	89	184	1
+linesegment	94	181	94	184	1
+linesegment	99	181	99	184	1
+linesegment	104	181	104	184	1
+linesegment	109	181	109	184	1
+linesegment	114	181	114	184	1
+linesegment	119	181	119	184	1
+linesegment	124	181	124	184	1
+linesegment	129	181	129	184	1
+linesegment	134	181	134	184	1
+linesegment	139	178	139	184	1
+# グラフ軸線					
+linesegment	18	41	18	55	0.5
+linesegment	140	41	140	55	0.5
+linesegment	18	65	18	79	0.5
+linesegment	140	65	140	79	0.5
+linesegment	18	89	18	103	0.5
+linesegment	140	89	140	103	0.5
+linesegment	18	113	18	127	0.5
+linesegment	140	113	140	127	0.5
+linesegment	18	137	18	151	0.5
+linesegment	140	137	140	151	0.5
+linesegment	18	161	18	175	0.5
+linesegment	140	161	140	175	0.5
+linesegment	18	185	18	199	0.5
+linesegment	140	185	140	199	0.5
+# グラフ文字					
+label 11 35.5 left center gothic 6 black _ _ 日付
+label 11 38.5 left center gothic 6 black _ _ 時間帯
+label 21.5 38.5 center center gothic 6 black _ _ 0
+label 26.5 38.5 center center gothic 6 black _ _ 1
+label 31.5 38.5 center center gothic 6 black _ _ 2
+label 36.5 38.5 center center gothic 6 black _ _ 3
+label 41.5 38.5 center center gothic 6 black _ _ 4
+label 46.5 38.5 center center gothic 6 black _ _ 5
+label 51.5 38.5 center center gothic 6 black _ _ 6
+label 56.5 38.5 center center gothic 6 black _ _ 7
+label 61.5 38.5 center center gothic 6 black _ _ 8
+label 66.5 38.5 center center gothic 6 black _ _ 9
+label 71.5 38.5 center center gothic 6 black _ _ 10
+label 76.5 38.5 center center gothic 6 black _ _ 11
+label 81.5 38.5 center center gothic 6 black _ _ 12
+label 86.5 38.5 center center gothic 6 black _ _ 13
+label 91.5 38.5 center center gothic 6 black _ _ 14
+label 96.5 38.5 center center gothic 6 black _ _ 15
+label 101.5 38.5 center center gothic 6 black _ _ 16
+label 106.5 38.5 center center gothic 6 black _ _ 17
+label 111.5 38.5 center center gothic 6 black _ _ 18
+label 116.5 38.5 center center gothic 6 black _ _ 19
+label 121.5 38.5 center center gothic 6 black _ _ 20
+label 126.5 38.5 center center gothic 6 black _ _ 21
+label 131.5 38.5 center center gothic 6 black _ _ 22
+label 136.5 38.5 center center gothic 6 black _ _ 23
+label 11 59.5 left center gothic 6 black _ _ 日付
+label 11 62.5 left center gothic 6 black _ _ 時間帯
+label 21.5 62.5 center center gothic 6 black _ _ 0
+label 26.5 62.5 center center gothic 6 black _ _ 1
+label 31.5 62.5 center center gothic 6 black _ _ 2
+label 36.5 62.5 center center gothic 6 black _ _ 3
+label 41.5 62.5 center center gothic 6 black _ _ 4
+label 46.5 62.5 center center gothic 6 black _ _ 5
+label 51.5 62.5 center center gothic 6 black _ _ 6
+label 56.5 62.5 center center gothic 6 black _ _ 7
+label 61.5 62.5 center center gothic 6 black _ _ 8
+label 66.5 62.5 center center gothic 6 black _ _ 9
+label 71.5 62.5 center center gothic 6 black _ _ 10
+label 76.5 62.5 center center gothic 6 black _ _ 11
+label 81.5 62.5 center center gothic 6 black _ _ 12
+label 86.5 62.5 center center gothic 6 black _ _ 13
+label 91.5 62.5 center center gothic 6 black _ _ 14
+label 96.5 62.5 center center gothic 6 black _ _ 15
+label 101.5 62.5 center center gothic 6 black _ _ 16
+label 106.5 62.5 center center gothic 6 black _ _ 17
+label 111.5 62.5 center center gothic 6 black _ _ 18
+label 116.5 62.5 center center gothic 6 black _ _ 19
+label 121.5 62.5 center center gothic 6 black _ _ 20
+label 126.5 62.5 center center gothic 6 black _ _ 21
+label 131.5 62.5 center center gothic 6 black _ _ 22
+label 136.5 62.5 center center gothic 6 black _ _ 23
+label 11 83.5 left center gothic 6 black _ _ 日付
+label 11 86.5 left center gothic 6 black _ _ 時間帯
+label 21.5 86.5 center center gothic 6 black _ _ 0
+label 26.5 86.5 center center gothic 6 black _ _ 1
+label 31.5 86.5 center center gothic 6 black _ _ 2
+label 36.5 86.5 center center gothic 6 black _ _ 3
+label 41.5 86.5 center center gothic 6 black _ _ 4
+label 46.5 86.5 center center gothic 6 black _ _ 5
+label 51.5 86.5 center center gothic 6 black _ _ 6
+label 56.5 86.5 center center gothic 6 black _ _ 7
+label 61.5 86.5 center center gothic 6 black _ _ 8
+label 66.5 86.5 center center gothic 6 black _ _ 9
+label 71.5 86.5 center center gothic 6 black _ _ 10
+label 76.5 86.5 center center gothic 6 black _ _ 11
+label 81.5 86.5 center center gothic 6 black _ _ 12
+label 86.5 86.5 center center gothic 6 black _ _ 13
+label 91.5 86.5 center center gothic 6 black _ _ 14
+label 96.5 86.5 center center gothic 6 black _ _ 15
+label 101.5 86.5 center center gothic 6 black _ _ 16
+label 106.5 86.5 center center gothic 6 black _ _ 17
+label 111.5 86.5 center center gothic 6 black _ _ 18
+label 116.5 86.5 center center gothic 6 black _ _ 19
+label 121.5 86.5 center center gothic 6 black _ _ 20
+label 126.5 86.5 center center gothic 6 black _ _ 21
+label 131.5 86.5 center center gothic 6 black _ _ 22
+label 136.5 86.5 center center gothic 6 black _ _ 23
+label 11 107.5 left center gothic 6 black _ _ 日付
+label 11 110.5 left center gothic 6 black _ _ 時間帯
+label 21.5 110.5 center center gothic 6 black _ _ 0
+label 26.5 110.5 center center gothic 6 black _ _ 1
+label 31.5 110.5 center center gothic 6 black _ _ 2
+label 36.5 110.5 center center gothic 6 black _ _ 3
+label 41.5 110.5 center center gothic 6 black _ _ 4
+label 46.5 110.5 center center gothic 6 black _ _ 5
+label 51.5 110.5 center center gothic 6 black _ _ 6
+label 56.5 110.5 center center gothic 6 black _ _ 7
+label 61.5 110.5 center center gothic 6 black _ _ 8
+label 66.5 110.5 center center gothic 6 black _ _ 9
+label 71.5 110.5 center center gothic 6 black _ _ 10
+label 76.5 110.5 center center gothic 6 black _ _ 11
+label 81.5 110.5 center center gothic 6 black _ _ 12
+label 86.5 110.5 center center gothic 6 black _ _ 13
+label 91.5 110.5 center center gothic 6 black _ _ 14
+label 96.5 110.5 center center gothic 6 black _ _ 15
+label 101.5 110.5 center center gothic 6 black _ _ 16
+label 106.5 110.5 center center gothic 6 black _ _ 17
+label 111.5 110.5 center center gothic 6 black _ _ 18
+label 116.5 110.5 center center gothic 6 black _ _ 19
+label 121.5 110.5 center center gothic 6 black _ _ 20
+label 126.5 110.5 center center gothic 6 black _ _ 21
+label 131.5 110.5 center center gothic 6 black _ _ 22
+label 136.5 110.5 center center gothic 6 black _ _ 23
+label 11 131.5 left center gothic 6 black _ _ 日付
+label 11 134.5 left center gothic 6 black _ _ 時間帯
+label 21.5 134.5 center center gothic 6 black _ _ 0
+label 26.5 134.5 center center gothic 6 black _ _ 1
+label 31.5 134.5 center center gothic 6 black _ _ 2
+label 36.5 134.5 center center gothic 6 black _ _ 3
+label 41.5 134.5 center center gothic 6 black _ _ 4
+label 46.5 134.5 center center gothic 6 black _ _ 5
+label 51.5 134.5 center center gothic 6 black _ _ 6
+label 56.5 134.5 center center gothic 6 black _ _ 7
+label 61.5 134.5 center center gothic 6 black _ _ 8
+label 66.5 134.5 center center gothic 6 black _ _ 9
+label 71.5 134.5 center center gothic 6 black _ _ 10
+label 76.5 134.5 center center gothic 6 black _ _ 11
+label 81.5 134.5 center center gothic 6 black _ _ 12
+label 86.5 134.5 center center gothic 6 black _ _ 13
+label 91.5 134.5 center center gothic 6 black _ _ 14
+label 96.5 134.5 center center gothic 6 black _ _ 15
+label 101.5 134.5 center center gothic 6 black _ _ 16
+label 106.5 134.5 center center gothic 6 black _ _ 17
+label 111.5 134.5 center center gothic 6 black _ _ 18
+label 116.5 134.5 center center gothic 6 black _ _ 19
+label 121.5 134.5 center center gothic 6 black _ _ 20
+label 126.5 134.5 center center gothic 6 black _ _ 21
+label 131.5 134.5 center center gothic 6 black _ _ 22
+label 136.5 134.5 center center gothic 6 black _ _ 23
+label 11 155.5 left center gothic 6 black _ _ 日付
+label 11 158.5 left center gothic 6 black _ _ 時間帯
+label 21.5 158.5 center center gothic 6 black _ _ 0
+label 26.5 158.5 center center gothic 6 black _ _ 1
+label 31.5 158.5 center center gothic 6 black _ _ 2
+label 36.5 158.5 center center gothic 6 black _ _ 3
+label 41.5 158.5 center center gothic 6 black _ _ 4
+label 46.5 158.5 center center gothic 6 black _ _ 5
+label 51.5 158.5 center center gothic 6 black _ _ 6
+label 56.5 158.5 center center gothic 6 black _ _ 7
+label 61.5 158.5 center center gothic 6 black _ _ 8
+label 66.5 158.5 center center gothic 6 black _ _ 9
+label 71.5 158.5 center center gothic 6 black _ _ 10
+label 76.5 158.5 center center gothic 6 black _ _ 11
+label 81.5 158.5 center center gothic 6 black _ _ 12
+label 86.5 158.5 center center gothic 6 black _ _ 13
+label 91.5 158.5 center center gothic 6 black _ _ 14
+label 96.5 158.5 center center gothic 6 black _ _ 15
+label 101.5 158.5 center center gothic 6 black _ _ 16
+label 106.5 158.5 center center gothic 6 black _ _ 17
+label 111.5 158.5 center center gothic 6 black _ _ 18
+label 116.5 158.5 center center gothic 6 black _ _ 19
+label 121.5 158.5 center center gothic 6 black _ _ 20
+label 126.5 158.5 center center gothic 6 black _ _ 21
+label 131.5 158.5 center center gothic 6 black _ _ 22
+label 136.5 158.5 center center gothic 6 black _ _ 23
+label 11 179.5 left center gothic 6 black _ _ 日付
+label 11 182.5 left center gothic 6 black _ _ 時間帯
+label 21.5 182.5 center center gothic 6 black _ _ 0
+label 26.5 182.5 center center gothic 6 black _ _ 1
+label 31.5 182.5 center center gothic 6 black _ _ 2
+label 36.5 182.5 center center gothic 6 black _ _ 3
+label 41.5 182.5 center center gothic 6 black _ _ 4
+label 46.5 182.5 center center gothic 6 black _ _ 5
+label 51.5 182.5 center center gothic 6 black _ _ 6
+label 56.5 182.5 center center gothic 6 black _ _ 7
+label 61.5 182.5 center center gothic 6 black _ _ 8
+label 66.5 182.5 center center gothic 6 black _ _ 9
+label 71.5 182.5 center center gothic 6 black _ _ 10
+label 76.5 182.5 center center gothic 6 black _ _ 11
+label 81.5 182.5 center center gothic 6 black _ _ 12
+label 86.5 182.5 center center gothic 6 black _ _ 13
+label 91.5 182.5 center center gothic 6 black _ _ 14
+label 96.5 182.5 center center gothic 6 black _ _ 15
+label 101.5 182.5 center center gothic 6 black _ _ 16
+label 106.5 182.5 center center gothic 6 black _ _ 17
+label 111.5 182.5 center center gothic 6 black _ _ 18
+label 116.5 182.5 center center gothic 6 black _ _ 19
+label 121.5 182.5 center center gothic 6 black _ _ 20
+label 126.5 182.5 center center gothic 6 black _ _ 21
+label 131.5 182.5 center center gothic 6 black _ _ 22
+label 136.5 182.5 center center gothic 6 black _ _ 23
+
+############### 右グラフ					
+# 枠とヘッダ					
+rectxystroke	150	25	290	202	1
+rectxystroke	149.7	24.7	290.3	202.3	1
+label 220 27 center top gothic 9 black _ _ ###R_KIKAN###
+# グラフ枠					
+rectxystroke	154	34	288	55	1
+rectxystroke	154	58	288	79	1
+rectxystroke	154	82	288	103	1
+rectxystroke	154	106	288	127	1
+rectxystroke	154	130	288	151	1
+rectxystroke	154	154	288	175	1
+rectxystroke	154	178	288	199	1
+# グラフ横線					
+linesegment	154	37	288	37	1
+linesegment	154	61	288	61	1
+linesegment	154	85	288	85	1
+linesegment	154	109	288	109	1
+linesegment	154	133	288	133	1
+linesegment	154	157	288	157	1
+linesegment	154	181	288	181	1
+linesegment	154	40	288	40	1
+linesegment	154	64	288	64	1
+linesegment	154	88	288	88	1
+linesegment	154	112	288	112	1
+linesegment	154	136	288	136	1
+linesegment	154	160	288	160	1
+linesegment	154	184	288	184	1
+# グラフ縦線					
+linesegment	162	34	162	40	1
+linesegment	167	37	167	40	1
+linesegment	172	37	172	40	1
+linesegment	177	37	177	40	1
+linesegment	182	37	182	40	1
+linesegment	187	37	187	40	1
+linesegment	192	37	192	40	1
+linesegment	197	37	197	40	1
+linesegment	202	37	202	40	1
+linesegment	207	37	207	40	1
+linesegment	212	37	212	40	1
+linesegment	217	37	217	40	1
+linesegment	222	37	222	40	1
+linesegment	227	37	227	40	1
+linesegment	232	37	232	40	1
+linesegment	237	37	237	40	1
+linesegment	242	37	242	40	1
+linesegment	247	37	247	40	1
+linesegment	252	37	252	40	1
+linesegment	257	37	257	40	1
+linesegment	262	37	262	40	1
+linesegment	267	37	267	40	1
+linesegment	272	37	272	40	1
+linesegment	277	37	277	40	1
+linesegment	282	34	282	40	1
+linesegment	162	58	162	64	1
+linesegment	167	61	167	64	1
+linesegment	172	61	172	64	1
+linesegment	177	61	177	64	1
+linesegment	182	61	182	64	1
+linesegment	187	61	187	64	1
+linesegment	192	61	192	64	1
+linesegment	197	61	197	64	1
+linesegment	202	61	202	64	1
+linesegment	207	61	207	64	1
+linesegment	212	61	212	64	1
+linesegment	217	61	217	64	1
+linesegment	222	61	222	64	1
+linesegment	227	61	227	64	1
+linesegment	232	61	232	64	1
+linesegment	237	61	237	64	1
+linesegment	242	61	242	64	1
+linesegment	247	61	247	64	1
+linesegment	252	61	252	64	1
+linesegment	257	61	257	64	1
+linesegment	262	61	262	64	1
+linesegment	267	61	267	64	1
+linesegment	272	61	272	64	1
+linesegment	277	61	277	64	1
+linesegment	282	58	282	64	1
+linesegment	162	82	162	88	1
+linesegment	167	85	167	88	1
+linesegment	172	85	172	88	1
+linesegment	177	85	177	88	1
+linesegment	182	85	182	88	1
+linesegment	187	85	187	88	1
+linesegment	192	85	192	88	1
+linesegment	197	85	197	88	1
+linesegment	202	85	202	88	1
+linesegment	207	85	207	88	1
+linesegment	212	85	212	88	1
+linesegment	217	85	217	88	1
+linesegment	222	85	222	88	1
+linesegment	227	85	227	88	1
+linesegment	232	85	232	88	1
+linesegment	237	85	237	88	1
+linesegment	242	85	242	88	1
+linesegment	247	85	247	88	1
+linesegment	252	85	252	88	1
+linesegment	257	85	257	88	1
+linesegment	262	85	262	88	1
+linesegment	267	85	267	88	1
+linesegment	272	85	272	88	1
+linesegment	277	85	277	88	1
+linesegment	282	82	282	88	1
+linesegment	162	106	162	112	1
+linesegment	167	109	167	112	1
+linesegment	172	109	172	112	1
+linesegment	177	109	177	112	1
+linesegment	182	109	182	112	1
+linesegment	187	109	187	112	1
+linesegment	192	109	192	112	1
+linesegment	197	109	197	112	1
+linesegment	202	109	202	112	1
+linesegment	207	109	207	112	1
+linesegment	212	109	212	112	1
+linesegment	217	109	217	112	1
+linesegment	222	109	222	112	1
+linesegment	227	109	227	112	1
+linesegment	232	109	232	112	1
+linesegment	237	109	237	112	1
+linesegment	242	109	242	112	1
+linesegment	247	109	247	112	1
+linesegment	252	109	252	112	1
+linesegment	257	109	257	112	1
+linesegment	262	109	262	112	1
+linesegment	267	109	267	112	1
+linesegment	272	109	272	112	1
+linesegment	277	109	277	112	1
+linesegment	282	106	282	112	1
+linesegment	162	130	162	136	1
+linesegment	167	133	167	136	1
+linesegment	172	133	172	136	1
+linesegment	177	133	177	136	1
+linesegment	182	133	182	136	1
+linesegment	187	133	187	136	1
+linesegment	192	133	192	136	1
+linesegment	197	133	197	136	1
+linesegment	202	133	202	136	1
+linesegment	207	133	207	136	1
+linesegment	212	133	212	136	1
+linesegment	217	133	217	136	1
+linesegment	222	133	222	136	1
+linesegment	227	133	227	136	1
+linesegment	232	133	232	136	1
+linesegment	237	133	237	136	1
+linesegment	242	133	242	136	1
+linesegment	247	133	247	136	1
+linesegment	252	133	252	136	1
+linesegment	257	133	257	136	1
+linesegment	262	133	262	136	1
+linesegment	267	133	267	136	1
+linesegment	272	133	272	136	1
+linesegment	277	133	277	136	1
+linesegment	282	130	282	136	1
+linesegment	162	154	162	160	1
+linesegment	167	157	167	160	1
+linesegment	172	157	172	160	1
+linesegment	177	157	177	160	1
+linesegment	182	157	182	160	1
+linesegment	187	157	187	160	1
+linesegment	192	157	192	160	1
+linesegment	197	157	197	160	1
+linesegment	202	157	202	160	1
+linesegment	207	157	207	160	1
+linesegment	212	157	212	160	1
+linesegment	217	157	217	160	1
+linesegment	222	157	222	160	1
+linesegment	227	157	227	160	1
+linesegment	232	157	232	160	1
+linesegment	237	157	237	160	1
+linesegment	242	157	242	160	1
+linesegment	247	157	247	160	1
+linesegment	252	157	252	160	1
+linesegment	257	157	257	160	1
+linesegment	262	157	262	160	1
+linesegment	267	157	267	160	1
+linesegment	272	157	272	160	1
+linesegment	277	157	277	160	1
+linesegment	282	154	282	160	1
+linesegment	162	178	162	184	1
+linesegment	167	181	167	184	1
+linesegment	172	181	172	184	1
+linesegment	177	181	177	184	1
+linesegment	182	181	182	184	1
+linesegment	187	181	187	184	1
+linesegment	192	181	192	184	1
+linesegment	197	181	197	184	1
+linesegment	202	181	202	184	1
+linesegment	207	181	207	184	1
+linesegment	212	181	212	184	1
+linesegment	217	181	217	184	1
+linesegment	222	181	222	184	1
+linesegment	227	181	227	184	1
+linesegment	232	181	232	184	1
+linesegment	237	181	237	184	1
+linesegment	242	181	242	184	1
+linesegment	247	181	247	184	1
+linesegment	252	181	252	184	1
+linesegment	257	181	257	184	1
+linesegment	262	181	262	184	1
+linesegment	267	181	267	184	1
+linesegment	272	181	272	184	1
+linesegment	277	181	277	184	1
+linesegment	282	178	282	184	1
+# グラフ軸線					
+linesegment	161	41	161	55	0.5
+linesegment	283	41	283	55	0.5
+linesegment	161	65	161	79	0.5
+linesegment	283	65	283	79	0.5
+linesegment	161	89	161	103	0.5
+linesegment	283	89	283	103	0.5
+linesegment	161	113	161	127	0.5
+linesegment	283	113	283	127	0.5
+linesegment	161	137	161	151	0.5
+linesegment	283	137	283	151	0.5
+linesegment	161	161	161	175	0.5
+linesegment	283	161	283	175	0.5
+linesegment	161	185	161	199	0.5
+linesegment	283	185	283	199	0.5
+# グラフ文字					
+label 154 35.5 left center gothic 6 black _ _ 日付
+label 154 38.5 left center gothic 6 black _ _ 時間帯
+label 164.5 38.5 center center gothic 6 black _ _ 0
+label 169.5 38.5 center center gothic 6 black _ _ 1
+label 174.5 38.5 center center gothic 6 black _ _ 2
+label 179.5 38.5 center center gothic 6 black _ _ 3
+label 184.5 38.5 center center gothic 6 black _ _ 4
+label 189.5 38.5 center center gothic 6 black _ _ 5
+label 194.5 38.5 center center gothic 6 black _ _ 6
+label 199.5 38.5 center center gothic 6 black _ _ 7
+label 204.5 38.5 center center gothic 6 black _ _ 8
+label 209.5 38.5 center center gothic 6 black _ _ 9
+label 214.5 38.5 center center gothic 6 black _ _ 10
+label 219.5 38.5 center center gothic 6 black _ _ 11
+label 224.5 38.5 center center gothic 6 black _ _ 12
+label 229.5 38.5 center center gothic 6 black _ _ 13
+label 234.5 38.5 center center gothic 6 black _ _ 14
+label 239.5 38.5 center center gothic 6 black _ _ 15
+label 244.5 38.5 center center gothic 6 black _ _ 16
+label 249.5 38.5 center center gothic 6 black _ _ 17
+label 254.5 38.5 center center gothic 6 black _ _ 18
+label 259.5 38.5 center center gothic 6 black _ _ 19
+label 264.5 38.5 center center gothic 6 black _ _ 20
+label 269.5 38.5 center center gothic 6 black _ _ 21
+label 274.5 38.5 center center gothic 6 black _ _ 22
+label 279.5 38.5 center center gothic 6 black _ _ 23
+label 154 59.5 left center gothic 6 black _ _ 日付
+label 154 62.5 left center gothic 6 black _ _ 時間帯
+label 164.5 62.5 center center gothic 6 black _ _ 0
+label 169.5 62.5 center center gothic 6 black _ _ 1
+label 174.5 62.5 center center gothic 6 black _ _ 2
+label 179.5 62.5 center center gothic 6 black _ _ 3
+label 184.5 62.5 center center gothic 6 black _ _ 4
+label 189.5 62.5 center center gothic 6 black _ _ 5
+label 194.5 62.5 center center gothic 6 black _ _ 6
+label 199.5 62.5 center center gothic 6 black _ _ 7
+label 204.5 62.5 center center gothic 6 black _ _ 8
+label 209.5 62.5 center center gothic 6 black _ _ 9
+label 214.5 62.5 center center gothic 6 black _ _ 10
+label 219.5 62.5 center center gothic 6 black _ _ 11
+label 224.5 62.5 center center gothic 6 black _ _ 12
+label 229.5 62.5 center center gothic 6 black _ _ 13
+label 234.5 62.5 center center gothic 6 black _ _ 14
+label 239.5 62.5 center center gothic 6 black _ _ 15
+label 244.5 62.5 center center gothic 6 black _ _ 16
+label 249.5 62.5 center center gothic 6 black _ _ 17
+label 254.5 62.5 center center gothic 6 black _ _ 18
+label 259.5 62.5 center center gothic 6 black _ _ 19
+label 264.5 62.5 center center gothic 6 black _ _ 20
+label 269.5 62.5 center center gothic 6 black _ _ 21
+label 274.5 62.5 center center gothic 6 black _ _ 22
+label 279.5 62.5 center center gothic 6 black _ _ 23
+label 154 83.5 left center gothic 6 black _ _ 日付
+label 154 86.5 left center gothic 6 black _ _ 時間帯
+label 164.5 86.5 center center gothic 6 black _ _ 0
+label 169.5 86.5 center center gothic 6 black _ _ 1
+label 174.5 86.5 center center gothic 6 black _ _ 2
+label 179.5 86.5 center center gothic 6 black _ _ 3
+label 184.5 86.5 center center gothic 6 black _ _ 4
+label 189.5 86.5 center center gothic 6 black _ _ 5
+label 194.5 86.5 center center gothic 6 black _ _ 6
+label 199.5 86.5 center center gothic 6 black _ _ 7
+label 204.5 86.5 center center gothic 6 black _ _ 8
+label 209.5 86.5 center center gothic 6 black _ _ 9
+label 214.5 86.5 center center gothic 6 black _ _ 10
+label 219.5 86.5 center center gothic 6 black _ _ 11
+label 224.5 86.5 center center gothic 6 black _ _ 12
+label 229.5 86.5 center center gothic 6 black _ _ 13
+label 234.5 86.5 center center gothic 6 black _ _ 14
+label 239.5 86.5 center center gothic 6 black _ _ 15
+label 244.5 86.5 center center gothic 6 black _ _ 16
+label 249.5 86.5 center center gothic 6 black _ _ 17
+label 254.5 86.5 center center gothic 6 black _ _ 18
+label 259.5 86.5 center center gothic 6 black _ _ 19
+label 264.5 86.5 center center gothic 6 black _ _ 20
+label 269.5 86.5 center center gothic 6 black _ _ 21
+label 274.5 86.5 center center gothic 6 black _ _ 22
+label 279.5 86.5 center center gothic 6 black _ _ 23
+label 154 107.5 left center gothic 6 black _ _ 日付
+label 154 110.5 left center gothic 6 black _ _ 時間帯
+label 164.5 110.5 center center gothic 6 black _ _ 0
+label 169.5 110.5 center center gothic 6 black _ _ 1
+label 174.5 110.5 center center gothic 6 black _ _ 2
+label 179.5 110.5 center center gothic 6 black _ _ 3
+label 184.5 110.5 center center gothic 6 black _ _ 4
+label 189.5 110.5 center center gothic 6 black _ _ 5
+label 194.5 110.5 center center gothic 6 black _ _ 6
+label 199.5 110.5 center center gothic 6 black _ _ 7
+label 204.5 110.5 center center gothic 6 black _ _ 8
+label 209.5 110.5 center center gothic 6 black _ _ 9
+label 214.5 110.5 center center gothic 6 black _ _ 10
+label 219.5 110.5 center center gothic 6 black _ _ 11
+label 224.5 110.5 center center gothic 6 black _ _ 12
+label 229.5 110.5 center center gothic 6 black _ _ 13
+label 234.5 110.5 center center gothic 6 black _ _ 14
+label 239.5 110.5 center center gothic 6 black _ _ 15
+label 244.5 110.5 center center gothic 6 black _ _ 16
+label 249.5 110.5 center center gothic 6 black _ _ 17
+label 254.5 110.5 center center gothic 6 black _ _ 18
+label 259.5 110.5 center center gothic 6 black _ _ 19
+label 264.5 110.5 center center gothic 6 black _ _ 20
+label 269.5 110.5 center center gothic 6 black _ _ 21
+label 274.5 110.5 center center gothic 6 black _ _ 22
+label 279.5 110.5 center center gothic 6 black _ _ 23
+label 154 131.5 left center gothic 6 black _ _ 日付
+label 154 134.5 left center gothic 6 black _ _ 時間帯
+label 164.5 134.5 center center gothic 6 black _ _ 0
+label 169.5 134.5 center center gothic 6 black _ _ 1
+label 174.5 134.5 center center gothic 6 black _ _ 2
+label 179.5 134.5 center center gothic 6 black _ _ 3
+label 184.5 134.5 center center gothic 6 black _ _ 4
+label 189.5 134.5 center center gothic 6 black _ _ 5
+label 194.5 134.5 center center gothic 6 black _ _ 6
+label 199.5 134.5 center center gothic 6 black _ _ 7
+label 204.5 134.5 center center gothic 6 black _ _ 8
+label 209.5 134.5 center center gothic 6 black _ _ 9
+label 214.5 134.5 center center gothic 6 black _ _ 10
+label 219.5 134.5 center center gothic 6 black _ _ 11
+label 224.5 134.5 center center gothic 6 black _ _ 12
+label 229.5 134.5 center center gothic 6 black _ _ 13
+label 234.5 134.5 center center gothic 6 black _ _ 14
+label 239.5 134.5 center center gothic 6 black _ _ 15
+label 244.5 134.5 center center gothic 6 black _ _ 16
+label 249.5 134.5 center center gothic 6 black _ _ 17
+label 254.5 134.5 center center gothic 6 black _ _ 18
+label 259.5 134.5 center center gothic 6 black _ _ 19
+label 264.5 134.5 center center gothic 6 black _ _ 20
+label 269.5 134.5 center center gothic 6 black _ _ 21
+label 274.5 134.5 center center gothic 6 black _ _ 22
+label 279.5 134.5 center center gothic 6 black _ _ 23
+label 154 155.5 left center gothic 6 black _ _ 日付
+label 154 158.5 left center gothic 6 black _ _ 時間帯
+label 164.5 158.5 center center gothic 6 black _ _ 0
+label 169.5 158.5 center center gothic 6 black _ _ 1
+label 174.5 158.5 center center gothic 6 black _ _ 2
+label 179.5 158.5 center center gothic 6 black _ _ 3
+label 184.5 158.5 center center gothic 6 black _ _ 4
+label 189.5 158.5 center center gothic 6 black _ _ 5
+label 194.5 158.5 center center gothic 6 black _ _ 6
+label 199.5 158.5 center center gothic 6 black _ _ 7
+label 204.5 158.5 center center gothic 6 black _ _ 8
+label 209.5 158.5 center center gothic 6 black _ _ 9
+label 214.5 158.5 center center gothic 6 black _ _ 10
+label 219.5 158.5 center center gothic 6 black _ _ 11
+label 224.5 158.5 center center gothic 6 black _ _ 12
+label 229.5 158.5 center center gothic 6 black _ _ 13
+label 234.5 158.5 center center gothic 6 black _ _ 14
+label 239.5 158.5 center center gothic 6 black _ _ 15
+label 244.5 158.5 center center gothic 6 black _ _ 16
+label 249.5 158.5 center center gothic 6 black _ _ 17
+label 254.5 158.5 center center gothic 6 black _ _ 18
+label 259.5 158.5 center center gothic 6 black _ _ 19
+label 264.5 158.5 center center gothic 6 black _ _ 20
+label 269.5 158.5 center center gothic 6 black _ _ 21
+label 274.5 158.5 center center gothic 6 black _ _ 22
+label 279.5 158.5 center center gothic 6 black _ _ 23
+label 154 179.5 left center gothic 6 black _ _ 日付
+label 154 182.5 left center gothic 6 black _ _ 時間帯
+label 164.5 182.5 center center gothic 6 black _ _ 0
+label 169.5 182.5 center center gothic 6 black _ _ 1
+label 174.5 182.5 center center gothic 6 black _ _ 2
+label 179.5 182.5 center center gothic 6 black _ _ 3
+label 184.5 182.5 center center gothic 6 black _ _ 4
+label 189.5 182.5 center center gothic 6 black _ _ 5
+label 194.5 182.5 center center gothic 6 black _ _ 6
+label 199.5 182.5 center center gothic 6 black _ _ 7
+label 204.5 182.5 center center gothic 6 black _ _ 8
+label 209.5 182.5 center center gothic 6 black _ _ 9
+label 214.5 182.5 center center gothic 6 black _ _ 10
+label 219.5 182.5 center center gothic 6 black _ _ 11
+label 224.5 182.5 center center gothic 6 black _ _ 12
+label 229.5 182.5 center center gothic 6 black _ _ 13
+label 234.5 182.5 center center gothic 6 black _ _ 14
+label 239.5 182.5 center center gothic 6 black _ _ 15
+label 244.5 182.5 center center gothic 6 black _ _ 16
+label 249.5 182.5 center center gothic 6 black _ _ 17
+label 254.5 182.5 center center gothic 6 black _ _ 18
+label 259.5 182.5 center center gothic 6 black _ _ 19
+label 264.5 182.5 center center gothic 6 black _ _ 20
+label 269.5 182.5 center center gothic 6 black _ _ 21
+label 274.5 182.5 center center gothic 6 black _ _ 22
+label 279.5 182.5 center center gothic 6 black _ _ 23
+
+############### 左グラフ軸ラベル					
+# ゼロは固定
+label 17.5 54.8 right bottom gothic 4 black _ _ 0
+label 17.5 78.8 right bottom gothic 4 black _ _ 0
+label 17.5 102.8 right bottom gothic 4 black _ _ 0
+label 17.5 126.8 right bottom gothic 4 black _ _ 0
+label 17.5 150.8 right bottom gothic 4 black _ _ 0
+label 17.5 174.8 right bottom gothic 4 black _ _ 0
+label 17.5 198.8 right bottom gothic 4 black _ _ 0
+label 140.5 54.8 left bottom gothic 4 black _ _ 0%
+label 140.5 78.8 left bottom gothic 4 black _ _ 0%
+label 140.5 102.8 left bottom gothic 4 black _ _ 0%
+label 140.5 126.8 left bottom gothic 4 black _ _ 0%
+label 140.5 150.8 left bottom gothic 4 black _ _ 0%
+label 140.5 174.8 left bottom gothic 4 black _ _ 0%
+label 140.5 198.8 left bottom gothic 4 black _ _ 0%
+############### 右グラフ軸ラベル 
+# ゼロは固定 
+label 160.5 54.8 right bottom gothic 4 black _ _ 0
+label 160.5 78.8 right bottom gothic 4 black _ _ 0
+label 160.5 102.8 right bottom gothic 4 black _ _ 0
+label 160.5 126.8 right bottom gothic 4 black _ _ 0
+label 160.5 150.8 right bottom gothic 4 black _ _ 0
+label 160.5 174.8 right bottom gothic 4 black _ _ 0
+label 160.5 198.8 right bottom gothic 4 black _ _ 0
+label 283.5 54.8 left bottom gothic 4 black _ _ 0%
+label 283.5 78.8 left bottom gothic 4 black _ _ 0%
+label 283.5 102.8 left bottom gothic 4 black _ _ 0%
+label 283.5 126.8 left bottom gothic 4 black _ _ 0%
+label 283.5 150.8 left bottom gothic 4 black _ _ 0%
+label 283.5 174.8 left bottom gothic 4 black _ _ 0%
+label 283.5 198.8 left bottom gothic 4 black _ _ 0%
